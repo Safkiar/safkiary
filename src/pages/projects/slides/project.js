@@ -1,0 +1,120 @@
+const slides = [
+  {
+    title: "Safkiar  smooth scroling",
+    subtitle: "JavaScript - PUG - Webpack - SCSS",
+    description:
+      "Modern one-page React application with a sleek, responsive design and smooth scrolling.",
+    data: "11.24",
+    link: "https://kikowski.netlify.app/",
+    image: "scroll.png",
+  },
+  {
+    title: "Safizoo",
+    subtitle: "Angular - TypeScript - Java Spring - MySQL - SCSS",
+    description:
+      "fullstack e-commerce app where users can browse products, view details, and place orders. The application uses Angular SSR (Server-Side Rendering) for enhanced performance and SEO optimization on the frontend, while Spring Boot serves as the backend API connected to a MySQL database. Each part of the system is hosted individually and communicates seamlessly.",
+    data: "12.24",
+    link: "https://one-safizoo-fullstack-angular-spring.onrender.com/products",
+    image: "safizoo.png",
+  },
+  {
+    title: "Betangu",
+    subtitle: "Angular - TypeScript - Firebase - SCSS",
+    description:
+      "Track bets with secure authentication. Users can add bets through a simple form, and the app calculates statistics and rankings to encourage friendly competition.",
+    data: "11.24",
+    link: "https://betangu.netlify.app/home",
+    image: "bet.png",
+  },
+  {
+    title: "Animated Card",
+    subtitle: "JavaScript - PUG - Webpack - SCSS",
+    description:
+      "It updates the card preview dynamically as the user types, including smooth flip animations when interacting with fields like the CVV. The setup provides a responsive, interactive experience for entering card details",
+    data: "10.24",
+    link: "https://safkiar-animated-card.netlify.app/",
+    image: "card.png",
+  },
+  {
+    title: "Smart Searching Tool",
+    subtitle: "React - Redux - TypeScript - Styled Components",
+    description:
+      "React-Redux-based feature designed to help users filter and retrieve data efficiently from a table of user information",
+    data: "09.24",
+    link: "https://smartst.netlify.app/",
+    image: "sst.png",
+  },
+  {
+    title: "Daily Quest",
+    subtitle: "React - Styled Components - Supabase",
+    description:
+      "Manage their tasks and goals efficiently. Users can add and track quests that are daily, one-time, or recurring on specific days. The app also includes features for adding and editing notes, providing detailed information about each quest. Additionally, it offers a calendar view for an organized overview of upcoming tasks and progress tracking.",
+    data: "08.24",
+    link: "https://dailyquest.netlify.app/dashboard",
+    image: "quest.png",
+  },
+  {
+    title: "The Wild Oasis",
+    subtitle: "React - Styled Components - Supabase",
+    description:
+      "The booking management app built with React, React Query, and Supabase offers comprehensive features including booking and cabin management with editable details. It provides real-time statistics and interactive charts, supports dark mode, and is fully responsive. User authentication and settings are securely handled through Supabase (course project)",
+    data: "06.24",
+    link: "https://safkiar-the-wild-oasis.netlify.app/login",
+    image: "oasis.png",
+  },
+  {
+    title: "Well Schedule",
+    subtitle: "React - Styled Components - Firebase",
+    description:
+      "User-friendly platform for managing events, allowing for detailed customization, such as setting occurrences for specific weeks of the month. Adding events is straightforward—just a simple click is required. The platform provides a clear view of your schedule with daily, weekly, and monthly calendar options.",
+    data: "07.24",
+    link: "https://well-shedule.netlify.app/Weekly",
+    image: "well.png",
+  },
+  {
+    title: "Fast React Pizza",
+    subtitle: "React - Tailwind",
+    description:
+      "Pizza ordering app, developed with Tailwind CSS, offers a seamless user experience for ordering pizza online.",
+    data: "05.24",
+    link: "https://safkiar-fast-react-pizza.netlify.app/",
+    image: "pizza.png",
+  },
+  {
+    title: "Mix React",
+    subtitle: "React - Styled Components",
+    description:
+      "dynamic web application that offers a variety of interface solutions. It encompasses a wide range of features such as informational cards, interactive quizzes, a finance management module resembling online banking, a currency converter facilitating quick calculations, as well as tools for handling dates",
+    data: "05.24",
+    image: "mixreact.png",
+  },
+  {
+    title: "Safkiar - first webpage",
+    subtitle: "JavaScript - CSS",
+    description:
+      "My first personal website built using JavaScript, featuring smooth animations, translations, and interactive sliders.",
+    data: "04.24",
+    link: "https://safkiar.github.io/3-safkiar-04.2024/",
+    image: "safkiar.png",
+  },
+  {
+    title: "MiniChess",
+    subtitle: "JavaScript - CSS",
+    description:
+      "6x8 chess variant that fully implements traditional rules—including castling, en passant, and pawn promotion—using a custom drag-and-drop system. I independently developed the advanced game logic to accurately handle these complex mechanics in a compact format",
+    data: "03.24",
+    link: "https://safkiar.github.io/2-minichess-03.2024/",
+    image: "chess.png",
+  },
+  {
+    title: "Forkify",
+    subtitle: "JavaScript - SCSS",
+    description:
+      "Forkify is a recipe finder that fetches data from an external API, letting users search and save favorite dishes. Built with MVC, it offers a clean interface for easy culinary exploration.",
+    data: "03.24",
+    link: "https://safkiar-forkify.netlify.app/",
+    image: "forkify.png",
+  },
+];
+
+export default slides;

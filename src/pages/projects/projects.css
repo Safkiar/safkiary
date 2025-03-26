@@ -1,31 +1,10 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  position: relative;
-}
-
-html,
-body {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  font-size: 3vmin;
-  position: relative;
-}
-
-html {
-  background: #151515;
-  overflow: hidden;
-}
-
 .parent {
   padding-top: 40px;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 14vh;
 }
 
 .slides {
@@ -34,15 +13,16 @@ html {
     grid-area: 1 / -1;
   }
 
-  > button {
+  > .button_slides {
     appearance: none;
     background: transparent;
     border: none;
-    color: white;
+    color: #fff;
     position: absolute;
-    font-size: 5rem;
+    font-size: 6rem;
     width: 5rem;
     height: 5rem;
+
     top: 30%;
     transition: opacity 0.3s;
     opacity: 0.7;
@@ -66,13 +46,14 @@ html {
 }
 
 .slideContent {
-  width: 45vw;
-  height: 22vw;
+  width: 35vw;
+  height: 17vw;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   transition: transform 0.5s ease-in-out;
-  opacity: 0.7;
+  opacity: 0.4;
+  box-shadow: 0 2px 20px 2px rgba(255, 255, 255, 0.08);
 
   display: grid;
   align-content: center;
@@ -80,6 +61,10 @@ html {
   transform-style: preserve-3d;
   transform: perspective(1500px) translateX(calc(100% * var(--offset)))
     rotateY(calc(-47deg * var(--dir)));
+}
+
+.slideContent:hover {
+  cursor: pointer;
 }
 
 .slideContentInner {
@@ -90,6 +75,8 @@ html {
   opacity: 0;
   position: absolute;
   top: 100%;
+  width: 100%;
+
   /* transform: translateY(10%); */
 
   .slideSubtitle,
@@ -98,17 +85,30 @@ html {
     font-weight: normal;
     letter-spacing: 0.2ch;
     text-transform: uppercase;
+    text-align: center;
     margin: 0;
+    margin-bottom: 4px;
   }
 
-  .slideSubtitle::before {
-    content: "— ";
+  .slideTitle {
+    font-size: 2rem;
+  }
+
+  .slideSubtitle {
+    font-size: 1rem;
+    /* font-size: 1rem; */
   }
 
   .slideDescription {
+    padding: 0 10px;
     margin: 0;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     letter-spacing: 0.2ch;
+  }
+
+  .slideData {
+    text-align: center;
+    font-size: 1.2rem;
   }
 }
 
@@ -124,7 +124,6 @@ html {
   opacity: 0;
   transition: opacity 0.3s linear, transform 0.3s ease-in-out;
   pointer-events: none;
-
   transform: translateX(calc(10% * var(--dir)));
 }
 
@@ -133,7 +132,7 @@ html {
   pointer-events: auto;
 
   .slideBackground {
-    opacity: 0.2;
+    opacity: 0.1;
     transform: none;
   }
 

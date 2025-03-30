@@ -1,0 +1,125 @@
+:root {
+  --sz: 20px;
+}
+
+.graph {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  background-color: white;
+}
+
+.table {
+  position: relative;
+}
+
+.info {
+  position: relative;
+  width: 250px;
+  height: 200px;
+  background: #996fae;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.skewul {
+  position: relative;
+  transform: skewY(-3deg);
+}
+
+.skewli {
+  position: relative;
+  list-style: none;
+  width: 200px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #3e3f46;
+  z-index: calc(1 * var(--1));
+  /* ??? */
+  transition: 0.5s;
+}
+
+.skewli:hover {
+  background: #996fae;
+  transform: translateX(30px);
+}
+
+.skewli::before {
+  content: "";
+  color: #999;
+  background: #2e3133;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 10px;
+  height: 100%;
+  transform-origin: right;
+  transform: skewY(45deg);
+  transition: 0.5s;
+}
+
+.skewli:hover::before {
+  background: #7b5190;
+}
+
+.skewli:after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0px;
+  width: 100%;
+  height: 10px;
+  background: #35383e;
+  transform-origin: bottom;
+  transform: skewX(45deg);
+  transition: 0.5s;
+}
+
+.skewli:hover::after {
+  background: #86589d;
+}
+
+.skewli a {
+  text-decoration: none;
+  color: #999;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+}
+
+.skewli:hover a {
+  color: #fff;
+}
+
+.skewli:last-child::after {
+  box-shadow: -120px 120px 20px rgba(0, 0, 0, 0.25);
+}
+
+.a1 {
+  z-index: 1;
+  width: calc(var(--sz) * 2);
+}
+
+.a2 {
+  z-index: 2;
+}
+
+.a3 {
+  z-index: 3;
+}
+
+.a4 {
+  z-index: 4;
+}
+
+.a5 {
+  z-index: 5;
+}
+
+.a6 {
+  z-index: 6;
+}

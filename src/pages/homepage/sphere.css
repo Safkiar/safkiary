@@ -1,0 +1,27 @@
+.text-sphere {
+  position: relative;
+  top: 0;
+  /* width: 100%; */
+  /* height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tagcloud {
+  display: inline-block;
+  top: 0;
+  left: 0;
+
+  font-size: 0.9rem;
+}
+
+.tagcloud--item {
+  color: #00ffffff;
+  text-transform: uppercase;
+}
+
+.tagcloud--item:hover {
+  color: bisque;
+  cursor: default;
+}

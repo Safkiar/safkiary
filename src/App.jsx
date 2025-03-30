@@ -1,10 +1,10 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import Homepage from "./pages/homepage";
-import Contact from "./pages/contact";
-import Certificates from "./pages/certificates";
+import Homepage from "./pages/homepage/homepage";
+import Contact from "./pages/contact/contact";
+import Certificates from "./pages/certificates/certificates";
 import Projects from "./pages/projects/projects";
 import Nav from "./nav/nav";
-import Experience from "./pages/experience";
+import Experience from "./pages/experience/experience";
 
 function App() {
   return (

@@ -2,7 +2,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  position: relative;
 }
 
 html,
@@ -11,13 +10,13 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  position: relative;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
 body {
   overflow: hidden;
-  background: #1a1a1a;
+  background: #1e1e1e;
   line-height: 1.8;
-  font-weight: 400;
+  font-weight: 500;
+  letter-spacing: 0.08rem;
 }

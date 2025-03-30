@@ -243,3 +243,122 @@ nav ul li:nth-child(4) a {
 nav ul li:nth-child(5) a {
   transform: rotate(60deg);
 }
+
+/* sun */
+
+.darkmode {
+  position: fixed;
+  top: 1%;
+  right: 1%;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.5s, opacity 0.5s;
+}
+
+.sun img {
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(0 0 15px #fffacd);
+}
+
+.moon img {
+  margin: 10px;
+  width: 30px;
+  height: 30px;
+  filter: drop-shadow(0 0 8px #bbb);
+}
+
+.sun img:hover,
+.moon img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1) blur(0.3px);
+  transition: all 0.3s ease;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.sun img,
+.moon img {
+  animation: float 3s ease-in-out infinite;
+}
+/* Sun change */
+
+.invisibleClass {
+  display: none;
+}
+
+.visibleClass {
+  display: block;
+}
+
+.animate-up {
+  animation: iconUp 0.5s forwards;
+}
+
+.animate-down {
+  animation: iconDown 0.5s forwards;
+}
+
+.animate-up2 {
+  animation: iconUp2 0.5s forwards;
+}
+
+.animate-down2 {
+  animation: iconDown2 0.5s forwards;
+}
+
+@keyframes iconUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}
+
+@keyframes iconUp2 {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+}
+
+@keyframes iconDown {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes iconDown2 {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

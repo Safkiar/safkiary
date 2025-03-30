@@ -77,12 +77,8 @@ function Certificates() {
       <div className="carousel" ref={setCarouselDom}>
         <div className="list" ref={setSliderDom}>
           <div className="item">
-            <img src="/img1.jpg" alt="img1" />
+            <img src="/certificates/ANG.png" alt="img1" />
             <div className="contentt">
-              <div className="author">LUNDEV</div>
-              <div className="title">DESIGN SLIDER</div>
-              <div className="topic">ANIMAL</div>
-              <div className="des">Opis slajdu 1</div>
               <div className="buttons">
                 <button>SEE MORE</button>
                 <button>SUBSCRIBE</button>
@@ -91,12 +87,8 @@ function Certificates() {
           </div>
 
           <div className="item">
-            <img src="/img2.jpg" alt="img2" />
+            <img src="/certificates/CSS.png" alt="img2" />
             <div className="content">
-              <div className="author">LUNDEV</div>
-              <div className="title">DESIGN SLIDER</div>
-              <div className="topic">ANIMAL</div>
-              <div className="des">Opis slajdu 2</div>
               <div className="buttons">
                 <button>SEE MORE</button>
                 <button>SUBSCRIBE</button>
@@ -105,12 +97,8 @@ function Certificates() {
           </div>
 
           <div className="item">
-            <img src="/img3.jpg" alt="img3" />
+            <img src="/certificates/cssadv.png" alt="img3" />
             <div className="content">
-              <div className="author">LUNDEV</div>
-              <div className="title">DESIGN SLIDER</div>
-              <div className="topic">ANIMAL</div>
-              <div className="des">Opis slajdu 3</div>
               <div className="buttons">
                 <button>SEE MORE</button>
                 <button>SUBSCRIBE</button>
@@ -119,12 +107,8 @@ function Certificates() {
           </div>
 
           <div className="item">
-            <img src="/img4.jpg" alt="img4" />
+            <img src="/certificates/JS.png" alt="img4" />
             <div className="content">
-              <div className="author">LUNDEV</div>
-              <div className="title">DESIGN SLIDER</div>
-              <div className="topic">ANIMAL</div>
-              <div className="des">Opis slajdu 4</div>
               <div className="buttons">
                 <button>SEE MORE</button>
                 <button>SUBSCRIBE</button>
@@ -135,7 +119,7 @@ function Certificates() {
 
         <div className="thumbnail" ref={setThumbnailDom}>
           <div className="item">
-            <img src="/img2.jpg" alt="thumb1" />
+            <img src="/certificates/CSS.png" alt="thumb1" />
             <div className="content">
               <div className="title">Name Slider</div>
               <div className="description">Description</div>
@@ -143,7 +127,7 @@ function Certificates() {
           </div>
 
           <div className="item">
-            <img src="/img3.jpg" alt="thumb2" />
+            <img src="/certificates/cssadv.png" alt="thumb2" />
             <div className="content">
               <div className="title">Name Slider</div>
               <div className="description">Description</div>
@@ -151,7 +135,7 @@ function Certificates() {
           </div>
 
           <div className="item">
-            <img src="/img4.jpg" alt="thumb3" />
+            <img src="/certificates/JS.png" alt="thumb3" />
             <div className="content">
               <div className="title">Name Slider</div>
               <div className="description">Description</div>
@@ -159,7 +143,7 @@ function Certificates() {
           </div>
 
           <div className="item">
-            <img src="/img1.jpg" alt="thumb4" />
+            <img src="/certificates/ANG.png" alt="thumb4" />
             <div className="content">
               <div className="title">Name Slider</div>
               <div className="description">Description</div>

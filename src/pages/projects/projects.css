@@ -8,6 +8,7 @@
 }
 
 .slides {
+  position: relative;
   display: grid;
   > .slide {
     grid-area: 1 / -1;

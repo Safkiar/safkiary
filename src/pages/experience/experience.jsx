@@ -62,16 +62,18 @@ function Experience() {
           <a href="#">webpack</a>
         </li>
       </ul>
+
       <div className="table">
         <div className="info">
-          {hovered && <div>tyle mam projektów</div>}
-          {hovered2 && <div>taads</div>}
-          {hovered3 && <div>asd</div>}
-          {hovered4 && <div>zxc</div>}
-          {hovered5 && <div>asd</div>}
-          {hovered6 && <div>qdsa</div>}
+          {hovered && <div className="fadeIn">Tyle mam projektów</div>}
+          {hovered2 && <div className="fadeIn">Taads</div>}
+          {hovered3 && <div className="fadeIn">ASD</div>}
+          {hovered4 && <div className="fadeIn">ZXC</div>}
+          {hovered5 && <div className="fadeIn">Python info</div>}
+          {hovered6 && <div className="fadeIn">Webpack info</div>}
         </div>
       </div>
+
       <Buttons />
     </div>
   );

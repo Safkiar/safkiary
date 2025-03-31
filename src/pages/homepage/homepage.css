@@ -13,30 +13,76 @@
 
 .tvbox {
   position: relative;
-  min-width: 950px;
+  /* min-width: 750px; */
+  width: 730px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   background: rgba(0, 0, 0, 0.2);
-  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   border-radius: 10px;
-  height: 400px;
+  height: 260px;
   border: 1px solid pink;
   color: white;
 }
 
+.my_img_container {
+  width: 20%;
+  border: 1px solid red;
+}
+
 .my_img_container img {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   border-radius: 5px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .tvpixel {
-  border: 1px solid pink;
-  width: 50px;
-  height: 50px;
+  border: 1px solid rgba(255, 192, 203, 0.114);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+  width: 420px;
+  height: 152px;
+}
+
+.intro {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.me {
+  width: 92%;
+  text-align: center;
+  font-size: 1.12rem;
+}
+
+.who {
+  width: 94%;
+  margin-top: 10px;
+}
+
+.showMe {
+  opacity: 0;
+  /* transform: translateX(-20px); */
+  transition: opacity 0.2s ease-in;
+  /* , transform 0.6s ease; */
+  animation: showText 0.6s forwards;
+}
+
+@keyframes showText {
+  to {
+    opacity: 1;
+    /* transform: translateX(0); */
+  }
+}
+
+.hover-indicator {
+  margin: 5px;
 }

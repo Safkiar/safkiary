@@ -24,7 +24,7 @@ a {
   position: fixed;
   right: 0;
   bottom: -5%;
-  z-index: 1000;
+  z-index: 100000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,7 +57,7 @@ nav .link {
   margin-top: -20px;
   right: 0;
   cursor: pointer;
-  z-index: 99;
+  z-index: 99999;
 }
 
 nav .link::before {
@@ -72,7 +72,7 @@ nav .link::before {
   );
   border-radius: 50% 0 0 50%;
   transform: scale(2);
-  z-index: -2;
+  /* z-index: -2; */
 }
 
 nav .link::after {
@@ -84,7 +84,7 @@ nav .link::after {
   background-color: var(--secondary-color);
   border-radius: 50% 0 50% 50%;
   transform: scale(2);
-  z-index: -1;
+  /* z-index: -1; */
   opacity: 0.4;
   transition: opacity 0.3s;
 }
@@ -255,6 +255,7 @@ nav ul li:nth-child(5) a {
   display: flex;
   justify-content: center;
   transition: transform 0.5s, opacity 0.5s;
+  z-index: 100000;
 }
 
 .sun img {

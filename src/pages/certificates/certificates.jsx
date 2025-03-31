@@ -1,169 +1,134 @@
-import { useEffect, useState } from "react";
+import slides from "./slides/certificates";
 import "./certificates.css";
-function Certificates() {
-  const [carouselDom, setCarouselDom] = useState(null);
-  const [sliderDom, setSliderDom] = useState(null);
-  const [thumbnailDom, setThumbnailDom] = useState(null);
-  // eslint-disable-next-line no-unused-vars
-  const [timeDom, setTimeDom] = useState(null);
-  const [nextDom, setNextDom] = useState(null);
-  const [prevDom, setPrevDom] = useState(null);
+import { useRef, useEffect, useReducer } from "react";
+
+function useTilt(active) {
+  const ref = useRef(null);
 
   useEffect(() => {
-    if (!carouselDom || !sliderDom || !thumbnailDom || !nextDom || !prevDom)
+    if (!ref.current || !active) {
       return;
+    }
 
-    const timeRunning = 3000;
-    const timeAutoNext = 7000;
-
-    let runTimeOut;
-    let runNextAuto;
-
-    const showSlider = (type) => {
-      const SliderItemsDom = sliderDom.querySelectorAll(".item");
-      const thumbnailItemsDom = thumbnailDom.querySelectorAll(".item");
-
-      if (type === "next") {
-        sliderDom.appendChild(SliderItemsDom[0]);
-        thumbnailDom.appendChild(thumbnailItemsDom[0]);
-        carouselDom.classList.add("next");
-      } else {
-        sliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
-        thumbnailDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
-        carouselDom.classList.add("prev");
-      }
-
-      clearTimeout(runTimeOut);
-      runTimeOut = setTimeout(() => {
-        carouselDom.classList.remove("next");
-        carouselDom.classList.remove("prev");
-      }, timeRunning);
-
-      clearTimeout(runNextAuto);
-      runNextAuto = setTimeout(() => {
-        nextDom.click();
-      }, timeAutoNext);
+    const state = {
+      rect: undefined,
+      mouseX: undefined,
+      mouseY: undefined,
     };
 
-    nextDom.onclick = () => showSlider("next");
-    prevDom.onclick = () => showSlider("prev");
+    let el = ref.current;
 
-    runNextAuto = setTimeout(() => {
-      nextDom.click();
-    }, timeAutoNext);
+    const handleMouseMove = (e) => {
+      if (!el) {
+        return;
+      }
+      if (!state.rect) {
+        state.rect = el.getBoundingClientRect();
+      }
+      state.mouseX = e.clientX;
+      state.mouseY = e.clientY;
+      const px = (state.mouseX - state.rect.left) / state.rect.width;
+      const py = (state.mouseY - state.rect.top) / state.rect.height;
+
+      el.style.setProperty("--px", px);
+      el.style.setProperty("--py", py);
+    };
+
+    el.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      clearTimeout(runTimeOut);
-      clearTimeout(runNextAuto);
+      el.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [carouselDom, sliderDom, thumbnailDom, nextDom, prevDom]);
+  }, [active]);
+
+  return ref;
+}
+
+const initialState = {
+  slideIndex: 0,
+};
+
+const slidesReducer = (state, event) => {
+  if (event.type === "NEXT") {
+    return {
+      ...state,
+      slideIndex: (state.slideIndex + 1) % slides.length,
+    };
+  }
+  if (event.type === "PREV") {
+    return {
+      ...state,
+      slideIndex:
+        state.slideIndex === 0 ? slides.length - 1 : state.slideIndex - 1,
+    };
+  }
+};
+
+function Slide({ slide, offset }) {
+  const active = offset === 0 ? true : null;
+  const ref = useTilt(active);
+
+  const handleClick = () => {
+    if (active && slide.link) {
+      window.open(slide.link, "_blank");
+    }
+  };
 
   return (
-    <div className="fullview">
-      <header className="headercer">
-        <nav>
-          <a className="linker" href="">
-            Home
-          </a>
-          <a className="linker" href="">
-            Contacts
-          </a>
-          <a className="linker" href="">
-            Info
-          </a>
-        </nav>
-      </header>
+    <div
+      ref={ref}
+      className="slide"
+      data-active={active}
+      data-offset={offset}
+      style={{
+        "--offset": offset,
+        "--dir": offset === 0 ? 0 : offset > 0 ? 1 : -1,
+      }}
+    >
+      <div
+        className="slideBackground"
+        style={{
+          backgroundImage: `url('${slide.image}')`,
+        }}
+      />
+      <div
+        className={`slideContent ${active ? "active" : ""}`}
+        onClick={handleClick}
+        style={{
+          backgroundImage: `url('${slide.image}')`,
+        }}
+      >
+      </div>
+    </div>
+    // </div>
+  );
+}
 
-      <div className="carousel" ref={setCarouselDom}>
-        <div className="list" ref={setSliderDom}>
-          <div className="item">
-            <img src="/certificates/ANG.png" alt="img1" />
-            <div className="contentt">
-              <div className="buttons">
-                <button>SEE MORE</button>
-                <button>SUBSCRIBE</button>
-              </div>
-            </div>
-          </div>
+function Certificates() {
+  const [state, dispatch] = useReducer(slidesReducer, initialState);
 
-          <div className="item">
-            <img src="/certificates/CSS.png" alt="img2" />
-            <div className="content">
-              <div className="buttons">
-                <button>SEE MORE</button>
-                <button>SUBSCRIBE</button>
-              </div>
-            </div>
-          </div>
+  return (
+    <div className="parent">
+      <div className="slides">
+        <button
+          className="button_slides"
+          onClick={() => dispatch({ type: "PREV" })}
+        >
+          ‹
+        </button>
 
-          <div className="item">
-            <img src="/certificates/cssadv.png" alt="img3" />
-            <div className="content">
-              <div className="buttons">
-                <button>SEE MORE</button>
-                <button>SUBSCRIBE</button>
-              </div>
-            </div>
-          </div>
-
-          <div className="item">
-            <img src="/certificates/JS.png" alt="img4" />
-            <div className="content">
-              <div className="buttons">
-                <button>SEE MORE</button>
-                <button>SUBSCRIBE</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="thumbnail" ref={setThumbnailDom}>
-          <div className="item">
-            <img src="/certificates/CSS.png" alt="thumb1" />
-            <div className="content">
-              <div className="title">Name Slider</div>
-              <div className="description">Description</div>
-            </div>
-          </div>
-
-          <div className="item">
-            <img src="/certificates/cssadv.png" alt="thumb2" />
-            <div className="content">
-              <div className="title">Name Slider</div>
-              <div className="description">Description</div>
-            </div>
-          </div>
-
-          <div className="item">
-            <img src="/certificates/JS.png" alt="thumb3" />
-            <div className="content">
-              <div className="title">Name Slider</div>
-              <div className="description">Description</div>
-            </div>
-          </div>
-
-          <div className="item">
-            <img src="/certificates/ANG.png" alt="thumb4" />
-            <div className="content">
-              <div className="title">Name Slider</div>
-              <div className="description">Description</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="arrows">
-          <button id="prev" ref={setPrevDom}>
-            ◀
-          </button>
-          <button id="next" ref={setNextDom}>
-            ▶
-          </button>
-        </div>
-
-        <div className="time" ref={setTimeDom}></div>
+        {[...slides, ...slides, ...slides].map((slide, i) => {
+          let offset = slides.length + (state.slideIndex - i);
+          return <Slide slide={slide} offset={offset} key={i} />;
+        })}
+        <button
+          className="button_slides"
+          onClick={() => dispatch({ type: "NEXT" })}
+        >
+          ›
+        </button>
       </div>
     </div>
   );
 }
-
 export default Certificates;

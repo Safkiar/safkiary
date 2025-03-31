@@ -69,7 +69,7 @@ function Slide({ slide, offset }) {
   const ref = useTilt(active);
 
   const handleClick = () => {
-    if (slide.link) {
+    if (active && slide.link) {
       window.open(slide.link, "_blank");
     }
   };
@@ -92,7 +92,7 @@ function Slide({ slide, offset }) {
         }}
       />
       <div
-        className="slideContent"
+        className={`slideContent ${active ? "active" : ""}`}
         onClick={handleClick}
         style={{
           backgroundImage: `url('${slide.image}')`,

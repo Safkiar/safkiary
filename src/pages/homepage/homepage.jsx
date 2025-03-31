@@ -7,6 +7,15 @@ import "./sphere.css";
 
 function Homepage() {
   const [hoveredTag, setHoveredTag] = useState("");
+  const [emptyInd, setEmptyInd] = useState(true);
+
+  useEffect(() => {
+    if (hoveredTag === "") {
+      setEmptyInd(true);
+    } else {
+      setEmptyInd(false);
+    }
+  }, [hoveredTag]);
 
   useEffect(() => {
     const containerSelector = ".tagcloud";
@@ -70,11 +79,15 @@ function Homepage() {
           <img src="/Ja.jpg" alt="" />
         </div>
         <div className="tvpixel">
+        {emptyInd && (<div className="intro showMe">
+          <div className="me">Michał Kikowski - Software developer</div>
+          <div className="who">Blending creativity with discipline - I build refined UIs, handle data daily, and grow fast across the stack.</div>
+        </div>)}
           {hoveredTag === "python" && (
-            <div className="hover-indicator">🐍 Hovering over Python!</div>
+            <div className="hover-indicator showMe">🐍 Hovering over Python!</div>
           )}
           {hoveredTag === "javascript" && (
-            <div className="hover-indicator">⚡ JavaScript detected!</div>
+            <div className="hover-indicator showMe">⚡ JavaScript detected!</div>
           )}
         </div>
       </div>

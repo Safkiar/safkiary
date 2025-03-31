@@ -64,7 +64,7 @@
     rotateY(calc(-47deg * var(--dir)));
 }
 
-.slideContent:hover {
+.slideContent.active:hover {
   cursor: pointer;
 }
 

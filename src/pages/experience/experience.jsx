@@ -74,7 +74,7 @@ function Experience() {
         </div>
       </div>
 
-      <Buttons />
+      {/* <Buttons /> */}
     </div>
   );
 }

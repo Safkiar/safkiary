@@ -68,16 +68,10 @@ function Slide({ slide, offset }) {
   const active = offset === 0 ? true : null;
   const ref = useTilt(active);
 
-  const handleClick = () => {
-    if (active && slide.link) {
-      window.open(slide.link, "_blank");
-    }
-  };
-
   return (
     <div
       ref={ref}
-      className="slide"
+      className="slide2"
       data-active={active}
       data-offset={offset}
       style={{
@@ -86,19 +80,17 @@ function Slide({ slide, offset }) {
       }}
     >
       <div
-        className="slideBackground"
+        className="slideBackground2"
         style={{
           backgroundImage: `url('${slide.image}')`,
         }}
       />
       <div
-        className={`slideContent ${active ? "active" : ""}`}
-        onClick={handleClick}
+        className={`slideContent2 ${active ? "active" : ""}`}
         style={{
           backgroundImage: `url('${slide.image}')`,
         }}
-      >
-      </div>
+      ></div>
     </div>
     // </div>
   );
@@ -109,24 +101,26 @@ function Certificates() {
 
   return (
     <div className="parent">
-      <div className="slides">
-        <button
-          className="button_slides"
-          onClick={() => dispatch({ type: "PREV" })}
-        >
-          ‹
-        </button>
+      <div className="parent2">
+        <div className="slides2">
+          <button
+            className="button_slides2"
+            onClick={() => dispatch({ type: "PREV" })}
+          >
+            ‹
+          </button>
 
-        {[...slides, ...slides, ...slides].map((slide, i) => {
-          let offset = slides.length + (state.slideIndex - i);
-          return <Slide slide={slide} offset={offset} key={i} />;
-        })}
-        <button
-          className="button_slides"
-          onClick={() => dispatch({ type: "NEXT" })}
-        >
-          ›
-        </button>
+          {[...slides, ...slides, ...slides].map((slide, i) => {
+            let offset = slides.length + (state.slideIndex - i);
+            return <Slide slide={slide} offset={offset} key={i} />;
+          })}
+          <button
+            className="button_slides2"
+            onClick={() => dispatch({ type: "NEXT" })}
+          >
+            ›
+          </button>
+        </div>
       </div>
     </div>
   );

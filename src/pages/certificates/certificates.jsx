@@ -1,15 +1,16 @@
-import slides from "./slides/certificates";
+import { slides0 } from "./slides/certificates";
+import { slides1 } from "./slides/certificates";
+import { slides2 } from "./slides/certificates";
 import "./certificates.css";
-import { useRef, useEffect, useReducer } from "react";
+import { useRef, useEffect, useReducer, useState } from "react";
 import Buttons from "./buttons";
 
+// Tilt effect
 function useTilt(active) {
   const ref = useRef(null);
 
   useEffect(() => {
-    if (!ref.current || !active) {
-      return;
-    }
+    if (!ref.current || !active) return;
 
     const state = {
       rect: undefined,
@@ -17,17 +18,15 @@ function useTilt(active) {
       mouseY: undefined,
     };
 
-    let el = ref.current;
+    const el = ref.current;
 
     const handleMouseMove = (e) => {
-      if (!el) {
-        return;
-      }
-      if (!state.rect) {
-        state.rect = el.getBoundingClientRect();
-      }
+      if (!el) return;
+      if (!state.rect) state.rect = el.getBoundingClientRect();
+
       state.mouseX = e.clientX;
       state.mouseY = e.clientY;
+
       const px = (state.mouseX - state.rect.left) / state.rect.width;
       const py = (state.mouseY - state.rect.top) / state.rect.height;
 
@@ -36,35 +35,13 @@ function useTilt(active) {
     };
 
     el.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      el.removeEventListener("mousemove", handleMouseMove);
-    };
+    return () => el.removeEventListener("mousemove", handleMouseMove);
   }, [active]);
 
   return ref;
 }
 
-const initialState = {
-  slideIndex: 0,
-};
-
-const slidesReducer = (state, event) => {
-  if (event.type === "NEXT") {
-    return {
-      ...state,
-      slideIndex: (state.slideIndex + 1) % slides.length,
-    };
-  }
-  if (event.type === "PREV") {
-    return {
-      ...state,
-      slideIndex:
-        state.slideIndex === 0 ? slides.length - 1 : state.slideIndex - 1,
-    };
-  }
-};
-
+// Slide component
 function Slide({ slide, offset }) {
   const active = offset === 0 ? true : null;
   const ref = useTilt(active);
@@ -80,53 +57,96 @@ function Slide({ slide, offset }) {
         "--dir": offset === 0 ? 0 : offset > 0 ? 1 : -1,
       }}
     >
-      <div
-        className="slideBackground2"
-        style={{
-          backgroundImage: `url('${slide.image}')`,
-        }}
-      />
-      <div
-        className={`slideContent2 dot ${active ? "active" : ""}`}
-        // style={{
-        //   backgroundImage: `url('${slide.image}')`,
-        // }}
-      ></div>
+      <div className="testBackground">
+        <div
+          className="slideBackground2"
+          style={{
+            backgroundImage: `url('${slide.image}')`,
+          }}
+        />
+      </div>
+      <div className={`slideContent2 dot ${active ? "active" : ""}`} />
     </div>
-    // </div>
   );
 }
 
+// Reducer
+const initialState = {
+  slideIndex: 0,
+};
+
+const slidesReducer = (state, action) => {
+  const { type, length } = action;
+
+  if (type === "NEXT") {
+    return {
+      ...state,
+      slideIndex: (state.slideIndex + 1) % length,
+    };
+  }
+
+  if (type === "PREV") {
+    return {
+      ...state,
+      slideIndex: state.slideIndex === 0 ? length - 1 : state.slideIndex - 1,
+    };
+  }
+
+  if (type === "RESET") {
+    return {
+      slideIndex: 0,
+    };
+  }
+
+  return state;
+};
+
+// Main component
 function Certificates() {
+  const [activeIndex, setActiveIndex] = useState(0);
   const [state, dispatch] = useReducer(slidesReducer, initialState);
+
+  const slides = [slides0, slides1, slides2];
+  const activeSlides = slides[activeIndex];
+  const currentLength = activeSlides.length;
+
+  // Reset slideIndex when changing category
+  useEffect(() => {
+    dispatch({ type: "RESET" });
+  }, [activeIndex]);
 
   return (
     <div className="rel_container">
-      <Buttons></Buttons>
-    <div className="parent">
-      <div className="parent2">
-        <div className="slides2">
-          <button
-            className="button_slides2"
-            onClick={() => dispatch({ type: "PREV" })}
-            >
-            ‹
-          </button>
+      <Buttons activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
 
-          {[...slides, ...slides, ...slides].map((slide, i) => {
-            let offset = slides.length + (state.slideIndex - i);
-            return <Slide slide={slide} offset={offset} key={i} />;
-          })}
-          <button
-            className="button_slides2"
-            onClick={() => dispatch({ type: "NEXT" })}
+      <div className="parentz">
+        <div className="parentz2">
+          <div className="slides2">
+            <button
+              className="button_slides2"
+              onClick={() => dispatch({ type: "PREV", length: currentLength })}
             >
-            ›
-          </button>
+              ‹
+            </button>
+
+            {[...activeSlides, ...activeSlides, ...activeSlides].map(
+              (slide, i) => {
+                const offset = currentLength + (state.slideIndex - i);
+                return <Slide slide={slide} offset={offset} key={i} />;
+              }
+            )}
+
+            <button
+              className="button_slides2"
+              onClick={() => dispatch({ type: "NEXT", length: currentLength })}
+            >
+              ›
+            </button>
+          </div>
         </div>
       </div>
     </div>
-            </div>
   );
 }
+
 export default Certificates;

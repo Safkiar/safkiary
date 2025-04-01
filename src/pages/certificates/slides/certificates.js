@@ -1,13 +1,65 @@
-const slides = [
+export const slides0 = [
   {
-    image: "/certificates/ANG.png",
+    image: "/certificates/front/React.jpg",
   },
   {
-    image: "/certificates/CSS.png",
+    image: "/certificates/front/ANG.png",
   },
   {
-    image: "/certificates/cssadv.png",
+    image: "/certificates/front/CSS.png",
+  },
+  {
+    image: "/certificates/front/cssadv.png",
+  },
+  {
+    image: "/certificates/front/JS.png",
+  },
+  {
+    image: "/certificates/front/JSADV.png",
+  },
+  {
+    image: "/certificates/front/TS.jpg",
+  },
+  {
+    image: "/certificates/front/TS2.jpg",
+  },
+  {
+    image: "/certificates/front/RFULL.jpg",
   },
 ];
 
-export default slides;
+export const slides1 = [
+  {
+    image: "/certificates/back/NODE.jpg",
+  },
+  {
+    image: "/certificates/back/Python.jpg",
+  },
+  {
+    image: "/certificates/back/SPRING.jpg",
+  },
+  {
+    image: "/certificates/back/SPRING2.jpg",
+  },
+];
+
+export const slides2 = [
+  {
+    image: "/certificates/other/SQL.jpg",
+  },
+  {
+    image: "/certificates/other/MYSQL.jpg",
+  },
+  {
+    image: "/certificates/other/WP.jpg",
+  },
+  {
+    image: "/certificates/other/Github.jpg",
+  },
+  {
+    image: "/certificates/other/Microsoft.png",
+  },
+  {
+    image: "/certificates/other/Dyplom.jpg",
+  },
+];

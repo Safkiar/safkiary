@@ -3,16 +3,15 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import "./buttons.css";
 
-function Buttons() {
+function Buttons({ activeIndex, setActiveIndex }) {
   return (
     <div className="app-wrapper">
-      <SlideTabs />
+      <SlideTabs activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
     </div>
   );
 }
 
-const SlideTabs = () => {
-  const [activeIndex, setActiveIndex] = useState(0); // domyślnie pierwszy tab aktywny
+const SlideTabs = ({ activeIndex, setActiveIndex }) => {
   const [position, setPosition] = useState({
     left: 0,
     width: 0,

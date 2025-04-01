@@ -1,25 +1,26 @@
 .parent {
   width: 100%;
-  border: 10px solid pink;
   display: flex;
   justify-content: center;
 }
 
 .parent2 {
-  padding-top: 40px;
+  padding-top: 30px;
   color: #fff;
+  position: absolute;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 14vh;
-  border: 10px solid red;
-  width: 50%;
+  /* margin-top: 14vh; */
+
+  width: 125px;
+  overflow: hidden;
 }
 
 .slides2 {
   position: relative;
   display: grid;
-
   > .slide2 {
     grid-area: 1 / -1;
   }
@@ -30,11 +31,12 @@
     border: none;
     color: #fff;
     position: absolute;
-    font-size: 6rem;
-    width: 5rem;
-    height: 5rem;
+    font-size: 3.5rem;
+    width: 60%;
+    height: auto;
 
-    top: 30%;
+
+    top: -70%;
     transition: opacity 0.3s;
     opacity: 0.7;
     z-index: 5;
@@ -48,30 +50,28 @@
     }
 
     &:first-child {
-      left: -50%;
+      left: -60%;
     }
     &:last-child {
-      right: -50%;
+      right: -60%;
     }
   }
 }
 
 .slideContent2 {
-  width: 100px;
-  height: 50px;
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+
   transition: transform 0.5s ease-in-out;
-  opacity: 0.4;
+  opacity: 1;
   box-shadow: 0 2px 20px 2px rgba(255, 255, 255, 0.08);
 
   display: grid;
   align-content: center;
 
   transform-style: preserve-3d;
-  transform: perspective(1500px) translateX(calc(100% * var(--offset)))
-    rotateY(calc(-47deg * var(--dir)));
+  transform: perspective(1500px) translateX(calc(150% * var(--offset)))
+    rotateY(calc(-5deg * var(--dir)));
 }
 
 .slideContent.active:hover {
@@ -106,6 +106,10 @@
     --x: calc(var(--px) - 0.5);
     --y: calc(var(--py) - 0.5);
     opacity: 1;
+    background:linear-gradient(
+          rgba(15, 28, 56, 0.7),
+          #4aace0
+          );
 
     transform: perspective(1000px);
 
@@ -115,4 +119,20 @@
         rotateX(calc(var(--y) * -45deg)); */
     }
   }
+}
+
+.rel_container {
+  display: relative;
+}
+
+.dot {
+  background-color: #ccc;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 1rem 5px;
+  padding: 5px;
+
+  background: linear-gradient(rgba(12,27,58,0.7),#2f7da783);
+  border: 1px solid #10283683;
 }

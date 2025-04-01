@@ -20,22 +20,21 @@ function Homepage() {
   useEffect(() => {
     const containerSelector = ".tagcloud";
     const texts = [
-      "HTML",
-      "CSS",
-      "SCSS",
-      "JavaScript",
-      "Python",
-      "Django",
-      "Java",
-      "SQL",
-      "Spring",
-      "Node",
-      "React",
-      "Angular",
-      "Node",
-      "PUG",
-      "Webpack",
-      "TypeScript",
+      "html",
+      "css",
+      "scss",
+      "javascript",
+      "python",
+      "django",
+      "java",
+      "sql",
+      "spring",
+      "node",
+      "react",
+      "angular",
+      "pug",
+      "webpack",
+      "typescript",
     ];
 
     const options = {
@@ -54,7 +53,7 @@ function Homepage() {
       container.querySelectorAll(".tagcloud--item").forEach((el) => {
         el.addEventListener("mouseenter", () => {
           const text = el.textContent.toLowerCase();
-          if (text === "python" || text === "javascript") {
+          if (texts.includes(text))   {
             setHoveredTag(text);
           }
         });
@@ -96,6 +95,71 @@ function Homepage() {
           {hoveredTag === "javascript" && (
             <div className="hover-indicator showMe">
               ⚡ JavaScript detected!
+            </div>
+          )}
+              {hoveredTag === "pug" && (
+            <div className="hover-indicator showMe">
+              PUG PUG PUG
+            </div>
+          )}
+                 {hoveredTag === "html" && (
+            <div className="hover-indicator showMe">
+              html body div
+            </div>
+          )}
+                 {hoveredTag === "css" && (
+            <div className="hover-indicator showMe">
+              class to classname
+            </div>
+          )}
+                  {hoveredTag === "scss" && (
+            <div className="hover-indicator showMe">
+              im better version of you
+            </div>
+          )}
+                  {hoveredTag === "django" && (
+            <div className="hover-indicator showMe">
+              initial experience
+            </div>
+          )}
+                  {hoveredTag === "java" && (
+            <div className="hover-indicator showMe">
+              I`m not javascript!
+            </div>
+          )}
+                  {hoveredTag === "sql" && (
+            <div className="hover-indicator showMe">
+              booooring
+            </div>
+          )}
+                  {hoveredTag === "spring" && (
+            <div className="hover-indicator showMe">
+              is coming yeey
+            </div>
+          )}
+                  {hoveredTag === "node" && (
+            <div className="hover-indicator showMe">
+              I`m a back end
+            </div>
+          )}
+                        {hoveredTag === "react" && (
+            <div className="hover-indicator showMe">
+              meta haha
+            </div>
+          )}
+                        {hoveredTag === "angular" && (
+            <div className="hover-indicator showMe">
+              banks loves me
+            </div>
+          )}
+                        {hoveredTag === "webpack" && (
+            <div className="hover-indicator showMe">
+              what am I
+            </div>
+          )}
+                        {hoveredTag === "typescript" && (
+            <div className="hover-indicator showMe">
+              I`m better, stronger
             </div>
           )}
         </div>

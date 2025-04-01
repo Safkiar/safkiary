@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./experience.css";
-import Buttons from "./buttons";
 
 function Experience() {
   const [hovered, setHovered] = useState(false);

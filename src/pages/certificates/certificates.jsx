@@ -1,6 +1,7 @@
 import slides from "./slides/certificates";
 import "./certificates.css";
 import { useRef, useEffect, useReducer } from "react";
+import Buttons from "./buttons";
 
 function useTilt(active) {
   const ref = useRef(null);
@@ -86,10 +87,10 @@ function Slide({ slide, offset }) {
         }}
       />
       <div
-        className={`slideContent2 ${active ? "active" : ""}`}
-        style={{
-          backgroundImage: `url('${slide.image}')`,
-        }}
+        className={`slideContent2 dot ${active ? "active" : ""}`}
+        // style={{
+        //   backgroundImage: `url('${slide.image}')`,
+        // }}
       ></div>
     </div>
     // </div>
@@ -100,13 +101,15 @@ function Certificates() {
   const [state, dispatch] = useReducer(slidesReducer, initialState);
 
   return (
+    <div className="rel_container">
+      <Buttons></Buttons>
     <div className="parent">
       <div className="parent2">
         <div className="slides2">
           <button
             className="button_slides2"
             onClick={() => dispatch({ type: "PREV" })}
-          >
+            >
             ‹
           </button>
 
@@ -117,12 +120,13 @@ function Certificates() {
           <button
             className="button_slides2"
             onClick={() => dispatch({ type: "NEXT" })}
-          >
+            >
             ›
           </button>
         </div>
       </div>
     </div>
+            </div>
   );
 }
 export default Certificates;

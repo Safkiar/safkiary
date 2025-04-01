@@ -38,7 +38,7 @@ const SlideTabs = () => {
       className="tabs-container"
       onMouseLeave={() => handleSetPosition(activeIndex)} // po wyjechaniu myszką wracamy do aktywnego
     >
-      {["Home", "Pricing", "Features", "Docs", "Blog"].map((label, index) => (
+      {["Front", "Back", "Other"].map((label, index) => (
         <li
           key={label}
           ref={(el) => (tabsRef.current[index] = el)}

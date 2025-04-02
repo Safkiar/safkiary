@@ -51,7 +51,7 @@ function Homepage() {
       container.querySelectorAll(".tagcloud--item").forEach((el) => {
         el.addEventListener("mouseenter", () => {
           const text = el.textContent.toLowerCase();
-          if (texts.includes(text))   {
+          if (texts.includes(text)) {
             setHoveredTag(text);
           }
         });
@@ -76,93 +76,150 @@ function Homepage() {
           <h3>Michał Kikowski - Software developer</h3>
         </div>
         <div className="halving_card">
-
-
-       
-        <div className="my_img_container">
-          <img src="/Ja.jpg" alt="" />
-        </div>
-        <div className="tvpixel">
-          {emptyInd && (
-            <div className="intro showMe">
-              <div className="who">
-                Blending creativity with discipline - I build refined UIs,
-                handle data daily, and grow fast across the stack.
+          <div className="my_img_container">
+            {emptyInd && <img className="showMe" src="/Ja.jpg" alt="" />}
+            {hoveredTag === "java" && (
+              <img className="avatar showMe" src="./homepage/java.png" />
+            )}
+            {hoveredTag === "spring" && (
+              <img className="avatar showMe" src="./homepage/spring.png" />
+            )}
+            {hoveredTag === "angular" && (
+              <img className="avatar showMe" src="./homepage/Angular.png" />
+            )}
+            {hoveredTag === "css" && (
+              <img className="avatar showMe" src="./homepage/css.png" />
+            )}
+            {hoveredTag === "django" && (
+              <img className="avatar showMe" src="./homepage/dj.png" />
+            )}
+            {hoveredTag === "javascript" && (
+              <img className="avatar showMe" src="./homepage/js.png" />
+            )}
+            {hoveredTag === "node" && (
+              <img className="avatar showMe" src="./homepage/node.png" />
+            )}
+            {hoveredTag === "pug" && (
+              <img className="avatar showMe" src="./homepage/pug.png" />
+            )}
+            {hoveredTag === "python" && (
+              <img className="avatar showMe" src="./homepage/python.png" />
+            )}
+            {hoveredTag === "react" && (
+              <img className="avatar showMe" src="./homepage/React.png" />
+            )}
+            {hoveredTag === "sql" && (
+              <img className="avatar showMe" src="./homepage/SQL.png" />
+            )}
+            {hoveredTag === "typescript" && (
+              <img className="avatar showMe" src="./homepage/typescript.png" />
+            )}
+            {hoveredTag === "webpack" && (
+              <img className="avatar showMe" src="./homepage/webpack.png" />
+            )}
+          </div>
+          <div className="tvpixel">
+            {emptyInd && (
+              <div className="intro showMe">
+                <div className="who">
+                  Blending creativity with discipline - I build refined UIs,
+                  handle data daily, and grow fast across the stack.
+                </div>
+                <div className="who">
+                  Check out my projects, certificates, and hover over the sphere
+                  elements!
+                </div>
               </div>
-              <div className="who">
-                Check out my projects, certificates and hover elements of the sphere!
+            )}
+            {hoveredTag === "python" && (
+              <div className="hover-indicator showMe">
+                I completed one course and one project. I'm currently using
+                Python at work, where I've written many scripts. I'm well-versed
+                in Pandas, Selenium, Django, and NumPy. I'm still actively
+                investing in this area.
               </div>
-            </div>
-          )}
-          {hoveredTag === "python" && (
-            <div className="hover-indicator showMe">
-              I did one course and one project. I`m currently using it at work where I`ve made many scripts. I know well Pandas, Selenium, Django and NumPy. I`m still investing in this area.
-            </div>
-          )}
-          {hoveredTag === "javascript" && (
-            <div className="hover-indicator showMe">
-              I did two courses and four project in plain javascript. Is worth to mention that I`ve build chess with just js. I`m very good at react, typescript and angular. 
-            </div>
-          )}
-              {hoveredTag === "pug" && (
-            <div className="hover-indicator showMe">
-              I know how to work with different html. I`ve build one project with pug. 
-            </div>
-          )}
-      
-                 {hoveredTag === "css" && (
-            <div className="hover-indicator showMe">
-              I did two courses with css and many projects. My knowledge is very vast. I`m familiar with scss, tailwind and styled components. 
-            </div>
-          )}
-      
-                  {hoveredTag === "django" && (
-            <div className="hover-indicator showMe">
-              I`ve build one project with django connected to react front end. 
-            </div>
-          )}
-                  {hoveredTag === "java" && (
-            <div className="hover-indicator showMe">
-              I did two courses and I made fullstack app with spring. Java is also backend on project for foundation.
-            </div>
-          )}
-                  {hoveredTag === "sql" && (
-            <div className="hover-indicator showMe">
-              I did two courses and fullstack project with mysql. I use daily microsoft server at work with T-SQL. I know mysql, postgressql. 
-            </div>
-          )}
-                  {hoveredTag === "spring" && (
-            <div className="hover-indicator showMe">
-              I did fullstack project with spring, angular and mysql. I did two courses. 
-            </div>
-          )}
-                  {hoveredTag === "node" && (
-            <div className="hover-indicator showMe">
-              I`ve finished one course with node.
-            </div>
-          )}
-                        {hoveredTag === "react" && (
-            <div className="hover-indicator showMe">
-              I did over 100 hours on course with it. I`ve build 8 projects with react. I know react router, redux and many more libraries. 
-            </div>
-          )}
-                        {hoveredTag === "angular" && (
-            <div className="hover-indicator showMe">
-              I`ve did one course and three projects, one is fullstack app other is done with foundation. I also work with it daily at foundation as developer. 
-            </div>
-          )}
-                        {hoveredTag === "webpack" && (
-            <div className="hover-indicator showMe">
-              I`ve build one application with webpack.
-            </div>
-          )}
-                        {hoveredTag === "typescript" && (
-            <div className="hover-indicator showMe">
-              I`ve did two courses and 3 projects with typescript.
-            </div>
-          )}
+            )}
+            {hoveredTag === "javascript" && (
+              <div className="hover-indicator showMe">
+                I completed two courses and built four projects using plain
+                JavaScript. It's worth mentioning that I built a chess game
+                using just JS. I'm also highly skilled in React, TypeScript, and
+                Angular.
+              </div>
+            )}
+            {hoveredTag === "pug" && (
+              <div className="hover-indicator showMe">
+                I'm familiar with various HTML templating systems and built one
+                project using Pug.
+              </div>
+            )}
+
+            {hoveredTag === "css" && (
+              <div className="hover-indicator showMe">
+                I completed two CSS courses and built many projects. My CSS
+                knowledge is extensive — I'm experienced with SCSS, Tailwind,
+                and Styled Components.
+              </div>
+            )}
+
+            {hoveredTag === "django" && (
+              <div className="hover-indicator showMe">
+                I built one project using Django connected to a React frontend.
+              </div>
+            )}
+            {hoveredTag === "java" && (
+              <div className="hover-indicator showMe">
+                I completed two courses and created a full-stack app using
+                Spring. Java is also used as the backend in a project for the
+                foundation.
+              </div>
+            )}
+            {hoveredTag === "sql" && (
+              <div className="hover-indicator showMe">
+                I completed two courses and built a full-stack project with
+                MySQL. At work, I use Microsoft SQL Server daily with T-SQL. I'm
+                familiar with MySQL and PostgreSQL.
+              </div>
+            )}
+            {hoveredTag === "spring" && (
+              <div className="hover-indicator showMe">
+                I built a full-stack project with Spring, Angular, and MySQL. I
+                also completed two courses on Spring.
+              </div>
+            )}
+            {hoveredTag === "node" && (
+              <div className="hover-indicator showMe">
+                I completed one course on Node.js.
+              </div>
+            )}
+            {hoveredTag === "react" && (
+              <div className="hover-indicator showMe">
+                I spent over 100 hours on a React course and built 8 projects
+                with it. I'm proficient in React Router, Redux, and many
+                additional libraries.
+              </div>
+            )}
+            {hoveredTag === "angular" && (
+              <div className="hover-indicator showMe">
+                I completed one course and built three projects using Angular —
+                one of them is a full-stack app, and another is part of a
+                foundation project. I also work with Angular daily in my role as
+                a developer at the foundation.
+              </div>
+            )}
+            {hoveredTag === "webpack" && (
+              <div className="hover-indicator showMe">
+                I built one application using Webpack.
+              </div>
+            )}
+            {hoveredTag === "typescript" && (
+              <div className="hover-indicator showMe">
+                I completed two courses and built three projects using
+                TypeScript.
+              </div>
+            )}
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );

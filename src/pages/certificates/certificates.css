@@ -105,10 +105,10 @@
   background-size: cover;
   background-position: center center;
   z-index: -1;
-  opacity: 0;
-  transition: opacity 0.3s linear, transform 0.3s ease-in-out;
+  opacity: 1;
+  /* transition: opacity 0.1s ease-in-out; */
   pointer-events: none;
-  transform: translateX(calc(50% * var(--dir)));
+  /* transform: translateX(calc(50% * var(--dir))); */
   /* left: 50%; */
   /* transform: translateX(-50%); */
 }

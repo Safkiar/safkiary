@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./experience.css";
 
 function Experience() {
@@ -8,68 +8,138 @@ function Experience() {
   const [hovered4, setHovered4] = useState(false);
   const [hovered5, setHovered5] = useState(false);
   const [hovered6, setHovered6] = useState(false);
+  const [hovered7, setHovered7] = useState(false);
+  const [hovered8, setHovered8] = useState(false);
+  const [hovered9, setHovered9] = useState(false);
+  const [hovered10, setHovered10] = useState(false);
+  const [hovered11, setHovered11] = useState(false);
+  const [hovered12, setHovered12] = useState(false);
+
+  const [emptyInd, setEmptyInd] = useState(true);
+
+    useEffect(() => {
+      const allHovered = [
+        hovered, hovered2, hovered3, hovered4, hovered5, hovered6, hovered7, hovered8, hovered9, hovered10, hovered11, hovered12]
+        setEmptyInd(allHovered.every(val => val === false));
+    }, [hovered, hovered2, hovered3, hovered4, hovered5, hovered6, hovered7, hovered8, hovered9, hovered10, hovered11, hovered12]);
 
   return (
     <div className="graph">
       <ul className="skewul">
-        <li
-          className="a6 skewli"
-          onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
+     
+      <li
+          className="a12 skewli"
+          onMouseEnter={() => setHovered12(true)}
+          onMouseLeave={() => setHovered12(false)}
           data-icon="&#xf015"
         >
-          <a href="#">React</a>
+          <a href="#">MySQL</a>
         </li>
         <li
-          className="a5 skewli"
+          className="a11 skewli"
+          onMouseEnter={() => setHovered11(true)}
+          onMouseLeave={() => setHovered11(false)}
           data-icon="&#xf015"
-          onMouseEnter={() => setHovered2(true)}
-          onMouseLeave={() => setHovered2(false)}
+        >
+          <a href="#">Pug</a>
+        </li>
+        <li
+          className="a10 skewli"
+          onMouseEnter={() => setHovered10(true)}
+          onMouseLeave={() => setHovered10(false)}
+          data-icon="&#xf015"
+        >
+          <a href="#">Webpack</a>
+        </li>
+      <li
+          className="a9 skewli"
+          onMouseEnter={() => setHovered9(true)}
+          onMouseLeave={() => setHovered9(false)}
+          data-icon="&#xf015"
+        >
+          <a href="#">Django</a>
+        </li>
+      <li
+          className="a8 skewli"
+          onMouseEnter={() => setHovered8(true)}
+          onMouseLeave={() => setHovered8(false)}
+          data-icon="&#xf015"
+        >
+          <a href="#">Spring</a>
+        </li>
+        <li
+          className="a7 skewli"
+          onMouseEnter={() => setHovered7(true)}
+          onMouseLeave={() => setHovered7(false)}
+          data-icon="&#xf015"
         >
           <a href="#">Angular</a>
         </li>
         <li
+          className="a6 skewli"
+          data-icon="&#xf015"
+          onMouseEnter={() => setHovered6(true)}
+          onMouseLeave={() => setHovered6(false)}
+        >
+          <a href="#">TypeScript</a>
+        </li>
+        <li
+          className="a5 skewli"
+          data-icon="&#xf015"
+          onMouseEnter={() => setHovered5(true)}
+          onMouseLeave={() => setHovered5(false)}
+        >
+          <a href="#">CSS</a>
+        </li>
+        <li
           className="a4 skewli"
           data-icon="&#xf015"
-          onMouseEnter={() => setHovered3(true)}
-          onMouseLeave={() => setHovered3(false)}
+          onMouseEnter={() => setHovered4(true)}
+          onMouseLeave={() => setHovered4(false)}
         >
           <a href="#">JavaScript</a>
         </li>
         <li
           className="a3 skewli"
           data-icon="&#xf015"
-          onMouseEnter={() => setHovered4(true)}
-          onMouseLeave={() => setHovered4(false)}
+          onMouseEnter={() => setHovered3(true)}
+          onMouseLeave={() => setHovered3(false)}
         >
-          <a href="#">JAVA SPRING</a>
+          <a href="#">SCSS</a>
         </li>
         <li
           className="a2 skewli"
           data-icon="&#xf015"
-          onMouseEnter={() => setHovered5(true)}
-          onMouseLeave={() => setHovered5(false)}
+          onMouseEnter={() => setHovered2(true)}
+          onMouseLeave={() => setHovered2(false)}
         >
-          <a href="#">PYTHON</a>
+          <a href="#">Styled Components</a>
         </li>
         <li
           className="a1 skewli"
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
           data-icon="&#xf015"
-          onMouseEnter={() => setHovered6(true)}
-          onMouseLeave={() => setHovered6(false)}
         >
-          <a href="#">webpack</a>
+          <a href="#">React</a>
         </li>
       </ul>
 
       <div className="table">
         <div className="info">
-          {hovered && <div className="fadeIn">Tyle mam projektów</div>}
-          {hovered2 && <div className="fadeIn">Taads</div>}
-          {hovered3 && <div className="fadeIn">ASD</div>}
-          {hovered4 && <div className="fadeIn">ZXC</div>}
-          {hovered5 && <div className="fadeIn">Python info</div>}
-          {hovered6 && <div className="fadeIn">Webpack info</div>}
+          {emptyInd && <div className="fadeIn">Moje projekty</div>}
+          {hovered && <div className="fadeIn">8 projektów</div>}
+          {hovered2 && <div className="fadeIn">6 projektów</div>}
+          {hovered3 && <div className="fadeIn">6 projektów</div>}
+          {hovered4 && <div className="fadeIn">4 projekty</div>}
+          {hovered5 && <div className="fadeIn">3 projekty</div>}
+          {hovered6 && <div className="fadeIn">3 projekty</div>}
+          {hovered7 && <div className="fadeIn">3 projekty</div>}
+          {hovered8 && <div className="fadeIn">1 projekt</div>}
+          {hovered9 && <div className="fadeIn">1 projekt</div>}
+          {hovered10 && <div className="fadeIn">1 projekt</div>}
+          {hovered11 && <div className="fadeIn">1 projekt</div>}
+          {hovered12 && <div className="fadeIn">1 projekt</div>}
         </div>
       </div>
 

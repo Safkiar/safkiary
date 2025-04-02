@@ -1,8 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import "./nav.css";
 import { useState } from "react";
+import { useDarkMode } from "../darkmode/DarkModeContext";
 
 function Nav() {
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
   const navigate = useNavigate();
   const [isDay, setIsDay] = useState(false);
 
@@ -13,21 +15,21 @@ function Nav() {
   return (
     <div>
       <div onClick={toggleTheme} className="darkmode">
-        <div
+        {!isDarkMode && <div
           className={`sun icon-toggle ${
             isDay ? "animate-down" : "invisibleClass animate-up"
           }`}
         >
-          <img src="/sun.png" alt="Sun" />
-        </div>
-
+          <img onClick={toggleDarkMode} src="/sun.png" alt="Sun" />
+        </div>}
+        {isDarkMode && 
         <div
           className={`moon icon-toggle invisibleClass ${
             !isDay ? "animate-down2 visibleClass" : "animate-up2"
           }`}
         >
-          <img src="/moon.png" alt="Moon" />
-        </div>
+          <img onClick={toggleDarkMode} src="/moon.png" alt="Moon" />
+        </div>}
       </div>
       <div id="page" className="site">
         <div className="container">

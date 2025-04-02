@@ -20,9 +20,7 @@ function Homepage() {
   useEffect(() => {
     const containerSelector = ".tagcloud";
     const texts = [
-      "html",
       "css",
-      "scss",
       "javascript",
       "python",
       "django",
@@ -74,95 +72,97 @@ function Homepage() {
       </div>
       {/* <Cube></Cube> */}
       <div className="tvbox">
+        <div className="halving_card_title">
+          <h3>Michał Kikowski - Software developer</h3>
+        </div>
+        <div className="halving_card">
+
+
+       
         <div className="my_img_container">
           <img src="/Ja.jpg" alt="" />
         </div>
         <div className="tvpixel">
           {emptyInd && (
             <div className="intro showMe">
-              <div className="me">Michał Kikowski - Software developer</div>
               <div className="who">
                 Blending creativity with discipline - I build refined UIs,
                 handle data daily, and grow fast across the stack.
+              </div>
+              <div className="who">
+                Check out my projects, certificates and hover elements of the sphere!
               </div>
             </div>
           )}
           {hoveredTag === "python" && (
             <div className="hover-indicator showMe">
-              🐍 Hovering over Python!
+              I did one course and one project. I`m currently using it at work where I`ve made many scripts. I know well Pandas, Selenium, Django and NumPy. I`m still investing in this area.
             </div>
           )}
           {hoveredTag === "javascript" && (
             <div className="hover-indicator showMe">
-              ⚡ JavaScript detected!
+              I did two courses and four project in plain javascript. Is worth to mention that I`ve build chess with just js. I`m very good at react, typescript and angular. 
             </div>
           )}
               {hoveredTag === "pug" && (
             <div className="hover-indicator showMe">
-              PUG PUG PUG
+              I know how to work with different html. I`ve build one project with pug. 
             </div>
           )}
-                 {hoveredTag === "html" && (
-            <div className="hover-indicator showMe">
-              html body div
-            </div>
-          )}
+      
                  {hoveredTag === "css" && (
             <div className="hover-indicator showMe">
-              class to classname
+              I did two courses with css and many projects. My knowledge is very vast. I`m familiar with scss, tailwind and styled components. 
             </div>
           )}
-                  {hoveredTag === "scss" && (
-            <div className="hover-indicator showMe">
-              im better version of you
-            </div>
-          )}
+      
                   {hoveredTag === "django" && (
             <div className="hover-indicator showMe">
-              initial experience
+              I`ve build one project with django connected to react front end. 
             </div>
           )}
                   {hoveredTag === "java" && (
             <div className="hover-indicator showMe">
-              I`m not javascript!
+              I did two courses and I made fullstack app with spring. Java is also backend on project for foundation.
             </div>
           )}
                   {hoveredTag === "sql" && (
             <div className="hover-indicator showMe">
-              booooring
+              I did two courses and fullstack project with mysql. I use daily microsoft server at work with T-SQL. I know mysql, postgressql. 
             </div>
           )}
                   {hoveredTag === "spring" && (
             <div className="hover-indicator showMe">
-              is coming yeey
+              I did fullstack project with spring, angular and mysql. I did two courses. 
             </div>
           )}
                   {hoveredTag === "node" && (
             <div className="hover-indicator showMe">
-              I`m a back end
+              I`ve finished one course with node.
             </div>
           )}
                         {hoveredTag === "react" && (
             <div className="hover-indicator showMe">
-              meta haha
+              I did over 100 hours on course with it. I`ve build 8 projects with react. I know react router, redux and many more libraries. 
             </div>
           )}
                         {hoveredTag === "angular" && (
             <div className="hover-indicator showMe">
-              banks loves me
+              I`ve did one course and three projects, one is fullstack app other is done with foundation. I also work with it daily at foundation as developer. 
             </div>
           )}
                         {hoveredTag === "webpack" && (
             <div className="hover-indicator showMe">
-              what am I
+              I`ve build one application with webpack.
             </div>
           )}
                         {hoveredTag === "typescript" && (
             <div className="hover-indicator showMe">
-              I`m better, stronger
+              I`ve did two courses and 3 projects with typescript.
             </div>
           )}
         </div>
+      </div>
       </div>
     </div>
   );

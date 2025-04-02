@@ -5,9 +5,11 @@ import Certificates from "./pages/certificates/certificates";
 import Projects from "./pages/projects/projects";
 import Nav from "./nav/nav";
 import Experience from "./pages/experience/experience";
+import { DarkModeProvider } from "./darkmode/DarkModeContext";
 
 function App() {
   return (
+    <DarkModeProvider>
     <BrowserRouter>
       <Nav />
       <Routes>
@@ -18,6 +20,7 @@ function App() {
         <Route path="experience" element={<Experience />} />
       </Routes>
     </BrowserRouter>
+    </DarkModeProvider>
   );
 }
 

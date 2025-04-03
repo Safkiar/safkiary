@@ -10,11 +10,7 @@ function Homepage() {
   const [emptyInd, setEmptyInd] = useState(true);
 
   useEffect(() => {
-    if (hoveredTag === "") {
-      setEmptyInd(true);
-    } else {
-      setEmptyInd(false);
-    }
+    setEmptyInd(hoveredTag === "");
   }, [hoveredTag]);
 
   useEffect(() => {
@@ -35,19 +31,30 @@ function Homepage() {
       "typescript",
     ];
 
-    const options = {
-      radius: 280,
-      maxSpeed: "normal",
-      initSpeed: "normal",
-      keep: true,
+    const getRadius = () => {
+      const width = window.innerWidth;
+      if (width < 340) return 115;
+      if (width < 400) return 135;
+      if (width < 700) return 175;
+      if (width < 1000) return 190;
+      if (width < 1350) return 210;
+      return 280;
     };
 
-    const container = document.querySelector(containerSelector);
+    const renderTagCloud = () => {
+      const container = document.querySelector(containerSelector);
+      if (!container) return;
 
-    if (container) {
       container.innerHTML = "";
-      TagCloud(containerSelector, texts, options);
 
+      TagCloud(containerSelector, texts, {
+        radius: getRadius(),
+        maxSpeed: "normal",
+        initSpeed: "normal",
+        keep: true,
+      });
+
+      // Dodaj event listenery do nowo utworzonych elementów
       container.querySelectorAll(".tagcloud--item").forEach((el) => {
         el.addEventListener("mouseenter", () => {
           const text = el.textContent.toLowerCase();
@@ -60,7 +67,18 @@ function Homepage() {
           setHoveredTag("");
         });
       });
-    }
+    };
+
+    // Inicjalne renderowanie
+    renderTagCloud();
+
+    // Obsługa resize
+    const handleResize = () => {
+      renderTagCloud();
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -70,10 +88,13 @@ function Homepage() {
           <span className="tagcloud"></span>
         </div>
       </div>
+
       {/* <Cube></Cube> */}
+
       <div className="tvbox">
         <div className="halving_card_title">
-          <h3>Michał Kikowski - Software developer</h3>
+          <h3>Michał Kikowski </h3>
+          <h3>Software developer</h3>
         </div>
         <div className="halving_card">
           <div className="my_img_container">
@@ -118,6 +139,7 @@ function Homepage() {
               <img className="avatar showMe" src="./homepage/webpack.png" />
             )}
           </div>
+
           <div className="tvpixel">
             {emptyInd && (
               <div className="intro showMe">
@@ -153,7 +175,6 @@ function Homepage() {
                 project using Pug.
               </div>
             )}
-
             {hoveredTag === "css" && (
               <div className="hover-indicator showMe">
                 I completed two CSS courses and built many projects. My CSS
@@ -161,7 +182,6 @@ function Homepage() {
                 and Styled Components.
               </div>
             )}
-
             {hoveredTag === "django" && (
               <div className="hover-indicator showMe">
                 I built one project using Django connected to a React frontend.

@@ -1,5 +1,4 @@
 .homepage_container {
-  /* border: 1px solid pink; */
   width: 100%;
   height: 100%;
   display: flex;
@@ -57,28 +56,27 @@
 
 .tvbox {
   position: relative;
-  /* min-width: 750px; */
   width: 750px;
-  min-width: 600px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: center;
 
-  background: rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(17, 17, 17, 0.378);
+  box-shadow: 0px 8px 25px rgba(58, 58, 58, 0.5);
+  border: 1px solid rgba(118, 117, 117, 0.6);
   backdrop-filter: blur(20px);
   border-radius: 10px;
-  height: 360px;
+  height: 320px;
   color: white;
-  border: 1px solid pink;
-  /* border: 1px solid red; */
 }
 /* inside tvbox outside tvpixel */
 
 .halving_card_title {
   padding: 15px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 /* grey area */
@@ -90,20 +88,18 @@
   width: 450px;
   height: 202px;
 
-  border: 1px solid pink;
+  border: 1px solid rgba(118, 117, 117, 0.6);
 }
 
 .halving_card {
   display: flex;
   width: 100%;
-  border: 1px solid red;
   justify-content: space-evenly;
   align-items: center;
 }
 
 .my_img_container {
   width: 160px;
-  border: 1px solid blue;
   margin: 0 20px;
 }
 
@@ -127,5 +123,112 @@
     flex-direction: column;
     padding-top: 10px;
     gap: 10px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .homepage_container {
+    margin-top: 50px;
+    padding-top: 10px;
+    gap: 10px;
+  }
+  .who {
+    margin: 9px;
+    font-size: 0.9rem;
+  }
+
+  .hover-indicator {
+    margin: 9px;
+    font-size: 0.9rem;
+  }
+  .tvpixel {
+    width: 440px;
+    height: 172px;
+  }
+
+  .tvbox {
+    width: 680px;
+
+    gap: 0px;
+    height: 270px;
+  }
+
+  .my_img_container {
+    width: 130px;
+    margin: 0 20px;
+  }
+
+  .avatar {
+    width: 130px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .halving_card {
+    width: 90%;
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  .tvbox {
+    width: 95%;
+    height: auto;
+    padding-bottom: 10px;
+  }
+
+  .my_img_container {
+    width: 90px;
+    margin: 0 10px;
+  }
+
+  .avatar {
+    width: 90px;
+  }
+
+  .who {
+    width: 96%;
+  }
+
+  .hover-indicator {
+    width: 96%;
+  }
+
+  .halving_card_title {
+    padding: 10px;
+  }
+
+  .halving_card_title h3 {
+    font-size: 1rem;
+  }
+
+  .tvpixel {
+    width: 98%;
+  }
+}
+
+@media (max-width: 500px) {
+  .avatar {
+    font-size: 0.8rem;
+  }
+
+  .who {
+    font-size: 0.8rem;
+  }
+
+  .tvbox {
+    width: 96%;
+  }
+}
+
+@media (max-width: 400px) {
+  .tvpixel {
+    height: auto;
+  }
+  .halving_card_title {
+    flex-direction: column;
+    gap: 2px;
+    margin: 0;
+    padding: 2px;
   }
 }

@@ -10,19 +10,20 @@ function Nav() {
 
   const toggleTheme = () => {
     setIsDay((prev) => !prev);
+    toggleDarkMode((prev) => !prev);
   };
 
   return (
     <div>
       <div onClick={toggleTheme} className="darkmode">
-        {!isDarkMode && <div
+        {isDarkMode && <div
           className={`sun icon-toggle ${
             isDay ? "animate-down" : "invisibleClass animate-up"
           }`}
         >
           <img onClick={toggleDarkMode} src="/sun.png" alt="Sun" />
         </div>}
-        {isDarkMode && 
+        {!isDarkMode && 
         <div
           className={`moon icon-toggle invisibleClass ${
             !isDay ? "animate-down2 visibleClass" : "animate-up2"

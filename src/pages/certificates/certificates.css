@@ -8,7 +8,7 @@
   padding-top: 30px;
   color: #fff;
   position: absolute;
-  bottom: 0;
+  top: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,6 +21,7 @@
 .slides2 {
   position: relative;
   display: grid;
+  /* border: 10px solid yellow; */
 
   > .slide2 {
     grid-area: 1 / -1;
@@ -33,7 +34,7 @@
     color: #fff;
     position: absolute;
     font-size: 3.5rem;
-    width: 60%;
+    width: 70%;
     height: auto;
 
     top: -70%;
@@ -50,15 +51,16 @@
     }
 
     &:first-child {
-      left: -60%;
+      left: -80%;
     }
     &:last-child {
-      right: -60%;
+      right: -80%;
     }
   }
 }
 
 .slideContent2 {
+
   width: 25px;
   height: 25px;
 
@@ -81,7 +83,7 @@
 .testBackground {
   position: fixed;
   top: 0%;
-  margin-top: 100px;
+  margin-top: 145px;
   bottom: 0%;
   width: 50%;
   aspect-ratio: 900 / 650;
@@ -100,7 +102,7 @@
   top: 0%;
   margin-top: 20px;
   bottom: 0%;
-  width: 80%;
+  width: 90%;
   aspect-ratio: 900 / 650;
   background-size: cover;
   background-position: center center;
@@ -157,3 +159,31 @@
   background: linear-gradient(rgba(12, 27, 58, 0.7), #2f7da783);
   border: 1px solid #10283683;
 }
+
+
+@media (max-width: 1350px) {
+  .testBackground {
+    width: 70%;
+  }
+
+}
+
+@media (max-width: 1000px) {
+}
+
+@media (max-width: 750px) {
+  .testBackground {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+}
+
+@media (max-width: 400px) {
+  .testBackground {
+    width: 90%;
+  }
+}
+
+

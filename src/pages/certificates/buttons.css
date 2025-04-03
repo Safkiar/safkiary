@@ -12,10 +12,10 @@
   top: 0;
   right: 50%;
   transform: translateX(50%);
-  border: 2px solid red;
   display: flex;
   justify-content: center;
   z-index: 100;
+  margin-top: 2px;
 }
 
 .tabs-container {
@@ -23,7 +23,7 @@
   display: flex;
   background-color: white;
   padding: 0.25rem;
-  border: 5px solid pink;
+  border: 2px solid pink;
   border-radius: 9999px;
   width: fit-content;
   margin: auto;
@@ -35,32 +35,32 @@
   z-index: 10;
   display: block;
   cursor: pointer;
-  padding: 0.375rem 0.75rem;
+  padding: 0.575rem 1rem;
   font-size: 0.75rem;
   text-transform: uppercase;
   color: white;
   mix-blend-mode: difference;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .tab {
     padding: 0.75rem 1.25rem;
     font-size: 1rem;
   }
-}
+} */
 
 .cursor {
   position: absolute;
   z-index: 0;
-  height: 1.75rem;
+  height: 2.50rem;
   background-color: black;
   border-radius: 9999px;
   top: 50%;
   transform: translateY(-50%);
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .cursor {
     height: 3rem;
   }
-}
+} */

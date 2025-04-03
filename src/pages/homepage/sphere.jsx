@@ -26,6 +26,8 @@ function Sphere() {
       "TypeScript",
     ];
 
+   
+
     const options = {
       radius: 300,
       maxSpeed: "normal",

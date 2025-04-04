@@ -133,7 +133,7 @@
   pointer-events: auto;
 
   .slideBackground {
-    opacity: 0.1;
+    opacity: var(--opacity);
     transform: none;
   }
 

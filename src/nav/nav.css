@@ -249,7 +249,7 @@ nav ul li:nth-child(5) a {
 .darkmode {
   position: fixed;
   top: 1%;
-  right: 1%;
+  right: 3.5%;
   width: 55px;
   height: 55px;
   display: flex;
@@ -259,12 +259,14 @@ nav ul li:nth-child(5) a {
 }
 
 .sun img {
+  position: absolute;
   width: 50px;
   height: 50px;
   filter: drop-shadow(0 0 15px #fffacd);
 }
 
 .moon img {
+  position: absolute;
   margin: 10px;
   width: 30px;
   height: 30px;
@@ -294,11 +296,7 @@ nav ul li:nth-child(5) a {
 .moon img {
   animation: float 3s ease-in-out infinite;
 }
-/* Sun change */
 
-.invisibleClass {
-  display: none;
-}
 
 .visibleClass {
   display: block;

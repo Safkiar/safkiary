@@ -88,7 +88,6 @@
   width: 50%;
   aspect-ratio: 900 / 650;
   z-index: -1;
-  border: 1px solid red;
   left: 50%;
   right: 50%;
   transform: translateX(-50%);
@@ -157,7 +156,7 @@
   padding: 5px;
 
   background: linear-gradient(rgba(12, 27, 58, 0.7), #2f7da783);
-  border: 1px solid #10283683;
+  /* border: 1px solid #335a7038; */
 }
 
 

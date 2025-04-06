@@ -1,21 +1,70 @@
-import "./hexagon.css";
+import { useState } from 'react';
+import './hexagon.css';
+import {
+  FaLinkedin,
+  FaGithub,
+  FaEnvelope,
+  FaPhone,
+  FaCode,
+} from 'react-icons/fa';
+import { MdContactPage } from 'react-icons/md';
+import { SiCodewars } from 'react-icons/si';
 
 function Hexagon() {
+  const [hovered, setHovered] = useState(false);
+  const [hovered2, setHovered2] = useState(false);
+
+  function open() {
+    if (hovered2 == true) setHovered2((prev) => !prev);
+    if (hovered == false) setHovered((prev) => !prev);
+  }
+
+  function open2() {
+    if (hovered == true) setHovered((prev) => !prev);
+    if (hovered2 == false) setHovered2((prev) => !prev);
+  }
+
   return (
-    <div className="guard">
-      <section id="hexagon-element">
-        <div className="face front">1</div>
-        <div className="face side2">2</div>
-        <div className="face side3">3</div>
-        <div className="face side4">4</div>
-        <div className="face side5">5</div>
-        <div className="face side6">6</div>
-        <div className="face top">TOP</div>
-        <div className="face bottom">BOTTOM</div>
-      </section>
-      <div className="shadow"></div>
+    <div className="contact_container">
+      <div className="guard">
+        <section id="hexagon-element">
+          <div className="face front">
+            <a
+              href="https://www.linkedin.com/in/twoj-profil"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin size={62} />
+            </a>
+          </div>
+          <div className="face side2"></div>
+          <div className="face side3">
+            <FaGithub size={62} />
+          </div>
+          <div className="face side4">
+            <FaEnvelope onMouseEnter={() => open2()} size={62} />
+          </div>
+          <div className="face side5">
+            <SiCodewars size={60} />{' '}
+            {/* Codewars – nie ma oficjalnej ikony, można zamiennik */}
+          </div>
+          <div className="face side6">
+            <FaPhone className="color" onMouseEnter={() => open()} size={54} />
+          </div>
+          <div className="face top"></div>
+          <div className="face bottom"></div>
+        </section>
+        <div className="shadow"></div>
+      </div>
+      <div className="show_contact">
+        <h3>Contact me </h3>
+        {hovered && <p className=" showMe">+48 788 396 380</p>}
+        {hovered2 && <p className="showMe">m.kikowski97@gmail.com</p>}
+      </div>
     </div>
   );
 }
 
 export default Hexagon;
+
+//  onMouseLeave={() => setHovered(false)}

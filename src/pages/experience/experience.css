@@ -13,8 +13,8 @@
 .grid-container {
   display: grid;
   grid-template-areas:
-    "one two"
-    "one three";
+    'one two'
+    'one three';
   grid-template-columns: 1.8fr 1fr;
   grid-template-rows: 1fr 4fr;
   gap: 20px;
@@ -71,7 +71,7 @@
 }
 
 .skewli::before {
-  content: "";
+  content: '';
   color: #999;
   background: var(--007);
   display: flex;
@@ -92,7 +92,7 @@
 }
 
 .skewli:after {
-  content: "";
+  content: '';
   position: absolute;
   top: -7px;
   left: 0px;
@@ -348,9 +348,9 @@
 @media (max-width: 815px) {
   .grid-container {
     grid-template-areas:
-      "two"
-      "one"
-      "three";
+      'two'
+      'one'
+      'three';
     grid-template-columns: 1fr;
   }
 }

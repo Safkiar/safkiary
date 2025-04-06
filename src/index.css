@@ -1,25 +1,46 @@
 .light-mode {
   --background: linear-gradient(to right, #1f2358, #5f8fee);
+  --reversed-background: linear-gradient(to right, #03051a, #11264f);
+  --reversed-background2: linear-gradient(to right, #070c38, #142f65);
+  --reversed-background3: linear-gradient(to left, #070c38, #142f65);
+  --reversed-background4: linear-gradient(to left, #03051a, #11264f);
   --text: white;
   --text-opa: rgba(255, 255, 255, 0.7);
   --gradient: linear-gradient(rgba(12, 27, 58, 0.7), #2f7da783);
-  --light-rgba:rgba(103, 134, 244, 0.636);
-  --gradient-rgba:rgba(34, 99, 230, 0.5);
+  --light-rgba: rgba(24, 31, 56, 0.636);
+  --gradient-rgba: rgba(34, 99, 230, 0.5);
   --shadow-rgba: rgba(58, 58, 58, 0.5);
   --opacity: 0.06;
+  --001: #ffffff;
+  --002: #2f2fa883;
+  --004: #03051a;
+  --005: #0d0d4383;
+  --006: #5f8fee;
+  --007: #03051a;
+  --008: #070c38;
 }
 
 .dark-mode {
   --background: linear-gradient(to right, #03051a, #11264f);
+  --reversed-background: linear-gradient(to right, #1f2358, #5f8fee);
+  --reversed-background2: linear-gradient(to right, #131743, #4771c4);
+  --reversed-background3: linear-gradient(to left, #131743, #4771c4);
+  --reversed-background4: linear-gradient(to left, #1f2358, #5f8fee);
   --text: white;
   --text-opa: rgba(255, 255, 255, 0.7);
   --gradient: linear-gradient(rgba(12, 27, 58, 0.7), #2f7da783);
-  --light-rgba:rgba(77, 104, 199, 0.636);
-  --gradient-rgba:rgba(12, 27, 58, 0.7);
+  --light-rgba: rgba(77, 104, 199, 0.636);
+  --gradient-rgba: rgba(12, 27, 58, 0.7);
   --shadow-rgba: rgba(65, 64, 64, 0.5);
   --opacity: 0.1;
+  --001: #ffffff;
+  --002: #0d0d4383;
+  --004: #03051a;
+  --005: #ffffff;
+  --006: #0d0d4383;
+  --007: #1f2358;
+  --008: #131743;
 }
-
 
 *,
 *::before,

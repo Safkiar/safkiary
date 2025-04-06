@@ -1,10 +1,8 @@
 .tabs-container {
-  list-style: none; 
+  list-style: none;
   padding: 0;
   margin: 0;
 }
-
-
 
 .app-wrapper {
   /* background-color: #f5f5f5; */
@@ -27,7 +25,6 @@
   border-radius: 9999px;
   width: fit-content;
   margin: auto;
-
 }
 
 .tab {
@@ -39,7 +36,7 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   color: white;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
 }
 
 /* @media (min-width: 768px) {
@@ -52,10 +49,12 @@
 .cursor {
   position: absolute;
   z-index: 0;
-  height: 2.50rem;
-  background-color: black;
+  height: 2.5rem;
+  background: var(--reversed-background);
+  /* background: red; */
   border-radius: 9999px;
   top: 50%;
+  color: white;
   transform: translateY(-50%);
 }
 

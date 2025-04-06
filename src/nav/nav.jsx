@@ -1,33 +1,27 @@
 import { useNavigate } from "react-router-dom";
 import "./nav.css";
-import { useEffect, useState } from "react";
 import { useDarkMode } from "../darkmode/DarkModeContext";
+import { useRef } from "react";
 
 function Nav() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const navigate = useNavigate();
-  const [isDay, setIsDay] = useState(false);
-
-  const toggleTheme = () => {
-    setIsDay((prev) => !prev);
-  };
-
-  useEffect(() => {
-    setIsDay(!isDarkMode)
-  }, [isDarkMode]); 
-
-  // 
-  // 
-  // invisibleClass 
+  const checkboxRef = useRef(null);
 
   return (
     <div>
-      <div className="darkmode"><div
-          className={`sun icon-toggle ${isDarkMode ? "animate-down2" : "animate-up2"} `}
+      <div className="darkmode">
+        <div
+          className={`sun icon-toggle ${
+            isDarkMode ? "animate-down2" : "animate-up2"
+          } `}
         >
           <img onClick={toggleDarkMode} src="/sun.png" alt="Sun" />
-        </div> <div
-          className={`moon icon-toggle ${!isDarkMode ? "animate-down" : " animate-up"}`}
+        </div>{" "}
+        <div
+          className={`moon icon-toggle ${
+            !isDarkMode ? "animate-down" : " animate-up"
+          }`}
         >
           <img onClick={toggleDarkMode} src="/moon.png" alt="Moon" />
         </div>
@@ -35,12 +29,17 @@ function Nav() {
       <div id="page" className="site">
         <div className="container">
           <nav>
-            <input type="checkbox" id="link" hidden />
+            <input type="checkbox" id="link" hidden ref={checkboxRef} />
             <label htmlFor="link" className="link">
               <i className="menu ri-menu-3-line r1-2x"></i>
               <i className="close ri-close-line r1-2x"></i>
             </label>
-            <ul className="submenu">
+            <ul
+              className="submenu"
+              onMouseLeave={() => {
+                if (checkboxRef.current) checkboxRef.current.checked = false;
+              }}
+            >
               <li>
                 <a href="#" onClick={() => navigate("/")}>
                   <span>Home</span>

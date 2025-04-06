@@ -1,4 +1,4 @@
-import Cube from "./cube";
+import Cube from "../contact/hexagon";
 // import Sphere from "./sphere";
 import TagCloud from "TagCloud";
 import "./homepage.css";

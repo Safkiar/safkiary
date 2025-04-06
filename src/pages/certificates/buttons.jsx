@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import "./buttons.css";
 
 function Buttons({ activeIndex, setActiveIndex }) {
@@ -17,6 +18,10 @@ const SlideTabs = ({ activeIndex, setActiveIndex }) => {
     width: 0,
     opacity: 1,
   });
+
+  useEffect(() => {
+    handleSetPosition(activeIndex);
+  }, [activeIndex]);
 
   const tabsRef = useRef([]);
 

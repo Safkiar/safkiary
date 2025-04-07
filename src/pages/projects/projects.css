@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 14vh;
+  overflow: hidden;
 }
 
 .slides {
@@ -118,6 +119,8 @@
   top: 0;
   left: -10%;
   right: -10%;
+
+
   bottom: 0;
   background-size: cover;
   background-position: center center;
@@ -135,6 +138,7 @@
   .slideBackground {
     opacity: var(--opacity);
     transform: none;
+
   }
 
   .slideContentInner {
@@ -222,15 +226,20 @@
   .parent {
     padding-top: 0px;
   }
+
+  .slideContent {
+    width: 75vw;
+    height: 46vw;
+  }
   .slides {
     > .button_slides {
-      top: 20%;
+      top: 27%;
 
       &:first-child {
-        left: -25%;
+        left: -18%;
       }
       &:last-child {
-        right: -25%;
+        right: -18%;
       }
     }
   }

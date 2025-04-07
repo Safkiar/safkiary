@@ -1,9 +1,21 @@
+/* -- hexagon: poruszanie kostką przez kliknięcie */
+/* -- nav: translator */
+/* -- experience: godziny projektu */
+/* -- general: szybsze przechodzenie między routerami */
+/* -- loader przed załadowaniem */
+/* -- mobilny:nav: nie znika po otwarciu - kliknięcie zewnętrzne i czasowość */
+/* -- mobilny:nav: po otwarciu nav powinien mieć z-index największy */
+
+
+
 .light-mode {
   --background: linear-gradient(to right, #1f2358, #5f8fee);
   --reversed-background: linear-gradient(to right, #03051a, #11264f);
   --reversed-background2: linear-gradient(to right, #070c38, #142f65);
   --reversed-background3: linear-gradient(to left, #070c38, #142f65);
   --reversed-background4: linear-gradient(to left, #03051a, #11264f);
+  --reversed-background3a: linear-gradient(to top, #070c38, #142f65);
+  --reversed-background4a: linear-gradient(to top, #03051a, #11264f);
   --text: white;
   --text-opa: rgba(255, 255, 255, 0.7);
   --gradient: linear-gradient(rgba(12, 27, 58, 0.7), #2f7da783);
@@ -28,6 +40,8 @@
   --reversed-background2: linear-gradient(to right, #131743, #4771c4);
   --reversed-background3: linear-gradient(to left, #131743, #4771c4);
   --reversed-background4: linear-gradient(to left, #1f2358, #5f8fee);
+  --reversed-background3a: linear-gradient(to top, #131743, #4771c4);
+  --reversed-background4a: linear-gradient(to top, #1f2358, #5f8fee);
   --text: white;
   --text-opa: rgba(255, 255, 255, 0.7);
   --gradient: linear-gradient(rgba(12, 27, 58, 0.7), #2f7da783);
@@ -50,11 +64,12 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html,
 body {
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   margin: 0;
   padding: 0;
@@ -62,7 +77,10 @@ body {
 }
 
 body {
-  overflow: hidden;
+
+  overflow-x: hidden;
+    overflow-y: auto;   
+    width: 100%;        
   background: var(--background);
   color: var(--text);
   line-height: 1.8;

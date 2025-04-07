@@ -144,6 +144,7 @@
 
 .rel_container {
   display: relative;
+  height: 100vh;
 }
 
 .dot {

@@ -30,7 +30,7 @@ function Hexagon() {
         <section id="hexagon-element">
           <div className="face front">
             <a
-              href="https://www.linkedin.com/in/twoj-profil"
+              href="https://www.linkedin.com/in/micha%C5%82-kikowski-6bab9720b/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -39,14 +39,25 @@ function Hexagon() {
           </div>
           <div className="face side2"></div>
           <div className="face side3">
+          <a
+              href="https://github.com/Safkiar"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
             <FaGithub size={62} />
+            </a>
           </div>
           <div className="face side4">
             <FaEnvelope onMouseEnter={() => open2()} size={62} />
           </div>
           <div className="face side5">
-            <SiCodewars size={60} />{' '}
-            {/* Codewars – nie ma oficjalnej ikony, można zamiennik */}
+          <a
+              href="https://www.codewars.com/users/MrKikowski"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+            <SiCodewars size={60} />
+            </a>
           </div>
           <div className="face side6">
             <FaPhone className="color" onMouseEnter={() => open()} size={54} />

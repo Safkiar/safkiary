@@ -41,34 +41,34 @@ function Nav() {
               }}
             >
               <li>
-                <a href="#" onClick={() => navigate("/")}>
-                  <span>Home</span>
-                  <i className="ri-home-line"></i>
+                <a href="#" >
+                  <span onClick={() => navigate("/")}>Home</span>
+                  <i onClick={() => navigate("/")} className="ri-home-line"></i>
                 </a>
               </li>
-              <li onClick={() => navigate("/projects")}>
+              <li >
                 <a href="#">
-                  <span>Projects</span>
-                  <i className="ri-folder-3-line"></i>
+                  <span onClick={() => navigate("/projects")}>Projects</span>
+                  <i onClick={() => navigate("/projects")} className="ri-folder-3-line"></i>
                 </a>
               </li>
-              <li onClick={() => navigate("/certificates")}>
+              <li >
                 <a href="#">
-                  <span>Certificates</span>
-                  <i className="ri-medal-line"></i>
+                  <span onClick={() => navigate("/certificates")}>Certificates</span>
+                  <i onClick={() => navigate("/certificates")} className="ri-medal-line"></i>
                 </a>
               </li>
-              <li onClick={() => navigate("/experience")}>
+              <li >
                 <a href="#">
-                  <span>Experience</span>
-                  <i className="ri-briefcase-line"></i>
+                  <span onClick={() => navigate("/experience")}>Experience</span>
+                  <i onClick={() => navigate("/experience")} className="ri-briefcase-line"></i>
                 </a>
               </li>
 
-              <li onClick={() => navigate("/contact")}>
+              <li >
                 <a href="#">
-                  <span>Contact</span>
-                  <i className="ri-user-line"></i>
+                  <span onClick={() => navigate("/contact")}>Contact</span>
+                  <i onClick={() => navigate("/contact")} className="ri-user-line"></i>
                 </a>
               </li>
             </ul>

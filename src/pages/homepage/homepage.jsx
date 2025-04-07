@@ -34,7 +34,7 @@ function Homepage() {
     const getRadius = () => {
       const width = window.innerWidth;
       if (width < 340) return 115;
-      if (width < 400) return 135;
+      if (width < 410) return 135;
       if (width < 700) return 175;
       if (width < 1000) return 190;
       if (width < 1350) return 210;

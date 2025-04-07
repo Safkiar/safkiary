@@ -27,7 +27,7 @@
   position: absolute;
   width: 100px;
   height: 100px;
-  background: var(--reversed-background3);
+  background: var(--reversed-background3a);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,12 +38,15 @@
 }
 
 .face:hover {
-  background: var(--reversed-background4);
+  background: var(--reversed-background4a);
   color: var(--010);
 }
 
 .front {
   transform: rotateY(0deg) translateZ(85px);
+  :hover {
+    cursor: pointer;
+  }
 }
 .side2 {
   transform: rotateY(60deg) translateZ(85px);

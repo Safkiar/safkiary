@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import './hexagon.css';
+import { useState } from "react";
+import "./hexagon.css";
 import {
   FaLinkedin,
   FaGithub,
   FaEnvelope,
   FaPhone,
   FaCode,
-} from 'react-icons/fa';
-import { MdContactPage } from 'react-icons/md';
-import { SiCodewars } from 'react-icons/si';
+} from "react-icons/fa";
+import { MdContactPage } from "react-icons/md";
+import { SiCodewars } from "react-icons/si";
 
 function Hexagon() {
   const [hovered, setHovered] = useState(false);
@@ -39,24 +39,24 @@ function Hexagon() {
           </div>
           <div className="face side2"></div>
           <div className="face side3">
-          <a
+            <a
               href="https://github.com/Safkiar"
               target="_blank"
               rel="noopener noreferrer"
             >
-            <FaGithub size={62} />
+              <FaGithub size={62} />
             </a>
           </div>
           <div className="face side4">
             <FaEnvelope onMouseEnter={() => open2()} size={62} />
           </div>
           <div className="face side5">
-          <a
+            <a
               href="https://www.codewars.com/users/MrKikowski"
               target="_blank"
               rel="noopener noreferrer"
             >
-            <SiCodewars size={60} />
+              <SiCodewars size={60} />
             </a>
           </div>
           <div className="face side6">

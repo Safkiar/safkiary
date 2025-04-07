@@ -28,7 +28,7 @@
     top: 30%;
     transition: opacity 0.3s;
     opacity: 0.7;
-    z-index: 99999999;
+    z-index: 99999;
 
     &:hover {
       opacity: 1;
@@ -120,7 +120,6 @@
   left: -10%;
   right: -10%;
 
-
   bottom: 0;
   background-size: cover;
   background-position: center center;
@@ -138,7 +137,6 @@
   .slideBackground {
     opacity: var(--opacity);
     transform: none;
-
   }
 
   .slideContentInner {

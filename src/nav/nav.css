@@ -58,7 +58,7 @@ nav .link {
   margin-top: -20px;
   right: 0;
   cursor: pointer;
-  z-index: 99999;
+  z-index: 9999999999;
 }
 
 nav .link::before {
@@ -118,6 +118,7 @@ nav ul.submenu {
 
 nav > input:checked ~ ul.submenu {
   backdrop-filter: blur(8px);
+  z-index: 999999999;
   opacity: 1;
   visibility: visible;
   transition: backdrop-filter 0.8s ease, opacity 0.3s ease, visibility 0s 0s;
@@ -373,7 +374,7 @@ nav ul li:nth-child(5) a {
   }
   .site {
     bottom: 0;
-    top: -20%;
+    top: -28%;
     right: -7%;
   }
   nav .link {

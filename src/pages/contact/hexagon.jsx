@@ -11,6 +11,8 @@ import { MdContactPage } from "react-icons/md";
 import { SiCodewars } from "react-icons/si";
 
 function Hexagon() {
+  const [isPaused, setIsPaused] = useState(false);
+
   const [hovered, setHovered] = useState(false);
   const [hovered2, setHovered2] = useState(false);
   const [hovered3, setHovered3] = useState(false);
@@ -20,48 +22,59 @@ function Hexagon() {
   function open() {
     if (hovered == false) setHovered((prev) => !prev);
     if (hovered2 == true) setHovered2((prev) => !prev);
-    if (hovered3 == true) setHovered2((prev) => !prev);
-    if (hovered4 == true) setHovered2((prev) => !prev);
-    if (hovered5 == true) setHovered2((prev) => !prev);
+    if (hovered3 == true) setHovered3((prev) => !prev);
+    if (hovered4 == true) setHovered4((prev) => !prev);
+    if (hovered5 == true) setHovered5((prev) => !prev);
   }
 
   function open2() {
     if (hovered == true) setHovered((prev) => !prev);
     if (hovered2 == false) setHovered2((prev) => !prev);
-    if (hovered3 == true) setHovered2((prev) => !prev);
-    if (hovered4 == true) setHovered2((prev) => !prev);
-    if (hovered5 == true) setHovered2((prev) => !prev);
+    if (hovered3 == true) setHovered3((prev) => !prev);
+    if (hovered4 == true) setHovered4((prev) => !prev);
+    if (hovered5 == true) setHovered5((prev) => !prev);
   }
 
   function open3() {
     if (hovered == true) setHovered((prev) => !prev);
     if (hovered2 == true) setHovered2((prev) => !prev);
-    if (hovered3 == false) setHovered2((prev) => !prev);
-    if (hovered4 == true) setHovered2((prev) => !prev);
-    if (hovered5 == true) setHovered2((prev) => !prev);
+    if (hovered3 == false) setHovered3((prev) => !prev);
+    if (hovered4 == true) setHovered4((prev) => !prev);
+    if (hovered5 == true) setHovered5((prev) => !prev);
   }
 
   function open4() {
     if (hovered == true) setHovered((prev) => !prev);
     if (hovered2 == true) setHovered2((prev) => !prev);
-    if (hovered3 == true) setHovered2((prev) => !prev);
-    if (hovered4 == false) setHovered2((prev) => !prev);
-    if (hovered5 == true) setHovered2((prev) => !prev);
+    if (hovered3 == true) setHovered3((prev) => !prev);
+    if (hovered4 == false) setHovered4((prev) => !prev);
+    if (hovered5 == true) setHovered5((prev) => !prev);
   }
 
   function open5() {
     if (hovered == true) setHovered((prev) => !prev);
     if (hovered2 == true) setHovered2((prev) => !prev);
-    if (hovered3 == true) setHovered2((prev) => !prev);
-    if (hovered4 == true) setHovered2((prev) => !prev);
-    if (hovered5 == false) setHovered2((prev) => !prev);
+    if (hovered3 == true) setHovered3((prev) => !prev);
+    if (hovered4 == true) setHovered4((prev) => !prev);
+    if (hovered5 == false) setHovered5((prev) => !prev);
   }
 
   return (
     <div className="contact_container">
       <div className="guard">
-        <section id="hexagon-element">
-          <div className="face front">
+        <section
+          id="hexagon-element"
+          className={isPaused ? "paused" : ""}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <div
+            className="face front"
+            onMouseEnter={() => {
+              setIsPaused(true);
+              open3();
+            }}
+          >
             <a
               href="https://www.linkedin.com/in/micha%C5%82-kikowski-6bab9720b/"
               target="_blank"
@@ -70,8 +83,19 @@ function Hexagon() {
               <FaLinkedin size={62} />
             </a>
           </div>
-          <div className="face side2"></div>
-          <div className="face side3">
+          <div
+            className="face side2"
+            onMouseEnter={() => {
+              setIsPaused(false);
+            }}
+          ></div>
+          <div
+            className="face side3"
+            onMouseEnter={() => {
+              setIsPaused(true);
+              open4();
+            }}
+          >
             <a
               href="https://github.com/Safkiar"
               target="_blank"
@@ -80,10 +104,16 @@ function Hexagon() {
               <FaGithub size={62} />
             </a>
           </div>
-          <div className="face side4">
-            <FaEnvelope onMouseEnter={() => open2()} size={62} />
+          <div className="face side4" onMouseEnter={() => open2()} size={62}>
+            <FaEnvelope size={64} />
           </div>
-          <div className="face side5">
+          <div
+            className="face side5"
+            onMouseEnter={() => {
+              setIsPaused(true);
+              open5();
+            }}
+          >
             <a
               href="https://www.codewars.com/users/MrKikowski"
               target="_blank"
@@ -92,8 +122,14 @@ function Hexagon() {
               <SiCodewars size={60} />
             </a>
           </div>
-          <div className="face side6">
-            <FaPhone className="color" onMouseEnter={() => open()} size={54} />
+          <div
+            className="face side6"
+            onMouseEnter={() => {
+              setIsPaused(true);
+              open();
+            }}
+          >
+            <FaPhone className="color" size={54} />
           </div>
           <div className="face top"></div>
           <div className="face bottom"></div>
@@ -104,7 +140,9 @@ function Hexagon() {
         <h3>Contact me </h3>
         {hovered && <p className=" showMe">+48 788 396 380</p>}
         {hovered2 && <p className="showMe">m.kikowski97@gmail.com</p>}
-        {/* {hovered3 && <p className="showMe">m.LinkedIn </p>} */}
+        {hovered3 && <p className="showMe">LinkedIn </p>}
+        {hovered4 && <p className="showMe">Github </p>}
+        {hovered5 && <p className="showMe">Codewars </p>}
       </div>
     </div>
   );

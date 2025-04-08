@@ -19,7 +19,7 @@
   animation: spinner 14s infinite linear;
 }
 
-#hexagon-element:hover {
+#hexagon-element.paused {
   animation-play-state: paused;
 }
 
@@ -50,6 +50,12 @@
 }
 .side2 {
   transform: rotateY(60deg) translateZ(85px);
+  &:hover {
+    cursor: default;
+    background: var(--reversed-background3a);
+    animation-play-state: running;
+    /* nie działa, chciałbym zeby jak sie hoveruje akurat ten fragment to dzialalo normalnie */
+  }
 }
 .side3 {
   transform: rotateY(120deg) translateZ(85px);

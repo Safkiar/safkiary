@@ -78,7 +78,6 @@
   position: absolute;
   top: 100%;
   width: 100%;
- 
 
   .slideSubtitle,
   .slideTitle {
@@ -140,7 +139,6 @@
 
   .slideContentInner {
     opacity: 1;
-
   }
 
   .slideContent {

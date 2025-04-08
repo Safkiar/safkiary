@@ -6,6 +6,7 @@ import Projects from "./pages/projects/projects";
 import Nav from "./nav/nav";
 import Experience from "./pages/experience/experience";
 import { DarkModeProvider } from "./darkmode/DarkModeContext";
+import PageNotFound from "./pages/notFound/pagenotfound";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="certificates" element={<Certificates />} />
         <Route path="projects" element={<Projects />} />
         <Route path="experience" element={<Experience />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
     </DarkModeProvider>

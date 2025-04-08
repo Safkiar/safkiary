@@ -106,7 +106,6 @@ function Slide({ slide, offset }) {
         </div>
       </div>
     </div>
-    // </div>
   );
 }
 

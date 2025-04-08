@@ -13,15 +13,48 @@ import { SiCodewars } from "react-icons/si";
 function Hexagon() {
   const [hovered, setHovered] = useState(false);
   const [hovered2, setHovered2] = useState(false);
+  const [hovered3, setHovered3] = useState(false);
+  const [hovered4, setHovered4] = useState(false);
+  const [hovered5, setHovered5] = useState(false);
 
   function open() {
-    if (hovered2 == true) setHovered2((prev) => !prev);
     if (hovered == false) setHovered((prev) => !prev);
+    if (hovered2 == true) setHovered2((prev) => !prev);
+    if (hovered3 == true) setHovered2((prev) => !prev);
+    if (hovered4 == true) setHovered2((prev) => !prev);
+    if (hovered5 == true) setHovered2((prev) => !prev);
   }
 
   function open2() {
     if (hovered == true) setHovered((prev) => !prev);
     if (hovered2 == false) setHovered2((prev) => !prev);
+    if (hovered3 == true) setHovered2((prev) => !prev);
+    if (hovered4 == true) setHovered2((prev) => !prev);
+    if (hovered5 == true) setHovered2((prev) => !prev);
+  }
+
+  function open3() {
+    if (hovered == true) setHovered((prev) => !prev);
+    if (hovered2 == true) setHovered2((prev) => !prev);
+    if (hovered3 == false) setHovered2((prev) => !prev);
+    if (hovered4 == true) setHovered2((prev) => !prev);
+    if (hovered5 == true) setHovered2((prev) => !prev);
+  }
+
+  function open4() {
+    if (hovered == true) setHovered((prev) => !prev);
+    if (hovered2 == true) setHovered2((prev) => !prev);
+    if (hovered3 == true) setHovered2((prev) => !prev);
+    if (hovered4 == false) setHovered2((prev) => !prev);
+    if (hovered5 == true) setHovered2((prev) => !prev);
+  }
+
+  function open5() {
+    if (hovered == true) setHovered((prev) => !prev);
+    if (hovered2 == true) setHovered2((prev) => !prev);
+    if (hovered3 == true) setHovered2((prev) => !prev);
+    if (hovered4 == true) setHovered2((prev) => !prev);
+    if (hovered5 == false) setHovered2((prev) => !prev);
   }
 
   return (
@@ -71,6 +104,7 @@ function Hexagon() {
         <h3>Contact me </h3>
         {hovered && <p className=" showMe">+48 788 396 380</p>}
         {hovered2 && <p className="showMe">m.kikowski97@gmail.com</p>}
+        {/* {hovered3 && <p className="showMe">m.LinkedIn </p>} */}
       </div>
     </div>
   );

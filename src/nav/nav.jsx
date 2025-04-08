@@ -2,14 +2,25 @@ import { useNavigate } from "react-router-dom";
 import "./nav.css";
 import { useDarkMode } from "../darkmode/DarkModeContext";
 import { useRef } from "react";
+import { useTranslate } from "../translation/TranslationContext";
 
 function Nav() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const navigate = useNavigate();
   const checkboxRef = useRef(null);
+  const {setLang, lang} = useTranslate();
 
   return (
     <div>
+      <div className="translatormode">
+
+      <div className={` ${lang === 'pl' ? "animate-down2" : "animate-up2"}`} onClick={() => setLang(lang === 'pl' ? 'en' : 'pl')}>
+        <p>PL</p>
+      </div>
+      <div className={` ${lang === 'en' ? "animate-down" : " animate-up"}`} onClick={() => setLang(lang === 'pl' ? 'en' : 'pl')}>
+     <p>EN</p>
+      </div>
+      </div>
       <div className="darkmode">
         <div
           className={`sun icon-toggle ${

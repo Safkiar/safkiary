@@ -4,10 +4,12 @@ import TagCloud from "TagCloud";
 import "./homepage.css";
 import { useEffect, useState } from "react";
 import "./sphere.css";
+import { useTranslate } from "../../translation/TranslationContext";
 
 function Homepage() {
   const [hoveredTag, setHoveredTag] = useState("");
   const [emptyInd, setEmptyInd] = useState(true);
+  const {t} = useTranslate();
 
   useEffect(() => {
     setEmptyInd(hoveredTag === "");
@@ -89,12 +91,12 @@ function Homepage() {
         </div>
       </div>
 
-      {/* <Cube></Cube> */}
+      {/* {t("welcome")} */}
 
       <div className="tvbox">
         <div className="halving_card_title">
           <h3>Michał Kikowski </h3>
-          <h3>Software developer</h3>
+          <h3>Software developer </h3>
         </div>
         <div className="halving_card">
           <div className="my_img_container">

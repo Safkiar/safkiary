@@ -82,7 +82,7 @@ nav .link::after {
   height: calc(100% - 4px);
   background-color: var(--006);
   border-radius: 50% 0 50% 50%;
-  
+
   transform: scale(2);
   /* z-index: -1; */
   opacity: 0.3;
@@ -139,7 +139,7 @@ nav > input:checked ~ ul li {
 nav ul.submenu li {
   --item: 1;
   z-index: 1000000;
-  
+
   position: absolute;
   width: 175px;
   height: 60px;
@@ -187,7 +187,7 @@ nav ul li a i {
   background-color: var(--primary-color);
   color: var(--white-color);
   /* border: 2px solid transparent; */
-  
+
   transition: border 0.3s background-color 0.3s;
   background: radial-gradient(circle at 30% 30%, var(--002), var(--001));
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
@@ -277,19 +277,23 @@ nav ul li:nth-child(5) a {
   cursor: default;
 }
 
-.translatormode p:first-child {
+.translatormode img:first-child {
   position: absolute;
   width: 50px;
   height: 50px;
-  filter: drop-shadow(0 0 15px #fffacd);
+  filter: drop-shadow(0 0 15px #fffacd5a);
 }
 
-.translatormode p:last-child {
+.translatormode img:last-child {
   position: absolute;
-  margin: 10px;
+  margin: 12px;
   width: 30px;
   height: 30px;
-  filter: drop-shadow(0 0 8px #bbb);
+  filter: drop-shadow(0 0 8px #bbbbbb63);
+}
+
+.translatormode img:hover {
+  filter: drop-shadow(0 2px 8px #bbbbbbce);
 }
 /* sun */
 
@@ -304,8 +308,6 @@ nav ul li:nth-child(5) a {
   justify-content: center;
   transition: transform 0.5s, opacity 0.5s;
   z-index: 1000000;
-
-  
 }
 
 .sun img {
@@ -446,5 +448,12 @@ nav ul li:nth-child(5) a {
 
   nav > input:checked ~ ul li a span {
     font-size: 0.86rem;
+  }
+}
+
+@media (min-width: 100px) {
+  .site {
+    right: 0;
+    transform: translateX(15px);
   }
 }

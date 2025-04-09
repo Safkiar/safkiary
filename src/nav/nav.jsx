@@ -8,18 +8,23 @@ function Nav() {
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const navigate = useNavigate();
   const checkboxRef = useRef(null);
-  const {setLang, lang} = useTranslate();
+  const { setLang, lang } = useTranslate();
 
   return (
     <div>
       <div className="translatormode">
-
-      <div className={` ${lang === 'pl' ? "animate-down2" : "animate-up2"}`} onClick={() => setLang(lang === 'pl' ? 'en' : 'pl')}>
-        <p>PL</p>
-      </div>
-      <div className={` ${lang === 'en' ? "animate-down" : " animate-up"}`} onClick={() => setLang(lang === 'pl' ? 'en' : 'pl')}>
-     <p>EN</p>
-      </div>
+        <div
+          className={` ${lang === "pl" ? "animate-down2" : "animate-up2"}`}
+          onClick={() => setLang(lang === "pl" ? "en" : "pl")}
+        >
+          <img src="/flags/Poland.png" />
+        </div>
+        <div
+          className={` ${lang === "en" ? "animate-down" : " animate-up"}`}
+          onClick={() => setLang(lang === "pl" ? "en" : "pl")}
+        >
+          <img src="/flags/England.png" />
+        </div>
       </div>
       <div className="darkmode">
         <div

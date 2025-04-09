@@ -4,6 +4,7 @@ import { slides2 } from "./slides/certificates";
 import "./certificates.css";
 import { useRef, useEffect, useReducer, useState } from "react";
 import Buttons from "./buttons";
+import Spinner from "../../spinner/spinner";
 
 // Tilt effect
 function useTilt(active) {

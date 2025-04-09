@@ -2,12 +2,10 @@ import slides from "./slides/project";
 import "./projects.css";
 import { useRef, useEffect, useReducer, useState } from "react";
 import { useTranslate } from "../../translation/TranslationContext";
+import Spinner from "../../spinner/spinner";
 
 function useTilt(active) {
   const ref = useRef(null);
-
-  
-
 
   useEffect(() => {
     if (!ref.current || !active) {
@@ -71,7 +69,7 @@ const slidesReducer = (state, event) => {
 function Slide({ slide, offset }) {
   const active = offset === 0 ? true : null;
   const ref = useTilt(active);
-  const {t} = useTranslate();
+  const { t } = useTranslate();
   const handleClick = () => {
     if (active && slide.link) {
       window.open(slide.link, "_blank");
@@ -102,7 +100,6 @@ function Slide({ slide, offset }) {
           backgroundImage: `url('${slide.image}')`,
         }}
       >
-        
         <div className="slideContentInner">
           <h2 className="slideTitle">{slide.title}</h2>
           <h3 className="slideSubtitle">{slide.subtitle}</h3>
@@ -116,32 +113,45 @@ function Slide({ slide, offset }) {
 
 function Projects() {
   const [state, dispatch] = useReducer(slidesReducer, initialState);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const mainSlide = slides[state.slideIndex];
+    const img = new Image();
+    img.src = mainSlide.image;
+    img.onload = () => {
+      setIsLoading(false);
+    };
+  }, [state.slideIndex]);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div className="hidden">
-
-    <div className="parent">
-      <div className="slides">
-        <button
-          className="button_slides"
-          onClick={() => dispatch({ type: "PREV" })}
+      <div className="parent">
+        <div className="slides">
+          <button
+            className="button_slides"
+            onClick={() => dispatch({ type: "PREV" })}
           >
-          ‹
-        </button>
+            ‹
+          </button>
 
-        {[...slides, ...slides, ...slides].map((slide, i) => {
-          let offset = slides.length + (state.slideIndex - i);
-          return <Slide slide={slide} offset={offset} key={i} />;
-        })}
-        <button
-          className="button_slides"
-          onClick={() => dispatch({ type: "NEXT" })}
+          {[...slides, ...slides, ...slides].map((slide, i) => {
+            let offset = slides.length + (state.slideIndex - i);
+            return <Slide slide={slide} offset={offset} key={i} />;
+          })}
+          <button
+            className="button_slides"
+            onClick={() => dispatch({ type: "NEXT" })}
           >
-          ›
-        </button>
+            ›
+          </button>
+        </div>
       </div>
     </div>
-          </div>
   );
 }
 export default Projects;

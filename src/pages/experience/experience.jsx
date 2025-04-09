@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import "./experience.css";
 import { FaFileDownload } from "react-icons/fa";
+import { useTranslate } from "../../translation/TranslationContext";
 
 function Experience() {
+  const {t} = useTranslate();
   const [hovered, setHovered] = useState(false);
   const [hovered2, setHovered2] = useState(false);
   const [hovered3, setHovered3] = useState(false);
@@ -155,65 +157,65 @@ function Experience() {
         <div className="item item-2">
           <div className="table">
             <div className="info">
-              {emptyInd && <div className="fadeIn">Moje projekty</div>}
-              {hovered && <div className="fadeIn">8 projektów</div>}
-              {hovered2 && <div className="fadeIn">6 projektów</div>}
-              {hovered3 && <div className="fadeIn">6 projektów</div>}
-              {hovered4 && <div className="fadeIn">4 projekty</div>}
-              {hovered5 && <div className="fadeIn">3 projekty</div>}
-              {hovered6 && <div className="fadeIn">3 projekty</div>}
-              {hovered7 && <div className="fadeIn">3 projekty</div>}
-              {hovered8 && <div className="fadeIn">1 projekt</div>}
-              {hovered9 && <div className="fadeIn">1 projekt</div>}
-              {hovered10 && <div className="fadeIn">1 projekt</div>}
-              {hovered11 && <div className="fadeIn">1 projekt</div>}
-              {hovered12 && <div className="fadeIn">1 projekt</div>}
+              {emptyInd && <div className="fadeIn">{t("myProjects")}</div>}
+              {hovered && <div className="fadeIn">8 {t("projects2")}</div>}
+              {hovered2 && <div className="fadeIn">6 {t("projects2")}</div>}
+              {hovered3 && <div className="fadeIn">6 {t("projects2")}</div>}
+              {hovered4 && <div className="fadeIn">4 {t("projects")}</div>}
+              {hovered5 && <div className="fadeIn">3 {t("projects")}</div>}
+              {hovered6 && <div className="fadeIn">3 {t("projects")}</div>}
+              {hovered7 && <div className="fadeIn">3 {t("projects")}</div>}
+              {hovered8 && <div className="fadeIn">1 {t("project")}</div>}
+              {hovered9 && <div className="fadeIn">1 {t("project")}</div>}
+              {hovered10 && <div className="fadeIn">1 {t("project")}</div>}
+              {hovered11 && <div className="fadeIn">1 {t("project")}</div>}
+              {hovered12 && <div className="fadeIn">1 {t("project")}</div>}
             </div>
           </div>
         </div>
         <div className="item item-3">
           <div className="add_info">
             <div className="table">
-              <p className="title">Stworzonych projektów</p>
+              <p className="title">{t("createdProjects")}</p>
               <p className="number">15</p>
-              <p className="title">Rozwiązanych zadań</p>
+              <p className="title">{t("solvedTasks")}</p>
               <p className="number">720+</p>
-              <p className="title">Godzin kursu</p>
+              <p className="title">{t("courseHours")}</p>
               <p className="number">15</p>
             </div>
             <div className="PdfContainer">
               <div className="PdfWrapper">
-                <p> Download CV </p>
+                <p> {t("downloadCV")}</p>
                 <div className="svg">
                   <a href="#" download>
                     <FaFileDownload />
-                    English
+                    {t("languageEnglish")}
                   </a>
                 </div>
                 <div className="svg">
                   <a href="#" download>
                     <FaFileDownload />
-                    Polish
+                    {t("languagePolish")}
                   </a>
                 </div>
               </div>
               <div className="PdfWrapper">
-                <p> View CV </p>
+                <p> {t("viewCV")} </p>
                 <div className="svg">
                   <a href="#" target="_blank" rel="noopener noreferrer">
                     <FaFileDownload />
-                    English
+                    {t("languageEnglish")}
                   </a>
                 </div>
                 <div className="svg">
                   <a href="#" target="_blank" rel="noopener noreferrer">
                     <FaFileDownload />
-                    Polish
+                    {t("languagePolish")}
                   </a>
                 </div>
               </div>
             </div>
-            <div className="table">pracodawcy</div>
+            <div className="table">{t("employer")}</div>
             <div className="img_container">
               <img className="wimg" src="./work/stadler.png" />
               <img className="wimg" src="./work/nordea.png" />

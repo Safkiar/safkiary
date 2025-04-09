@@ -146,98 +146,76 @@ function Homepage() {
             {emptyInd && (
               <div className="intro showMe">
                 <div className="who">
-                  Blending creativity with discipline - I build refined UIs,
-                  handle data daily, and grow fast across the stack.
+                {t("blendingCreativity")}
                 </div>
                 <div className="who">
-                  Check out my projects, certificates, and hover over the sphere
-                  elements!
+                {t("checkOut")}
                 </div>
               </div>
             )}
             {hoveredTag === "python" && (
               <div className="hover-indicator showMe">
-                I completed one course and one project. I'm currently using
-                Python at work, where I've written many scripts. I'm well-versed
-                in Pandas, Selenium, Django, and NumPy. I'm still actively
-                investing in this area.
+               {t("pythonExperience")}
               </div>
             )}
             {hoveredTag === "javascript" && (
               <div className="hover-indicator showMe">
-                I completed two courses and built four projects using plain
-                JavaScript. It's worth mentioning that I built a chess game
-                using just JS. I'm also highly skilled in React, TypeScript, and
-                Angular.
+              {t("javascriptExperience")}
               </div>
             )}
             {hoveredTag === "pug" && (
               <div className="hover-indicator showMe">
-                I'm familiar with various HTML templating systems and built one
-                project using Pug.
+               {t("htmlExperience")}
               </div>
             )}
             {hoveredTag === "css" && (
               <div className="hover-indicator showMe">
-                I completed two CSS courses and built many projects. My CSS
-                knowledge is extensive — I'm experienced with SCSS, Tailwind,
-                and Styled Components.
+                {t("cssExperience")}
               </div>
             )}
             {hoveredTag === "django" && (
               <div className="hover-indicator showMe">
-                I built one project using Django connected to a React frontend.
+                {t("djangoExperience")}
               </div>
             )}
             {hoveredTag === "java" && (
               <div className="hover-indicator showMe">
-                I completed two courses and created a full-stack app using
-                Spring. Java is also used as the backend in a project for the
-                foundation.
+              {t("springExperience")}
               </div>
             )}
             {hoveredTag === "sql" && (
               <div className="hover-indicator showMe">
-                I completed two courses and built a full-stack project with
-                MySQL. At work, I use Microsoft SQL Server daily with T-SQL. I'm
-                familiar with MySQL and PostgreSQL.
+              {t("mysqlExperience")}
               </div>
             )}
             {hoveredTag === "spring" && (
               <div className="hover-indicator showMe">
-                I built a full-stack project with Spring, Angular, and MySQL. I
-                also completed two courses on Spring.
+               {t("fullStackExperience")}
               </div>
             )}
             {hoveredTag === "node" && (
               <div className="hover-indicator showMe">
-                I completed one course on Node.js.
+                {t("nodejsExperience")}
               </div>
             )}
             {hoveredTag === "react" && (
               <div className="hover-indicator showMe">
-                I spent over 100 hours on a React course and built 8 projects
-                with it. I'm proficient in React Router, Redux, and many
-                additional libraries.
+               {t("reactExperience")}
               </div>
             )}
             {hoveredTag === "angular" && (
               <div className="hover-indicator showMe">
-                I completed one course and built three projects using Angular —
-                one of them is a full-stack app, and another is part of a
-                foundation project. I also work with Angular daily in my role as
-                a developer at the foundation.
+               {t("angularExperience")}
               </div>
             )}
             {hoveredTag === "webpack" && (
               <div className="hover-indicator showMe">
-                I built one application using Webpack.
+                {t("webpackExperience")}
               </div>
             )}
             {hoveredTag === "typescript" && (
               <div className="hover-indicator showMe">
-                I completed two courses and built three projects using
-                TypeScript.
+                {t("typescriptExperience")}
               </div>
             )}
           </div>

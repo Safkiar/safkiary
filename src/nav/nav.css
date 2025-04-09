@@ -119,7 +119,7 @@ nav ul.submenu {
 
 nav > input:checked ~ ul.submenu {
   backdrop-filter: blur(8px);
-  z-index: 999999999;
+  z-index: 1000000;
   opacity: 1;
   visibility: visible;
   transition: backdrop-filter 0.8s ease, opacity 0.3s ease, visibility 0s 0s;
@@ -127,15 +127,18 @@ nav > input:checked ~ ul.submenu {
 
 nav > input:checked ~ ul {
   visibility: inherit;
+  z-index: 1000000;
 }
 
 nav > input:checked ~ ul li {
   transform: rotate(calc((-180deg / 6) * var(--item))) translateX(0);
   opacity: 1;
+  z-index: 1000000;
 }
 
 nav ul.submenu li {
   --item: 1;
+  z-index: 1000000;
   
   position: absolute;
   width: 175px;
@@ -168,6 +171,7 @@ nav ul li a {
   position: relative;
   display: flex;
   align-items: center;
+  z-index: 1000000;
 }
 
 nav ul li a i {
@@ -176,6 +180,7 @@ nav ul li a i {
   height: 36px;
   border-radius: 50%;
   display: flex;
+  z-index: 1000000;
 
   align-items: center;
   justify-content: center;
@@ -299,6 +304,8 @@ nav ul li:nth-child(5) a {
   justify-content: center;
   transition: transform 0.5s, opacity 0.5s;
   z-index: 1000000;
+
+  
 }
 
 .sun img {
@@ -409,8 +416,9 @@ nav ul li:nth-child(5) a {
   }
   .site {
     bottom: 0;
-    top: -28%;
-    right: -7%;
+    top: 0;
+    right: 0%;
+    transform: translateX(25px);
   }
   nav .link {
     width: 25px;

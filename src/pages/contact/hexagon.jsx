@@ -9,9 +9,11 @@ import {
 } from "react-icons/fa";
 import { MdContactPage } from "react-icons/md";
 import { SiCodewars } from "react-icons/si";
+import { useTranslate } from "../../translation/TranslationContext";
 
 function Hexagon() {
   const [isPaused, setIsPaused] = useState(false);
+    const {t} = useTranslate();
 
   const [hovered, setHovered] = useState(false);
   const [hovered2, setHovered2] = useState(false);
@@ -137,7 +139,7 @@ function Hexagon() {
         <div className="shadow"></div>
       </div>
       <div className="show_contact">
-        <h3>Contact me </h3>
+        <h3 > {t("contact")} </h3>
         {hovered && <p className=" showMe">+48 788 396 380</p>}
         {hovered2 && <p className="showMe">m.kikowski97@gmail.com</p>}
         {hovered3 && <p className="showMe">LinkedIn </p>}

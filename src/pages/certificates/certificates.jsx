@@ -120,18 +120,15 @@ function Certificates() {
     img.onload = () => {
       setIsLoading(false);
     };
-  }, [state.slideIndex]);
+  }, [state.slideIndex, activeSlides]);
 
-  
- 
   useEffect(() => {
     dispatch({ type: "RESET" });
   }, [activeIndex]);
 
   return (
     <div className="rel_container">
-
-        <Buttons activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
+      <Buttons activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
 
       <div className="parentz">
         <div className="parentz2">
@@ -139,25 +136,25 @@ function Certificates() {
             <button
               className="button_slides2"
               onClick={() => dispatch({ type: "PREV", length: currentLength })}
-              >
+            >
               ‹
             </button>
-      {isLoading ?  (<Spinner/>) : (
-        <>
-
-            {[...activeSlides, ...activeSlides, ...activeSlides].map(
-              (slide, i) => {
-                const offset = currentLength + (state.slideIndex - i);
-                return <Slide slide={slide} offset={offset} key={i} />;
-              }
+            {isLoading ? (
+              <Spinner />
+            ) : (
+              <>
+                {[...activeSlides, ...activeSlides, ...activeSlides].map(
+                  (slide, i) => {
+                    const offset = currentLength + (state.slideIndex - i);
+                    return <Slide slide={slide} offset={offset} key={i} />;
+                  }
+                )}
+              </>
             )}
-
-</>
-)}
             <button
               className="button_slides2"
               onClick={() => dispatch({ type: "NEXT", length: currentLength })}
-              >
+            >
               ›
             </button>
           </div>

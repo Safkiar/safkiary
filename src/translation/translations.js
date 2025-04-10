@@ -1,5 +1,7 @@
 export const dictionary = {
   en: {
+    desc_trade:
+      "The app fetches live stock market data via APIs and automatically scrapes multiple websites using Selenium, providing a real-time and comprehensive market overview",
     desc_scroll:
       "Modern one-page React application with a sleek, responsive design and smooth scrolling.",
     desc_ecommerce:
@@ -70,6 +72,8 @@ export const dictionary = {
     tr: "en",
   },
   pl: {
+    desc_trade:
+      "Aplikacja pobiera dane na żywo z giełdy za pomocą API oraz automatycznie scrapuje informacje z wielu stron dzięki integracji z Selenium, zapewniając aktualny i szeroki przegląd rynku.",
     desc_scroll:
       "Nowoczesna aplikacja React na jednej stronie z eleganckim, responsywnym projektem i płynnym przewijaniem.",
     desc_ecommerce:

@@ -13,15 +13,13 @@
 .grid-container {
   display: grid;
   grid-template-areas:
-    'two three'
-    'one three';
+    "two three"
+    "one three";
   grid-template-columns: 1.5fr 1fr;
   grid-template-rows: 0.7fr 4fr;
   gap: 20px;
   padding: 5px;
   max-width: 1200px;
-
-
 }
 
 .item {
@@ -32,7 +30,7 @@
 
 .item-1 {
   grid-area: one;
-  
+
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -53,6 +51,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  margin-top: 20px;
 }
 
 .skewul {
@@ -77,7 +76,7 @@
 }
 
 .skewli::before {
-  content: '';
+  content: "";
   color: #999;
   background: var(--007);
   display: flex;
@@ -98,7 +97,7 @@
 }
 
 .skewli:after {
-  content: '';
+  content: "";
   position: absolute;
   top: -7px;
   left: 0px;
@@ -128,13 +127,12 @@
   text-align: left;
   width: 120%;
   padding-left: 30px;
-
 }
 
 .skewli a:active,
 .skewli a:focus {
-  outline: none; 
-  background-color: transparent; 
+  outline: none;
+  background-color: transparent;
 }
 
 .skewli:hover a {
@@ -142,7 +140,7 @@
 }
 
 .skewli:last-child::after {
-  box-shadow: -120px 120px 20px rgba(0, 0, 0, 0.25);
+  /* box-shadow: -120px 120px 20px rgba(0, 0, 0, 0.25); */
 }
 
 .a1 {
@@ -225,7 +223,6 @@
   flex-direction: column;
   align-items: center;
   padding: 10px;
-
 }
 
 .info {
@@ -338,7 +335,6 @@
   }
   a {
     display: flex;
-
   }
   svg {
     margin-left: 0.5rem;
@@ -350,13 +346,12 @@
 
 /* MOBILE: poniżej 700px */
 
-
 @media (max-width: 815px) {
   .grid-container {
     grid-template-areas:
-      'two'
-      'one'
-      'three';
+      "two"
+      "one"
+      "three";
     grid-template-columns: 1fr;
   }
   .grid-container {
@@ -372,22 +367,14 @@
   }
   .item-3 {
     margin-top: 20px;
-      margin-bottom: 25px;
+    margin-bottom: 25px;
   }
 
   .item-1 {
-
     margin-right: 40px;
   }
-  
+
   .item-2 {
     margin-right: 0;
-
   }
-  
-
 }
-
-
-
-

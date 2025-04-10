@@ -20,12 +20,10 @@
   height: auto;
 }
 
-
 .who {
   width: auto;
   margin: 12px;
   font-size: 1rem;
-  
 }
 
 .showMe {
@@ -112,27 +110,23 @@
   width: 150px;
 }
 
- @media (max-width: 1350px) {
+@media (max-width: 1350px) {
   .homepage_container {
     gap: 30px;
-}
-.tvbox {
-  width: 700px;
-  gap: 5px;
-  height: 290px;
-}
+  }
+  .tvbox {
+    width: 700px;
+    gap: 5px;
+    height: 290px;
+  }
 
-.halving_card_title {
-  padding: 10px;
-  gap: 20px;
-}
-
-
+  .halving_card_title {
+    padding: 10px;
+    gap: 20px;
+  }
 }
 
 @media (max-width: 1200px) {
-
-
   .homepage_container {
     flex-direction: column;
     padding-top: 0px;
@@ -140,12 +134,11 @@
   }
 }
 
-/* @media (max-width: 1000px) {
+@media (max-width: 720px) {
   .homepage_container {
-    margin-top: 10px;
-    padding-top: 2px;
     gap: 5px;
   }
+
   .who {
     margin: 9px;
     font-size: 0.9rem;
@@ -176,12 +169,9 @@
     width: 130px;
     font-size: 0.9rem;
   }
-} */
+}
 
-/* @media (max-width: 700px) {
-
-
-
+@media (max-width: 700px) {
   .halving_card {
     width: 90%;
     flex-direction: column-reverse;
@@ -191,21 +181,22 @@
   .tvbox {
     width: 95%;
     height: auto;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+    min-width: 250px;
   }
 
   .my_img_container {
-    width: 90px;
+    width: 100px;
     margin: 0 10px;
   }
 
   .edit {
-    width: 90px;
+    width: 100px;
     margin: 0 10px;
   }
 
   .avatar {
-    width: 90px;
+    width: 100px;
   }
 
   .who {
@@ -226,10 +217,11 @@
 
   .tvpixel {
     width: 98%;
+    height: auto;
   }
-} */
+}
 
-/* @media (max-width: 500px) {
+@media (max-width: 500px) {
   .avatar {
     font-size: 0.8rem;
   }
@@ -241,16 +233,13 @@
   .tvbox {
     width: 96%;
   }
-} */
+}
 
-/* @media (max-width: 400px) {
-  .tvpixel {
-    height: auto;
-  }
+@media (max-width: 400px) {
   .halving_card_title {
     flex-direction: column;
     gap: 2px;
     margin: 0;
     padding: 2px;
   }
-} */
+}

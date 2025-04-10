@@ -10,6 +10,11 @@ function Nav() {
   const checkboxRef = useRef(null);
   const { setLang, lang } = useTranslate();
 
+  const handleNavigate = (path) => {
+    navigate(path);
+    if (checkboxRef.current) checkboxRef.current.checked = false;
+  };
+
   return (
     <div>
       <div className="translatormode">
@@ -46,17 +51,7 @@ function Nav() {
         <div className="container">
           <nav>
             <input type="checkbox" id="link" hidden ref={checkboxRef} />
-            <label
-              htmlFor="link"
-              className="link"
-              onClick={() => {
-                if (checkboxRef.current) {
-                  setTimeout(() => {
-                    checkboxRef.current.checked = false;
-                  }, 3000);
-                }
-              }}
-            >
+            <label htmlFor="link" className="link">
               <i className="menu ri-menu-3-line r1-2x"></i>
               <i className="close ri-close-line r1-2x"></i>
             </label>
@@ -68,47 +63,53 @@ function Nav() {
             >
               <li>
                 <a href="#">
-                  <span onClick={() => navigate("/")}>Home</span>
-                  <i onClick={() => navigate("/")} className="ri-home-line"></i>
+                  <span onClick={() => handleNavigate("/")}>Home</span>
+                  <i
+                    onClick={() => handleNavigate("/")}
+                    className="ri-home-line"
+                  ></i>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <span onClick={() => navigate("/projects")}>Projects</span>
+                  <span onClick={() => handleNavigate("/projects")}>
+                    Projects
+                  </span>
                   <i
-                    onClick={() => navigate("/projects")}
+                    onClick={() => handleNavigate("/projects")}
                     className="ri-folder-3-line"
                   ></i>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <span onClick={() => navigate("/certificates")}>
+                  <span onClick={() => handleNavigate("/certificates")}>
                     Certificates
                   </span>
                   <i
-                    onClick={() => navigate("/certificates")}
+                    onClick={() => handleNavigate("/certificates")}
                     className="ri-medal-line"
                   ></i>
                 </a>
               </li>
               <li>
                 <a href="#">
-                  <span onClick={() => navigate("/experience")}>
+                  <span onClick={() => handleNavigate("/experience")}>
                     Experience
                   </span>
                   <i
-                    onClick={() => navigate("/experience")}
+                    onClick={() => handleNavigate("/experience")}
                     className="ri-briefcase-line"
                   ></i>
                 </a>
               </li>
-
               <li>
                 <a href="#">
-                  <span onClick={() => navigate("/contact")}>Contact</span>
+                  <span onClick={() => handleNavigate("/contact")}>
+                    Contact
+                  </span>
                   <i
-                    onClick={() => navigate("/contact")}
+                    onClick={() => handleNavigate("/contact")}
                     className="ri-user-line"
                   ></i>
                 </a>

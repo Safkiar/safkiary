@@ -111,14 +111,27 @@ function Certificates() {
   const activeSlides = slides[activeIndex];
   const currentLength = activeSlides.length;
 
-  // Reset slideIndex when changing category
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const mainSlide = activeSlides[state.slideIndex];
+    const img = new Image();
+    img.src = mainSlide.image;
+    img.onload = () => {
+      setIsLoading(false);
+    };
+  }, [state.slideIndex]);
+
+  
+ 
   useEffect(() => {
     dispatch({ type: "RESET" });
   }, [activeIndex]);
 
   return (
     <div className="rel_container">
-      <Buttons activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
+
+        <Buttons activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
 
       <div className="parentz">
         <div className="parentz2">
@@ -126,9 +139,11 @@ function Certificates() {
             <button
               className="button_slides2"
               onClick={() => dispatch({ type: "PREV", length: currentLength })}
-            >
+              >
               ‹
             </button>
+      {isLoading ?  (<Spinner/>) : (
+        <>
 
             {[...activeSlides, ...activeSlides, ...activeSlides].map(
               (slide, i) => {
@@ -137,10 +152,12 @@ function Certificates() {
               }
             )}
 
+</>
+)}
             <button
               className="button_slides2"
               onClick={() => dispatch({ type: "NEXT", length: currentLength })}
-            >
+              >
               ›
             </button>
           </div>

@@ -1,14 +1,15 @@
 const slides = [
   {
-    title: "Safkiar  smooth scroling",
-    subtitle: "JavaScript - PUG - Webpack - SCSS",
-    descriptionKey: "desc_scroll",
+    title: "FlyFlow",
+    subtitle: "React - Django - CSS",
+    descriptionKey: "desc_trade",
     description:
       "Modern one-page React application with a sleek, responsive design and smooth scrolling.",
-    data: "11.24",
-    link: "https://kikowski.netlify.app/",
-    image: "scroll.png",
+    data: "04.10",
+    link: "",
+    image: "construction.png",
   },
+
   {
     title: "Safizoo",
     subtitle: "Angular - TypeScript - Java Spring - MySQL - SCSS",
@@ -28,6 +29,16 @@ const slides = [
     data: "11.24",
     link: "https://betangu.netlify.app/home",
     image: "bet.png",
+  },
+  {
+    title: "Safkiar  smooth scroling",
+    subtitle: "JavaScript - PUG - Webpack - SCSS",
+    descriptionKey: "desc_scroll",
+    description:
+      "Modern one-page React application with a sleek, responsive design and smooth scrolling.",
+    data: "11.24",
+    link: "https://kikowski.netlify.app/",
+    image: "scroll.png",
   },
   {
     title: "Animated Card",

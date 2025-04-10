@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import Homepage from "./pages/homepage/homepage";
 import Contact from "./pages/contact/contact";
 import Certificates from "./pages/certificates/certificates";
@@ -7,49 +7,63 @@ import Nav from "./nav/nav";
 import Experience from "./pages/experience/experience";
 import { DarkModeProvider } from "./darkmode/DarkModeContext";
 import PageNotFound from "./pages/notFound/pagenotfound";
-import { useEffect, useState } from "react";
-import Spinner from "./spinner/spinner";
+import { AnimatePresence, motion } from "framer-motion";
 
-function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const handleLoad = () => {
-      setIsLoading(false);
-    };
-
-    // Jeśli strona już się załadowała (np. z cache)
-    if (document.readyState === "complete") {
-      setIsLoading(false);
-    } else {
-      window.addEventListener("load", handleLoad);
-    }
-
-    return () => {
-      window.removeEventListener("load", handleLoad);
-    };
-  }, []);
-
-  if (isLoading) {
-    return (
-      <div>
-        <Spinner />
-      </div>
-    );
+function AppContent() {
+  const location = useLocation();
+  const pageAnimation = {
+    initial: {opacity: 0},
+    animate: {opacity: 1},
+    exit: {opacity:0},
+    transition: {duration:0.3}
   }
 
+  return (<>
+       <Nav />
+        <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Homepage />} />
+          <Route path="contact" element={
+            <motion.div {...pageAnimation}>
+              <Contact />
+            </motion.div>
+            } />
+          <Route path="certificates" element={
+                   <motion.div {...pageAnimation}>
+              
+                     <Certificates />
+                   </motion.div>
+            } />
+          <Route path="projects" element={
+                   <motion.div {...pageAnimation}>
+              
+                     <Projects />
+                   </motion.div>
+            } />
+          <Route path="experience" element={
+                   <motion.div {...pageAnimation}>
+              
+                     <Experience />
+                   </motion.div>
+            } />
+          <Route path="*" element={
+                   <motion.div {...pageAnimation}>
+              
+                     <PageNotFound />
+                   </motion.div>
+            } />
+        </Routes>
+        </AnimatePresence>
+  </>)
+
+
+}
+
+function App() {
   return (
     <DarkModeProvider>
       <BrowserRouter>
-        <Nav />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="certificates" element={<Certificates />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="experience" element={<Experience />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
+      <AppContent/>
       </BrowserRouter>
     </DarkModeProvider>
   );

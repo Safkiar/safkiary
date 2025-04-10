@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 60px;
   gap: 50px;
 }
 
@@ -17,23 +17,21 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: auto;
 }
 
-.me {
-  width: 92%;
-  text-align: center;
-  font-size: 1.1rem;
-}
 
 .who {
-  width: 94%;
-  margin: 15px;
+  width: auto;
+  margin: 12px;
   font-size: 1rem;
+  
 }
 
 .showMe {
   opacity: 0;
-  /* transform: translateX(-20px); */
+  width: auto;
+  /* transform: translateY(-20px); */
   transition: opacity 0.5s ease-in;
   /* , transform 0.6s ease; */
   animation: showText 0.6s forwards;
@@ -42,7 +40,7 @@
 @keyframes showText {
   to {
     opacity: 1;
-    /* transform: translateX(0); */
+    /* transform: translateY(0); */
   }
 }
 
@@ -56,7 +54,7 @@
 
 .tvbox {
   position: relative;
-  width: 750px;
+  width: 700px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -98,8 +96,9 @@
 }
 
 .my_img_container {
-  width: 160px;
+  width: 150px;
   margin: 0 20px;
+  margin-top: 10px;
 }
 
 .my_img_container img {
@@ -113,19 +112,39 @@
   width: 150px;
 }
 
-@media (max-width: 1350px) {
+ @media (max-width: 1350px) {
+  .homepage_container {
+    gap: 30px;
+}
+.tvbox {
+  width: 700px;
+  gap: 5px;
+  height: 290px;
+}
+
+.halving_card_title {
+  padding: 10px;
+  gap: 20px;
+}
+
+
+}
+
+@media (max-width: 1200px) {
+
+
   .homepage_container {
     flex-direction: column;
-    padding-top: 10px;
+    padding-top: 0px;
     gap: 10px;
   }
 }
 
-@media (max-width: 1000px) {
+/* @media (max-width: 1000px) {
   .homepage_container {
-    margin-top: 50px;
-    padding-top: 10px;
-    gap: 10px;
+    margin-top: 10px;
+    padding-top: 2px;
+    gap: 5px;
   }
   .who {
     margin: 9px;
@@ -157,15 +176,11 @@
     width: 130px;
     font-size: 0.9rem;
   }
-}
+} */
 
-@media (max-width: 700px) {
+/* @media (max-width: 700px) {
 
-  .homepage_container {
-    margin-top: 10px;
-    padding-top: 2px;
-    gap: 5x;
-  }
+
 
   .halving_card {
     width: 90%;
@@ -180,6 +195,11 @@
   }
 
   .my_img_container {
+    width: 90px;
+    margin: 0 10px;
+  }
+
+  .edit {
     width: 90px;
     margin: 0 10px;
   }
@@ -207,9 +227,9 @@
   .tvpixel {
     width: 98%;
   }
-}
+} */
 
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
   .avatar {
     font-size: 0.8rem;
   }
@@ -221,9 +241,9 @@
   .tvbox {
     width: 96%;
   }
-}
+} */
 
-@media (max-width: 400px) {
+/* @media (max-width: 400px) {
   .tvpixel {
     height: auto;
   }
@@ -233,4 +253,4 @@
     margin: 0;
     padding: 2px;
   }
-}
+} */

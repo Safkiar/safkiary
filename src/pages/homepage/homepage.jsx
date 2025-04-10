@@ -5,11 +5,16 @@ import "./homepage.css";
 import { useEffect, useState } from "react";
 import "./sphere.css";
 import { useTranslate } from "../../translation/TranslationContext";
+import Spinner from "../../spinner/spinner";
 
 function Homepage() {
+ 
+
   const [hoveredTag, setHoveredTag] = useState("");
   const [emptyInd, setEmptyInd] = useState(true);
   const {t} = useTranslate();
+
+
 
   useEffect(() => {
     setEmptyInd(hoveredTag === "");
@@ -35,12 +40,12 @@ function Homepage() {
 
     const getRadius = () => {
       const width = window.innerWidth;
-      if (width < 340) return 115;
-      if (width < 410) return 135;
-      if (width < 700) return 175;
-      if (width < 1000) return 190;
-      if (width < 1350) return 210;
-      return 280;
+      if (width < 340) return 105;
+      if (width < 410) return 115;
+      if (width < 700) return 145;
+      if (width < 1200) return 170;
+      if (width < 1350) return 200;
+      return 250;
     };
 
     const renderTagCloud = () => {
@@ -100,7 +105,7 @@ function Homepage() {
         </div>
         <div className="halving_card">
           <div className="my_img_container">
-            {emptyInd && <img className="showMe" src="/Ja.jpg" alt="" />}
+            {emptyInd && <img className="edit showMe" src="/matma.jpg" alt="" />}
             {hoveredTag === "java" && (
               <img className="avatar showMe" src="./homepage/java.png" />
             )}

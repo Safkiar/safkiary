@@ -181,7 +181,7 @@ function Experience() {
               <p className="title">{t("solvedTasks")}</p>
               <p className="number">720+</p>
               <p className="title">{t("courseHours")}</p>
-              <p className="number">15</p>
+              <p className="number">536</p>
             </div>
             <div className="PdfContainer">
               <div className="PdfWrapper">

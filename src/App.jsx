@@ -1,10 +1,4 @@
-import {
-  BrowserRouter,
-  Navigate,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Homepage from "./pages/homepage/homepage";
 import Contact from "./pages/contact/contact";
 import Certificates from "./pages/certificates/certificates";

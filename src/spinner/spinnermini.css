@@ -1,0 +1,20 @@
+.spinner2 {
+  margin: 0 auto;
+  padding: 0.8rem;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #cfd8dc;
+  border-top-color: var(--002);
+  animation: spin 0.8s infinite ease-in-out;
+  z-index: 1000;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

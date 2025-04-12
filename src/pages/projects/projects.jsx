@@ -118,12 +118,25 @@ function Projects() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const mainSlide = slides[state.slideIndex];
-    const img = new Image();
-    img.src = mainSlide.image;
-    img.onload = () => {
-      setIsLoading(false);
-    };
+    const visibleSlides = [
+      slides[state.slideIndex],
+      slides[(state.slideIndex + 1) % slides.length],
+      slides[state.slideIndex === 0 ? slides.length - 1 : state.slideIndex - 1],
+    ];
+
+    let loaded = 0;
+
+    visibleSlides.forEach((slide) => {
+      const img = new Image();
+      img.src = slide.image;
+
+      img.onload = img.onerror = () => {
+        loaded++;
+        if (loaded === visibleSlides.length) {
+          setIsLoading(false);
+        }
+      };
+    });
   }, [state.slideIndex]);
 
   if (isLoading) {

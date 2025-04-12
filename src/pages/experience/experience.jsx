@@ -4,7 +4,7 @@ import { FaFileDownload } from "react-icons/fa";
 import { useTranslate } from "../../translation/TranslationContext";
 
 function Experience() {
-  const {t} = useTranslate();
+  const { t } = useTranslate();
   const [hovered, setHovered] = useState(false);
   const [hovered2, setHovered2] = useState(false);
   const [hovered3, setHovered3] = useState(false);
@@ -187,13 +187,13 @@ function Experience() {
               <div className="PdfWrapper">
                 <p> {t("downloadCV")}</p>
                 <div className="svg">
-                  <a href="#" download>
+                  <a href="./KikowskiMichalEN.pdf" download>
                     <FaFileDownload />
                     {t("languageEnglish")}
                   </a>
                 </div>
                 <div className="svg">
-                  <a href="#" download>
+                  <a href="./KikowskiMichalPL.pdf" download>
                     <FaFileDownload />
                     {t("languagePolish")}
                   </a>
@@ -202,13 +202,21 @@ function Experience() {
               <div className="PdfWrapper">
                 <p> {t("viewCV")} </p>
                 <div className="svg">
-                  <a href="#" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="./KikowskiMichalEN.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FaFileDownload />
                     {t("languageEnglish")}
                   </a>
                 </div>
                 <div className="svg">
-                  <a href="#" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="./KikowskiMichalPL.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <FaFileDownload />
                     {t("languagePolish")}
                   </a>

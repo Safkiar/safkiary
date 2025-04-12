@@ -286,6 +286,9 @@
 
 @media (max-width: 400px) {
   .slideContentInner {
+    margin-top: 5px;
+    width: 134%;
+    left: -17%;
     .slideTitle {
       font-size: 1.1rem;
     }

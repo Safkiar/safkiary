@@ -419,7 +419,7 @@ nav ul li:nth-child(5) a {
   }
   .site {
     bottom: 0;
-    top: 0;
+    top: -30%;
     right: 0%;
     transform: translateX(25px);
   }
@@ -455,12 +455,12 @@ nav ul li:nth-child(5) a {
 @media (min-width: 100px) {
   .site {
     right: 0;
-    transform: translateX(15px);
+    transform: translateX(20px);
   }
 }
 
 .zoomed {
-  scale: 0.5;
+  /* scale: 0.5; */
   /* right: -%; */
   /* bottom: -30%; */
   right: -2.5%;

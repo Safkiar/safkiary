@@ -15,8 +15,9 @@ function Nav() {
   useEffect(() => {
     const checkZoom = () => {
       const zoom = window.devicePixelRatio;
-      console.log("Zoom:", zoom);
-      setIsZoomed(zoom >= 2);
+      const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+      setIsZoomed(!isMobile && zoom >= 2);
     };
     checkZoom();
     window.addEventListener("resize", checkZoom);

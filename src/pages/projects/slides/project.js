@@ -6,7 +6,7 @@ const slides = [
     description:
       "Modern one-page React application with a sleek, responsive design and smooth scrolling.",
     data: "04.10",
-    link: "",
+    link: "https://github.com/Safkiar/14-BE-FlyFlow-03.2025",
     image: "construction.png",
   },
 
@@ -23,11 +23,11 @@ const slides = [
   {
     title: "Betangu",
     subtitle: "Angular - TypeScript - Firebase - SCSS",
-    descriptionKey:"desc_bets",
+    descriptionKey: "desc_bets",
     description:
       "Track bets with secure authentication. Users can add bets through a simple form, and the app calculates statistics and rankings to encourage friendly competition.",
     data: "11.24",
-    link: "https://betangu.netlify.app/home",
+    link: "https://betangu.netlify.app/",
     image: "bet.png",
   },
   {
@@ -43,7 +43,7 @@ const slides = [
   {
     title: "Animated Card",
     subtitle: "JavaScript - PUG - Webpack - SCSS",
-    descriptionKey:"desc_card_preview",
+    descriptionKey: "desc_card_preview",
     description:
       "It updates the card preview dynamically as the user types, including smooth flip animations when interacting with fields like the CVV. The setup provides a responsive, interactive experience for entering card details",
     data: "10.24",
@@ -53,7 +53,7 @@ const slides = [
   {
     title: "Smart Searching Tool",
     subtitle: "React - Redux - TypeScript - Styled Components",
-    descriptionKey:"desc_data_filter",
+    descriptionKey: "desc_data_filter",
     description:
       "React-Redux-based feature designed to help users filter and retrieve data efficiently from a table of user information",
     data: "09.24",
@@ -73,7 +73,7 @@ const slides = [
   {
     title: "The Wild Oasis",
     subtitle: "React - Styled Components - Supabase",
-    descriptionKey:"desc_booking_app",
+    descriptionKey: "desc_booking_app",
     description:
       "The booking management app built with React, React Query, and Supabase offers comprehensive features including booking and cabin management with editable details. It provides real-time statistics and interactive charts, supports dark mode, and is fully responsive. User authentication and settings are securely handled through Supabase (course project)",
     data: "06.24",
@@ -83,7 +83,7 @@ const slides = [
   {
     title: "Well Schedule",
     subtitle: "React - Styled Components - Firebase",
-    descriptionKey:"desc_event_manager",
+    descriptionKey: "desc_event_manager",
     description:
       "User-friendly platform for managing events, allowing for detailed customization, such as setting occurrences for specific weeks of the month. Adding events is straightforward—just a simple click is required. The platform provides a clear view of your schedule with daily, weekly, and monthly calendar options.",
     data: "07.24",
@@ -93,7 +93,7 @@ const slides = [
   {
     title: "Fast React Pizza",
     subtitle: "React - Tailwind",
-    descriptionKey:"desc_pizza_ordering",
+    descriptionKey: "desc_pizza_ordering",
     description:
       "Pizza ordering app, developed with Tailwind CSS, offers a seamless user experience for ordering pizza online.",
     data: "05.24",
@@ -112,7 +112,7 @@ const slides = [
   {
     title: "Safkiar - first webpage",
     subtitle: "JavaScript - CSS",
-    descriptionKey:"desc_personal_website",
+    descriptionKey: "desc_personal_website",
     description:
       "My first personal website built using JavaScript, featuring smooth animations, translations, and interactive sliders.",
     data: "04.24",
@@ -122,7 +122,7 @@ const slides = [
   {
     title: "MiniChess",
     subtitle: "JavaScript - CSS",
-    descriptionKey:"desc_chess_variant",
+    descriptionKey: "desc_chess_variant",
     description:
       "6x8 chess variant that fully implements traditional rules—including castling, en passant, and pawn promotion—using a custom drag-and-drop system. I independently developed the advanced game logic to accurately handle these complex mechanics in a compact format",
     data: "03.24",
@@ -132,7 +132,7 @@ const slides = [
   {
     title: "Forkify",
     subtitle: "JavaScript - SCSS",
-    descriptionKey:"desc_recipe_finder",
+    descriptionKey: "desc_recipe_finder",
     description:
       "Forkify is a recipe finder that fetches data from an external API, letting users search and save favorite dishes. Built with MVC, it offers a clean interface for easy culinary exploration.",
     data: "03.24",

@@ -267,8 +267,8 @@ nav ul li:nth-child(5) a {
   position: fixed;
   top: 0.5%;
   left: 0;
-  width: 55px;
-  height: 55px;
+  width: 1.5rem;
+  height: 1.5rem;
   display: flex;
   transform: translateX(-20px);
   justify-content: center;
@@ -280,6 +280,7 @@ nav ul li:nth-child(5) a {
 .translatormode img:first-child {
   position: absolute;
   width: 50px;
+
   height: 50px;
   filter: drop-shadow(0 0 15px #fffacd5a);
 }
@@ -456,4 +457,17 @@ nav ul li:nth-child(5) a {
     right: 0;
     transform: translateX(15px);
   }
+}
+
+.zoomed {
+  scale: 0.5;
+  /* right: -%; */
+  /* bottom: -30%; */
+  right: -2.5%;
+  bottom: -5%;
+}
+
+.zoomed2 {
+  scale: 0.5;
+  /* right: -%; */
 }

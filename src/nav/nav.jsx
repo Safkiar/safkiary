@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./nav.css";
 import { useDarkMode } from "../darkmode/DarkModeContext";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslate } from "../translation/TranslationContext";
 
 function Nav() {
@@ -9,6 +9,19 @@ function Nav() {
   const navigate = useNavigate();
   const checkboxRef = useRef(null);
   const { setLang, lang } = useTranslate();
+
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  useEffect(() => {
+    const checkZoom = () => {
+      const zoom = window.devicePixelRatio;
+      console.log("Zoom:", zoom);
+      setIsZoomed(zoom >= 2);
+    };
+    checkZoom();
+    window.addEventListener("resize", checkZoom);
+    return () => window.removeEventListener("resize", checkZoom);
+  }, []);
 
   const handleNavigate = (path) => {
     navigate(path);
@@ -47,7 +60,7 @@ function Nav() {
           <img onClick={toggleDarkMode} src="/moon.png" alt="Moon" />
         </div>
       </div>
-      <div id="page" className="site">
+      <div id="page" className={`site ${isZoomed ? "zoomed" : ""}`}>
         <div className="container">
           <nav>
             <input type="checkbox" id="link" hidden ref={checkboxRef} />

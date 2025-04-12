@@ -200,6 +200,32 @@
   }
 }
 
+.active.hov {
+  position: relative;
+  display: inline-block;
+}
+
+/* Przyciemnienie + napis jako warstwa */
+.active.hov::after {
+  content: "github link";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  opacity: 0;
+  transition: background 0.3s ease, opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.active.hov:hover::after {
+  background: rgba(0, 0, 0, 0.4); /* przyciemnienie */
+  opacity: 1; /* pokazanie napisu */
+}
+
 @media (max-width: 750px) {
   .slideContentInner {
     margin-top: 5px;

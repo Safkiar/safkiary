@@ -94,7 +94,9 @@ function Slide({ slide, offset }) {
         }}
       />
       <div
-        className={`slideContent ${active ? "active" : ""}`}
+        className={`slideContent ${active ? "active" : ""} ${
+          slide.descriptionKey == "desc_trade" ? "hov" : ""
+        }`}
         onClick={handleClick}
         style={{
           backgroundImage: `url('${slide.image}')`,

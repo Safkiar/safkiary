@@ -106,6 +106,10 @@
   border-radius: 5px;
 }
 
+.my_img_container .edit {
+  border-radius: 50%;
+}
+
 .avatar {
   width: 150px;
 }
@@ -192,7 +196,9 @@
 
   .edit {
     width: 100px;
-    margin: 0 10px;
+    /* margin: 5px 10px; */
+    margin-top: 15px;
+    margin-bottom: 10px;
   }
 
   .avatar {
@@ -200,7 +206,8 @@
   }
 
   .who {
-    width: 96%;
+    width: 98%;
+    padding: 10px;
   }
 
   .hover-indicator {
@@ -208,7 +215,7 @@
   }
 
   .halving_card_title {
-    padding: 10px;
+    padding: 14px;
   }
 
   .halving_card_title h3 {
@@ -240,6 +247,6 @@
     flex-direction: column;
     gap: 2px;
     margin: 0;
-    padding: 2px;
+    padding: 12px;
   }
 }

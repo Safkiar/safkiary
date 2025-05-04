@@ -45,7 +45,7 @@ export const slides1 = [
 
 export const slides2 = [
   {
-    image: "/certificates/oother/pandas.jpg",
+    image: "/certificates/other/pandas.jpg",
   },
   {
     image: "/certificates/other/SQL.jpg",

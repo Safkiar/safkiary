@@ -187,13 +187,13 @@ function Experience() {
               <div className="PdfWrapper">
                 <p> {t("downloadCV")}</p>
                 <div className="svg">
-                  <a href="./KikowskiMichalENG.pdf" download>
+                  <a href="./KIKOWSKI-CV-ENG.pdf" download>
                     <FaFileDownload />
                     {t("languageEnglish")}
                   </a>
                 </div>
                 <div className="svg">
-                  <a href="./KikowskiMichalPOL.pdf" download>
+                  <a href="./Kikowski-CV-POL.pdf" download>
                     <FaFileDownload />
                     {t("languagePolish")}
                   </a>
@@ -203,7 +203,7 @@ function Experience() {
                 <p> {t("viewCV")} </p>
                 <div className="svg">
                   <a
-                    href="./KikowskiMichalENG.pdf"
+                    href="./KIKOWSKI-CV-ENG.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -213,7 +213,7 @@ function Experience() {
                 </div>
                 <div className="svg">
                   <a
-                    href="./KikowskiMichalPOL.pdf"
+                    href="./Kikowski-CV-POL.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

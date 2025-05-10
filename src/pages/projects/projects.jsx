@@ -1,8 +1,9 @@
-import slides from "./slides/project";
-import "./projects.css";
-import { useRef, useEffect, useReducer, useState } from "react";
-import { useTranslate } from "../../translation/TranslationContext";
-import Spinner from "../../spinner/spinner";
+import slides from './slides/project';
+import './projects.css';
+import { useRef, useEffect, useReducer, useState } from 'react';
+import { useTranslate } from '../../translation/TranslationContext';
+import Spinner from '../../spinner/spinner';
+import { FaGithub, FaGlobe } from 'react-icons/fa';
 
 function useTilt(active) {
   const ref = useRef(null);
@@ -32,14 +33,14 @@ function useTilt(active) {
       const px = (state.mouseX - state.rect.left) / state.rect.width;
       const py = (state.mouseY - state.rect.top) / state.rect.height;
 
-      el.style.setProperty("--px", px);
-      el.style.setProperty("--py", py);
+      el.style.setProperty('--px', px);
+      el.style.setProperty('--py', py);
     };
 
-    el.addEventListener("mousemove", handleMouseMove);
+    el.addEventListener('mousemove', handleMouseMove);
 
     return () => {
-      el.removeEventListener("mousemove", handleMouseMove);
+      el.removeEventListener('mousemove', handleMouseMove);
     };
   }, [active]);
 
@@ -51,13 +52,13 @@ const initialState = {
 };
 
 const slidesReducer = (state, event) => {
-  if (event.type === "NEXT") {
+  if (event.type === 'NEXT') {
     return {
       ...state,
       slideIndex: (state.slideIndex + 1) % slides.length,
     };
   }
-  if (event.type === "PREV") {
+  if (event.type === 'PREV') {
     return {
       ...state,
       slideIndex:
@@ -70,11 +71,6 @@ function Slide({ slide, offset }) {
   const active = offset === 0 ? true : null;
   const ref = useTilt(active);
   const { t } = useTranslate();
-  const handleClick = () => {
-    if (active && slide.link) {
-      window.open(slide.link, "_blank");
-    }
-  };
 
   return (
     <div
@@ -83,8 +79,8 @@ function Slide({ slide, offset }) {
       data-active={active}
       data-offset={offset}
       style={{
-        "--offset": offset,
-        "--dir": offset === 0 ? 0 : offset > 0 ? 1 : -1,
+        '--offset': offset,
+        '--dir': offset === 0 ? 0 : offset > 0 ? 1 : -1,
       }}
     >
       <div
@@ -94,14 +90,44 @@ function Slide({ slide, offset }) {
         }}
       />
       <div
-        className={`slideContent ${active ? "active" : ""} ${
-          slide.descriptionKey == "desc_trade" ? "hov" : ""
+        className={`slideContent ${active ? 'active' : ''} ${
+          slide.descriptionKey ? 'hov' : ''
         }`}
-        onClick={handleClick}
         style={{
           backgroundImage: `url('${slide.image}')`,
         }}
       >
+        {active && (
+          <div
+            className={`
+      ${active ? 'active' : ''}
+      ${slide.descriptionKey ? 'colour' : ''}
+    `}
+          >
+            <div className="git">
+              <a
+                href={slide.gitlink}
+                target="_blank"
+                onClick={(e) => e.stopPropagation()}
+                rel="noopener noreferrer"
+              >
+                <FaGithub size={62} />
+              </a>
+            </div>
+            {!slide.onlygit && (
+              <div className="web">
+                <a
+                  href={slide.link}
+                  target="_blank"
+                  onClick={(e) => e.stopPropagation()}
+                  rel="noopener noreferrer"
+                >
+                  <FaGlobe size={62} />
+                </a>
+              </div>
+            )}
+          </div>
+        )}
         <div className="slideContentInner">
           <h2 className="slideTitle">{slide.title}</h2>
           <h3 className="slideSubtitle">{slide.subtitle}</h3>
@@ -149,7 +175,7 @@ function Projects() {
         <div className="slides">
           <button
             className="button_slides"
-            onClick={() => dispatch({ type: "PREV" })}
+            onClick={() => dispatch({ type: 'PREV' })}
           >
             ‹
           </button>
@@ -160,7 +186,7 @@ function Projects() {
           })}
           <button
             className="button_slides"
-            onClick={() => dispatch({ type: "NEXT" })}
+            onClick={() => dispatch({ type: 'NEXT' })}
           >
             ›
           </button>

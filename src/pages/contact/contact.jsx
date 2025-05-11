@@ -1,5 +1,5 @@
-import Cube from "./hexagon";
-import "./mov.css";
+import Cube from './hexagon';
+import './mov.css';
 
 function contact() {
   return (

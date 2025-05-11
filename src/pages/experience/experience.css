@@ -13,8 +13,8 @@
 .grid-container {
   display: grid;
   grid-template-areas:
-    "two three"
-    "one three";
+    'two three'
+    'one three';
   grid-template-columns: 1.5fr 1fr;
   grid-template-rows: 0.7fr 4fr;
   gap: 20px;
@@ -76,7 +76,7 @@
 }
 
 .skewli::before {
-  content: "";
+  content: '';
   color: #999;
   background: var(--007);
   display: flex;
@@ -97,7 +97,7 @@
 }
 
 .skewli:after {
-  content: "";
+  content: '';
   position: absolute;
   top: -7px;
   left: 0px;
@@ -182,7 +182,7 @@
 
 .a9 {
   z-index: 9;
-  width: calc(var(--sz) * 1);
+  width: calc(var(--sz) * 2);
 }
 .a10 {
   z-index: 10;
@@ -345,9 +345,9 @@
 @media (max-width: 815px) {
   .grid-container {
     grid-template-areas:
-      "two"
-      "one"
-      "three";
+      'two'
+      'one'
+      'three';
     grid-template-columns: 1fr;
   }
   .grid-container {

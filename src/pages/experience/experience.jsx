@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
-import "./experience.css";
-import { FaFileDownload } from "react-icons/fa";
-import { useTranslate } from "../../translation/TranslationContext";
+import { useEffect, useState } from 'react';
+import './experience.css';
+import { FaFileDownload } from 'react-icons/fa';
+import { useTranslate } from '../../translation/TranslationContext';
 
 function Experience() {
   const { t } = useTranslate();
   const [hovered, setHovered] = useState(false);
-  const [hovered2, setHovered2] = useState(false);
-  const [hovered3, setHovered3] = useState(false);
+  const [hovered2] = useState(false);
+  const [hovered3] = useState(false);
   const [hovered4, setHovered4] = useState(false);
-  const [hovered5, setHovered5] = useState(false);
+  const [hovered5] = useState(false);
   const [hovered6, setHovered6] = useState(false);
   const [hovered7, setHovered7] = useState(false);
   const [hovered8, setHovered8] = useState(false);
@@ -81,20 +81,20 @@ function Experience() {
               <a href="#">Webpack</a>
             </li>
             <li
-              className="a9 skewli"
-              onMouseEnter={() => setHovered9(true)}
-              onMouseLeave={() => setHovered9(false)}
-              data-icon="&#xf015"
-            >
-              <a href="#">Django</a>
-            </li>
-            <li
               className="a8 skewli"
               onMouseEnter={() => setHovered8(true)}
               onMouseLeave={() => setHovered8(false)}
               data-icon="&#xf015"
             >
               <a href="#">Spring</a>
+            </li>
+            <li
+              className="a9 skewli"
+              onMouseEnter={() => setHovered9(true)}
+              onMouseLeave={() => setHovered9(false)}
+              data-icon="&#xf015"
+            >
+              <a href="#">Django</a>
             </li>
             <li
               className="a7 skewli"
@@ -113,14 +113,6 @@ function Experience() {
               <a href="#">TypeScript</a>
             </li>
             <li
-              className="a5 skewli"
-              data-icon="&#xf015"
-              onMouseEnter={() => setHovered5(true)}
-              onMouseLeave={() => setHovered5(false)}
-            >
-              <a href="#">CSS</a>
-            </li>
-            <li
               className="a4 skewli"
               data-icon="&#xf015"
               onMouseEnter={() => setHovered4(true)}
@@ -128,22 +120,7 @@ function Experience() {
             >
               <a href="#">JavaScript</a>
             </li>
-            <li
-              className="a3 skewli"
-              data-icon="&#xf015"
-              onMouseEnter={() => setHovered3(true)}
-              onMouseLeave={() => setHovered3(false)}
-            >
-              <a href="#">SCSS</a>
-            </li>
-            <li
-              className="a2 skewli"
-              data-icon="&#xf015"
-              onMouseEnter={() => setHovered2(true)}
-              onMouseLeave={() => setHovered2(false)}
-            >
-              <a href="#">Styled Components</a>
-            </li>
+
             <li
               className="a1 skewli"
               onMouseEnter={() => setHovered(true)}
@@ -157,50 +134,50 @@ function Experience() {
         <div className="item item-2">
           <div className="table">
             <div className="info">
-              {emptyInd && <div className="fadeIn">{t("myProjects")}</div>}
-              {hovered && <div className="fadeIn">8 {t("projects2")}</div>}
-              {hovered2 && <div className="fadeIn">6 {t("projects2")}</div>}
-              {hovered3 && <div className="fadeIn">6 {t("projects2")}</div>}
-              {hovered4 && <div className="fadeIn">4 {t("projects")}</div>}
-              {hovered5 && <div className="fadeIn">3 {t("projects")}</div>}
-              {hovered6 && <div className="fadeIn">3 {t("projects")}</div>}
-              {hovered7 && <div className="fadeIn">3 {t("projects")}</div>}
-              {hovered8 && <div className="fadeIn">1 {t("project")}</div>}
-              {hovered9 && <div className="fadeIn">1 {t("project")}</div>}
-              {hovered10 && <div className="fadeIn">1 {t("project")}</div>}
-              {hovered11 && <div className="fadeIn">1 {t("project")}</div>}
-              {hovered12 && <div className="fadeIn">1 {t("project")}</div>}
+              {emptyInd && <div className="fadeIn">{t('myProjects')}</div>}
+              {hovered && <div className="fadeIn">8 {t('projects2')}</div>}
+              {hovered2 && <div className="fadeIn">6 {t('projects2')}</div>}
+              {hovered3 && <div className="fadeIn">6 {t('projects2')}</div>}
+              {hovered4 && <div className="fadeIn">4 {t('projects')}</div>}
+              {hovered5 && <div className="fadeIn">3 {t('projects')}</div>}
+              {hovered6 && <div className="fadeIn">3 {t('projects')}</div>}
+              {hovered7 && <div className="fadeIn">3 {t('projects')}</div>}
+              {hovered8 && <div className="fadeIn">1 {t('project')}</div>}
+              {hovered9 && <div className="fadeIn">2 {t('projects')}</div>}
+              {hovered10 && <div className="fadeIn">1 {t('project')}</div>}
+              {hovered11 && <div className="fadeIn">1 {t('project')}</div>}
+              {hovered12 && <div className="fadeIn">1 {t('project')}</div>}
             </div>
           </div>
         </div>
         <div className="item item-3">
           <div className="add_info">
             <div className="table">
-              <p className="title">{t("createdProjects")}</p>
-              <p className="number">15</p>
-              <p className="title">{t("solvedTasks")}</p>
-              <p className="number">720+</p>
-              <p className="title">{t("courseHours")}</p>
-              <p className="number">536</p>
+              <p className="title">{t('createdProjects')}</p>
+              <p className="number">16</p>
+              <p className="title">{t('solvedTasks')}</p>
+              <p className="number">760+</p>
+              <p className="title">{t('courseHours')}</p>
+              <p className="number">556</p>
             </div>
             <div className="PdfContainer">
               <div className="PdfWrapper">
-                <p> {t("downloadCV")}</p>
+                <p> {t('downloadCV')}</p>
                 <div className="svg">
                   <a href="./KIKOWSKI-CV-ENG.pdf" download>
                     <FaFileDownload />
-                    {t("languageEnglish")}
+                    {t('languageEnglish')}
                   </a>
                 </div>
                 <div className="svg">
                   <a href="./Kikowski-CV-POL.pdf" download>
                     <FaFileDownload />
-                    {t("languagePolish")}
+                    {t('languagePolish')}
                   </a>
                 </div>
               </div>
               <div className="PdfWrapper">
-                <p> {t("viewCV")} </p>
+                <p> {t('viewCV')} </p>
                 <div className="svg">
                   <a
                     href="./KIKOWSKI-CV-ENG.pdf"
@@ -208,7 +185,7 @@ function Experience() {
                     rel="noopener noreferrer"
                   >
                     <FaFileDownload />
-                    {t("languageEnglish")}
+                    {t('languageEnglish')}
                   </a>
                 </div>
                 <div className="svg">
@@ -218,12 +195,12 @@ function Experience() {
                     rel="noopener noreferrer"
                   >
                     <FaFileDownload />
-                    {t("languagePolish")}
+                    {t('languagePolish')}
                   </a>
                 </div>
               </div>
             </div>
-            <div className="table">{t("employer")}</div>
+            <div className="table">{t('employer')}</div>
             <div className="img_container">
               <img className="wimg" src="./work/stadler.png" />
               <img className="wimg" src="./work/nordea.png" />

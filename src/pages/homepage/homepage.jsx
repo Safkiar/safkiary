@@ -1,34 +1,34 @@
-import Cube from "../contact/hexagon";
+import Cube from '../contact/hexagon';
 // import Sphere from "./sphere";
-import TagCloud from "TagCloud";
-import "./homepage.css";
-import { useEffect, useState } from "react";
-import "./sphere.css";
-import { useTranslate } from "../../translation/TranslationContext";
-import Spinner from "../../spinner/spinnermini.jsx";
+import TagCloud from 'TagCloud';
+import './homepage.css';
+import { useEffect, useState } from 'react';
+import './sphere.css';
+import { useTranslate } from '../../translation/TranslationContext';
+import Spinner from '../../spinner/spinnermini.jsx';
 
 function Homepage() {
   const [imagesLoaded, setImagesLoaded] = useState(false);
-  const [hoveredTag, setHoveredTag] = useState("");
+  const [hoveredTag, setHoveredTag] = useState('');
   const [emptyInd, setEmptyInd] = useState(true);
   const { t } = useTranslate();
 
   useEffect(() => {
     const imageSources = [
-      "/matma.jpg",
-      "./homepage/java.png",
-      "./homepage/spring.png",
-      "./homepage/Angular.png",
-      "./homepage/css.png",
-      "./homepage/dj.png",
-      "./homepage/js.png",
-      "./homepage/node.png",
-      "./homepage/pug.png",
-      "./homepage/python.png",
-      "./homepage/React.png",
-      "./homepage/SQL.png",
-      "./homepage/typescript.png",
-      "./homepage/webpack.png",
+      '/matma.jpg',
+      './homepage/java.png',
+      './homepage/spring.png',
+      './homepage/Angular.png',
+      './homepage/css.png',
+      './homepage/dj.png',
+      './homepage/js.png',
+      './homepage/node.png',
+      './homepage/pug.png',
+      './homepage/python.png',
+      './homepage/React.png',
+      './homepage/SQL.png',
+      './homepage/typescript.png',
+      './homepage/webpack.png',
     ];
 
     let loaded = 0;
@@ -46,25 +46,25 @@ function Homepage() {
   }, []);
 
   useEffect(() => {
-    setEmptyInd(hoveredTag === "");
+    setEmptyInd(hoveredTag === '');
   }, [hoveredTag]);
 
   useEffect(() => {
-    const containerSelector = ".tagcloud";
+    const containerSelector = '.tagcloud';
     const texts = [
-      "css",
-      "javascript",
-      "python",
-      "django",
-      "java",
-      "sql",
-      "spring",
-      "node",
-      "react",
-      "angular",
-      "pug",
-      "webpack",
-      "typescript",
+      'css',
+      'javascript',
+      'python',
+      'django',
+      'java',
+      'sql',
+      'spring',
+      'node',
+      'react',
+      'angular',
+      'pug',
+      'webpack',
+      'typescript',
     ];
 
     const getRadius = () => {
@@ -81,40 +81,37 @@ function Homepage() {
       const container = document.querySelector(containerSelector);
       if (!container) return;
 
-      container.innerHTML = "";
+      container.innerHTML = '';
 
       TagCloud(containerSelector, texts, {
         radius: getRadius(),
-        maxSpeed: "normal",
-        initSpeed: "normal",
+        maxSpeed: 'normal',
+        initSpeed: 'normal',
         keep: true,
       });
 
-      // Dodaj event listenery do nowo utworzonych elementów
-      container.querySelectorAll(".tagcloud--item").forEach((el) => {
-        el.addEventListener("mouseenter", () => {
+      container.querySelectorAll('.tagcloud--item').forEach((el) => {
+        el.addEventListener('mouseenter', () => {
           const text = el.textContent.toLowerCase();
           if (texts.includes(text)) {
             setHoveredTag(text);
           }
         });
 
-        el.addEventListener("mouseleave", () => {
-          setHoveredTag("");
+        el.addEventListener('mouseleave', () => {
+          setHoveredTag('');
         });
       });
     };
 
-    // Inicjalne renderowanie
     renderTagCloud();
 
-    // Obsługa resize
     const handleResize = () => {
       renderTagCloud();
     };
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
@@ -124,8 +121,6 @@ function Homepage() {
           <span className="tagcloud"></span>
         </div>
       </div>
-
-      {/* {t("welcome")} */}
 
       <div className="tvbox">
         <div className="halving_card_title">
@@ -141,46 +136,46 @@ function Homepage() {
                 {emptyInd && (
                   <img className="edit showMe" src="/matma.jpg" alt="" />
                 )}
-                {hoveredTag === "java" && (
+                {hoveredTag === 'java' && (
                   <img className="avatar showMe" src="./homepage/java.png" />
                 )}
-                {hoveredTag === "spring" && (
+                {hoveredTag === 'spring' && (
                   <img className="avatar showMe" src="./homepage/spring.png" />
                 )}
-                {hoveredTag === "angular" && (
+                {hoveredTag === 'angular' && (
                   <img className="avatar showMe" src="./homepage/Angular.png" />
                 )}
-                {hoveredTag === "css" && (
+                {hoveredTag === 'css' && (
                   <img className="avatar showMe" src="./homepage/css.png" />
                 )}
-                {hoveredTag === "django" && (
+                {hoveredTag === 'django' && (
                   <img className="avatar showMe" src="./homepage/dj.png" />
                 )}
-                {hoveredTag === "javascript" && (
+                {hoveredTag === 'javascript' && (
                   <img className="avatar showMe" src="./homepage/js.png" />
                 )}
-                {hoveredTag === "node" && (
+                {hoveredTag === 'node' && (
                   <img className="avatar showMe" src="./homepage/node.png" />
                 )}
-                {hoveredTag === "pug" && (
+                {hoveredTag === 'pug' && (
                   <img className="avatar showMe" src="./homepage/pug.png" />
                 )}
-                {hoveredTag === "python" && (
+                {hoveredTag === 'python' && (
                   <img className="avatar showMe" src="./homepage/python.png" />
                 )}
-                {hoveredTag === "react" && (
+                {hoveredTag === 'react' && (
                   <img className="avatar showMe" src="./homepage/React.png" />
                 )}
-                {hoveredTag === "sql" && (
+                {hoveredTag === 'sql' && (
                   <img className="avatar showMe" src="./homepage/SQL.png" />
                 )}
-                {hoveredTag === "typescript" && (
+                {hoveredTag === 'typescript' && (
                   <img
                     className="avatar showMe"
                     src="./homepage/typescript.png"
                   />
                 )}
-                {hoveredTag === "webpack" && (
+                {hoveredTag === 'webpack' && (
                   <img className="avatar showMe" src="./homepage/webpack.png" />
                 )}
               </>
@@ -190,71 +185,71 @@ function Homepage() {
           <div className="tvpixel">
             {emptyInd && (
               <div className="intro showMe">
-                <div className="who">{t("blendingCreativity")}</div>
-                <div className="who">{t("checkOut")}</div>
+                <div className="who">{t('blendingCreativity')}</div>
+                <div className="who">{t('checkOut')}</div>
               </div>
             )}
-            {hoveredTag === "python" && (
+            {hoveredTag === 'python' && (
               <div className="hover-indicator showMe">
-                {t("pythonExperience")}
+                {t('pythonExperience')}
               </div>
             )}
-            {hoveredTag === "javascript" && (
+            {hoveredTag === 'javascript' && (
               <div className="hover-indicator showMe">
-                {t("javascriptExperience")}
+                {t('javascriptExperience')}
               </div>
             )}
-            {hoveredTag === "pug" && (
+            {hoveredTag === 'pug' && (
               <div className="hover-indicator showMe">
-                {t("htmlExperience")}
+                {t('htmlExperience')}
               </div>
             )}
-            {hoveredTag === "css" && (
-              <div className="hover-indicator showMe">{t("cssExperience")}</div>
+            {hoveredTag === 'css' && (
+              <div className="hover-indicator showMe">{t('cssExperience')}</div>
             )}
-            {hoveredTag === "django" && (
+            {hoveredTag === 'django' && (
               <div className="hover-indicator showMe">
-                {t("djangoExperience")}
+                {t('djangoExperience')}
               </div>
             )}
-            {hoveredTag === "java" && (
+            {hoveredTag === 'java' && (
               <div className="hover-indicator showMe">
-                {t("springExperience")}
+                {t('springExperience')}
               </div>
             )}
-            {hoveredTag === "sql" && (
+            {hoveredTag === 'sql' && (
               <div className="hover-indicator showMe">
-                {t("mysqlExperience")}
+                {t('mysqlExperience')}
               </div>
             )}
-            {hoveredTag === "spring" && (
+            {hoveredTag === 'spring' && (
               <div className="hover-indicator showMe">
-                {t("fullStackExperience")}
+                {t('fullStackExperience')}
               </div>
             )}
-            {hoveredTag === "node" && (
+            {hoveredTag === 'node' && (
               <div className="hover-indicator showMe">
-                {t("nodejsExperience")}
+                {t('nodejsExperience')}
               </div>
             )}
-            {hoveredTag === "react" && (
+            {hoveredTag === 'react' && (
               <div className="hover-indicator showMe">
-                {t("reactExperience")}
+                {t('reactExperience')}
               </div>
             )}
-            {hoveredTag === "angular" && (
+            {hoveredTag === 'angular' && (
               <div className="hover-indicator showMe">
-                {t("angularExperience")}
+                {t('angularExperience')}
               </div>
             )}
-            {hoveredTag === "webpack" && (
+            {hoveredTag === 'webpack' && (
               <div className="hover-indicator showMe">
-                {t("webpackExperience")}
+                {t('webpackExperience')}
               </div>
             )}
-            {hoveredTag === "typescript" && (
+            {hoveredTag === 'typescript' && (
               <div className="hover-indicator showMe">
-                {t("typescriptExperience")}
+                {t('typescriptExperience')}
               </div>
             )}
           </div>

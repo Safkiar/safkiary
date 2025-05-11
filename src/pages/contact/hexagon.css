@@ -165,7 +165,7 @@
   min-width: 250px;
   min-height: 30px;
   height: auto;
-  margin-top: 50px;
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -196,4 +196,18 @@
     opacity: 1;
     /* transform: translateX(0); */
   }
+}
+
+.mininav {
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.mininav svg {
+  opacity: 0.8;
+}
+.mininav svg:hover {
+  opacity: 1;
+  transform: scale(1.1);
 }

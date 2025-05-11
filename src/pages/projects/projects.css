@@ -15,6 +15,20 @@
   overflow: hidden;
 }
 
+.pdfIcon {
+  position: absolute;
+  top: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.pdfIcon:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
 .slides {
   position: relative;
   display: grid;
@@ -75,6 +89,11 @@
 /* .slideContent.active:hover {
   cursor: pointer;
 } */
+
+.viewProject {
+  position: absolute;
+  border: 10px solid black;
+}
 
 .slideContentInner {
   transform-style: preserve-3d;

@@ -128,6 +128,7 @@ const slides = [
       'dynamic web application that offers a variety of interface solutions. It encompasses a wide range of features such as informational cards, interactive quizzes, a finance management module resembling online banking, a currency converter facilitating quick calculations, as well as tools for handling dates',
     data: '05.24',
     image: 'mixreact.png',
+    link: 'https://safkiar-mix-react.netlify.app/',
     gitlink: 'https://github.com/Safkiar/4-mix-react-05.2024',
     onlygit: false,
   },

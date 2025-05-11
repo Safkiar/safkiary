@@ -62,7 +62,7 @@ nav .link {
 }
 
 nav .link::before {
-  content: "";
+  content: '';
 
   position: absolute;
   width: inherit;
@@ -75,7 +75,7 @@ nav .link::before {
 }
 
 nav .link::after {
-  content: "";
+  content: '';
   position: absolute;
 
   width: calc(100% - 4px);
@@ -225,7 +225,7 @@ nav > input:checked ~ ul li a span {
 }
 
 nav ul li a span::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 2px;
   left: 2px;
@@ -280,9 +280,9 @@ nav ul li:nth-child(5) a {
 .translatormode img:first-child {
   position: absolute;
   width: 50px;
+  opacity: 0.8;
 
   height: 50px;
-  filter: drop-shadow(0 0 15px #fffacd5a);
 }
 
 .translatormode img:last-child {
@@ -290,11 +290,11 @@ nav ul li:nth-child(5) a {
   margin: 12px;
   width: 30px;
   height: 30px;
-  filter: drop-shadow(0 0 8px #bbbbbb63);
 }
 
 .translatormode img:hover {
-  filter: drop-shadow(0 2px 8px #bbbbbbce);
+  opacity: 1;
+  transform: scale(1.1);
 }
 /* sun */
 
@@ -315,7 +315,9 @@ nav ul li:nth-child(5) a {
   position: absolute;
   width: 50px;
   height: 50px;
-  filter: drop-shadow(0 0 15px #fffacd);
+  filter: drop-shadow(0 0 0 15px #fffacd);
+  transition: all 0.3s ease;
+  opacity: 0.8;
 }
 
 .moon img {
@@ -324,13 +326,15 @@ nav ul li:nth-child(5) a {
   width: 30px;
   height: 30px;
   filter: drop-shadow(0 0 8px #bbb);
+  transition: all 0.3s ease;
+  opacity: 0.8;
 }
 
 .sun img:hover,
 .moon img:hover {
+  animation: none;
+  opacity: 1;
   transform: scale(1.1);
-  filter: brightness(1.1) blur(0.3px);
-  transition: all 0.3s ease;
 }
 
 @keyframes float {

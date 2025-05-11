@@ -3,7 +3,7 @@ import './projects.css';
 import { useRef, useEffect, useReducer, useState } from 'react';
 import { useTranslate } from '../../translation/TranslationContext';
 import Spinner from '../../spinner/spinner';
-import { FaGithub, FaGlobe } from 'react-icons/fa';
+import { FaFilePdf, FaGithub, FaGlobe } from 'react-icons/fa';
 
 function useTilt(active) {
   const ref = useRef(null);
@@ -88,7 +88,8 @@ function Slide({ slide, offset }) {
         style={{
           backgroundImage: `url('${slide.image}')`,
         }}
-      />
+      ></div>
+
       <div
         className={`slideContent ${active ? 'active' : ''} ${
           slide.descriptionKey ? 'hov' : ''
@@ -142,6 +143,7 @@ function Slide({ slide, offset }) {
 function Projects() {
   const [state, dispatch] = useReducer(slidesReducer, initialState);
   const [isLoading, setIsLoading] = useState(true);
+  const { lang } = useTranslate();
 
   useEffect(() => {
     const visibleSlides = [
@@ -169,9 +171,16 @@ function Projects() {
     return <Spinner />;
   }
 
+  const pdfUrl = lang === 'pl' ? '/P1.pdf' : '/P2.pdf';
+
   return (
     <div className="hidden">
       <div className="parent">
+        <FaFilePdf
+          className="pdfIcon"
+          size={28}
+          onClick={() => window.open(pdfUrl, '_blank')}
+        />
         <div className="slides">
           <button
             className="button_slides"

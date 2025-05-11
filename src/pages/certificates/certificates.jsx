@@ -1,10 +1,11 @@
-import { slides0 } from "./slides/certificates";
-import { slides1 } from "./slides/certificates";
-import { slides2 } from "./slides/certificates";
-import "./certificates.css";
-import { useRef, useEffect, useReducer, useState } from "react";
-import Buttons from "./buttons";
-import Spinner from "../../spinner/spinner";
+import { slides0 } from './slides/certificates';
+import { slides1 } from './slides/certificates';
+import { slides2 } from './slides/certificates';
+import { slides3 } from './slides/certificates';
+import './certificates.css';
+import { useRef, useEffect, useReducer, useState } from 'react';
+import Buttons from './buttons';
+import Spinner from '../../spinner/spinner';
 
 // Tilt effect
 function useTilt(active) {
@@ -31,18 +32,17 @@ function useTilt(active) {
       const px = (state.mouseX - state.rect.left) / state.rect.width;
       const py = (state.mouseY - state.rect.top) / state.rect.height;
 
-      el.style.setProperty("--px", px);
-      el.style.setProperty("--py", py);
+      el.style.setProperty('--px', px);
+      el.style.setProperty('--py', py);
     };
 
-    el.addEventListener("mousemove", handleMouseMove);
-    return () => el.removeEventListener("mousemove", handleMouseMove);
+    el.addEventListener('mousemove', handleMouseMove);
+    return () => el.removeEventListener('mousemove', handleMouseMove);
   }, [active]);
 
   return ref;
 }
 
-// Slide component
 function Slide({ slide, offset }) {
   const active = offset === 0 ? true : null;
   const ref = useTilt(active);
@@ -54,8 +54,8 @@ function Slide({ slide, offset }) {
       data-active={active}
       data-offset={offset}
       style={{
-        "--offset": offset,
-        "--dir": offset === 0 ? 0 : offset > 0 ? 1 : -1,
+        '--offset': offset,
+        '--dir': offset === 0 ? 0 : offset > 0 ? 1 : -1,
       }}
     >
       <div className="testBackground">
@@ -66,12 +66,11 @@ function Slide({ slide, offset }) {
           }}
         />
       </div>
-      <div className={`slideContent2 dot ${active ? "active" : ""}`} />
+      <div className={`slideContent2 dot ${active ? 'active' : ''}`} />
     </div>
   );
 }
 
-// Reducer
 const initialState = {
   slideIndex: 0,
 };
@@ -79,21 +78,21 @@ const initialState = {
 const slidesReducer = (state, action) => {
   const { type, length } = action;
 
-  if (type === "NEXT") {
+  if (type === 'NEXT') {
     return {
       ...state,
       slideIndex: (state.slideIndex + 1) % length,
     };
   }
 
-  if (type === "PREV") {
+  if (type === 'PREV') {
     return {
       ...state,
       slideIndex: state.slideIndex === 0 ? length - 1 : state.slideIndex - 1,
     };
   }
 
-  if (type === "RESET") {
+  if (type === 'RESET') {
     return {
       slideIndex: 0,
     };
@@ -102,12 +101,11 @@ const slidesReducer = (state, action) => {
   return state;
 };
 
-// Main component
 function Certificates() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [state, dispatch] = useReducer(slidesReducer, initialState);
 
-  const slides = [slides0, slides1, slides2];
+  const slides = [slides0, slides1, slides2, slides3];
   const activeSlides = slides[activeIndex];
   const currentLength = activeSlides.length;
 
@@ -123,7 +121,7 @@ function Certificates() {
   }, [state.slideIndex, activeSlides]);
 
   useEffect(() => {
-    dispatch({ type: "RESET" });
+    dispatch({ type: 'RESET' });
   }, [activeIndex]);
 
   return (
@@ -135,7 +133,7 @@ function Certificates() {
           <div className="slides2">
             <button
               className="button_slides2"
-              onClick={() => dispatch({ type: "PREV", length: currentLength })}
+              onClick={() => dispatch({ type: 'PREV', length: currentLength })}
             >
               ‹
             </button>
@@ -153,7 +151,7 @@ function Certificates() {
             )}
             <button
               className="button_slides2"
-              onClick={() => dispatch({ type: "NEXT", length: currentLength })}
+              onClick={() => dispatch({ type: 'NEXT', length: currentLength })}
             >
               ›
             </button>

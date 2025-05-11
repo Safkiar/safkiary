@@ -118,7 +118,7 @@ nav ul.submenu {
 }
 
 nav > input:checked ~ ul.submenu {
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(2.9px);
   z-index: 1000000;
   opacity: 1;
   visibility: visible;

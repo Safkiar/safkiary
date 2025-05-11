@@ -1,8 +1,8 @@
-import { useRef, useState } from "react";
+import { useRef, useState } from 'react';
 // eslint-disable-next-line no-unused-vars
-import { motion } from "framer-motion";
-import { useEffect } from "react";
-import "./buttons.css";
+import { motion } from 'framer-motion';
+import { useEffect } from 'react';
+import './buttons.css';
 
 function Buttons({ activeIndex, setActiveIndex }) {
   return (
@@ -40,9 +40,9 @@ const SlideTabs = ({ activeIndex, setActiveIndex }) => {
   return (
     <ul
       className="tabs-container"
-      onMouseLeave={() => handleSetPosition(activeIndex)} // po wyjechaniu myszką wracamy do aktywnego
+      onMouseLeave={() => handleSetPosition(activeIndex)}
     >
-      {["Front", "Back", "Other"].map((label, index) => (
+      {['Front', 'Back', 'Data', 'Other'].map((label, index) => (
         <li
           key={label}
           ref={(el) => (tabsRef.current[index] = el)}

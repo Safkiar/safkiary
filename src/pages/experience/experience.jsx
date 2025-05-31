@@ -158,19 +158,19 @@ function Experience() {
               <p className="title">{t('solvedTasks')}</p>
               <p className="number">760+</p>
               <p className="title">{t('courseHours')}</p>
-              <p className="number">556</p>
+              <p className="number">571</p>
             </div>
             <div className="PdfContainer">
               <div className="PdfWrapper">
                 <p> {t('downloadCV')}</p>
                 <div className="svg">
-                  <a href="./KIKOWSKI-CV-ENG.pdf" download>
+                  <a  href="./CV-ENGLISH-MK.pdf" download>
                     <FaFileDownload />
                     {t('languageEnglish')}
                   </a>
                 </div>
                 <div className="svg">
-                  <a href="./Kikowski-CV-POL.pdf" download>
+                  <a href="./CV-POLSKA-MK.pdf" download>
                     <FaFileDownload />
                     {t('languagePolish')}
                   </a>
@@ -180,7 +180,7 @@ function Experience() {
                 <p> {t('viewCV')} </p>
                 <div className="svg">
                   <a
-                    href="./KIKOWSKI-CV-ENG.pdf"
+                    href="./CV-ENGLISH-MK.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -190,7 +190,7 @@ function Experience() {
                 </div>
                 <div className="svg">
                   <a
-                    href="./Kikowski-CV-POL.pdf"
+                   href="./CV-POLSKA-MK.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

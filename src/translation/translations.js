@@ -58,7 +58,7 @@ export const dictionary = {
     springExperience:
       'I completed two courses and created a full-stack app using Spring. Java is also used as the backend in a project for the foundation.',
     mysqlExperience:
-      "I completed two courses and built a full-stack project with MySQL. At work, I use Microsoft SQL Server daily with T-SQL. I'm familiar with MySQL and PostgreSQL.",
+      "I completed three courses and built a full-stack project with MySQL. At work, I use Microsoft SQL Server daily with T-SQL. I'm familiar with MySQL and PostgreSQL.",
     fullStackExperience:
       'I built a full-stack project with Spring, Angular, and MySQL. I also completed two courses on Spring.',
     nodejsExperience: 'I completed one course on Node.js.',
@@ -129,7 +129,7 @@ export const dictionary = {
     springExperience:
       'Ukończyłem dwa kursy i stworzyłem aplikację full-stack używając Spring. Java jest również używana jako backend w projekcie dla fundacji.',
     mysqlExperience:
-      'Ukończyłem dwa kursy i zbudowałem projekt full-stack z MySQL. W pracy używam codziennie Microsoft SQL Server z T-SQL. Jestem zaznajomiony z MySQL i PostgreSQL.',
+      'Ukończyłem trzy kursy i zbudowałem projekt full-stack z MySQL. W pracy używam codziennie Microsoft SQL Server z T-SQL. Jestem zaznajomiony z MySQL i PostgreSQL.',
     fullStackExperience:
       'Zbudowałem projekt full-stack z Spring, Angular i MySQL. Ukończyłem również dwa kursy na temat Spring.',
     nodejsExperience: 'Ukończyłem jeden kurs na temat Node.js.',

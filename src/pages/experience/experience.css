@@ -172,7 +172,7 @@
 
 .a7 {
   z-index: 7;
-  width: calc(var(--sz) * 3);
+  width: calc(var(--sz) * 4);
 }
 
 .a8 {

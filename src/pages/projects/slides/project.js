@@ -1,11 +1,23 @@
 const slides = [
+    {
+    title: 'Safwork',
+    subtitle: 'Angular - SCSS',
+    descriptionKey: 'desc_job',
+    description:
+      'Modern one-page React application with a sleek, responsive design and smooth scrolling.',
+    data: '6.25',
+    link: 'https://safwork.netlify.app/',
+    image: 'jobang.png',
+    gitlink: 'https://github.com/Safkiar/15_safwork_fe',
+    onlygit: false,
+  },
   {
     title: 'FlyFlow',
     subtitle: 'React - Django - CSS',
     descriptionKey: 'desc_trade',
     description:
       'Modern one-page React application with a sleek, responsive design and smooth scrolling.',
-    data: '04.10',
+    data: '04.25',
     link: 'https://github.com/Safkiar/14-BE-FlyFlow-03.2025',
     image: 'construction.png',
     gitlink: 'https://github.com/Safkiar/14-BE-FlyFlow-03.2025',

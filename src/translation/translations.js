@@ -1,5 +1,7 @@
 export const dictionary = {
   en: {
+      desc_job:
+    'Job listings board in Angular 20, using signals for state and LocalStorage, reactive forms with validation, Angular Material styling, instant search, favorites filter, pagination, and Playwright E2E tests for adding/removing jobs.',
     desc_trade:
       'The app fetches live stock market data via APIs and automatically scrapes multiple websites using Selenium, providing a real-time and comprehensive market overview',
     desc_scroll:
@@ -65,13 +67,15 @@ export const dictionary = {
     reactExperience:
       "I spent over 100 hours on a React course and built 8 projects with it. I'm proficient in React Router, Query, Redux, and many additional libraries.",
     angularExperience:
-      'I completed one course and built three projects using Angular — one of them is a full-stack app, and another is part of a foundation project. I also work with Angular daily in my role as a developer at the foundation.',
+      'I completed one course and built four projects using Angular — one of them is a full-stack app, and another is part of a foundation project. I also work with Angular daily in my role as a developer at the foundation.',
     webpackExperience: 'I built one application using Webpack.',
     typescriptExperience:
       'I completed two courses and built three projects using TypeScript.',
     tr: 'en',
   },
   pl: {
+         desc_job:
+    'Tablica ogłoszeń w Angularze 20  wykorzystująca sygnały (signals) do zarządzania stanem i LocalStorage, Reactive Forms z walidacją, Angular Material do stylowania, instant search, filtr ulubionych, paginację oraz testy E2E Playwright dodawania i usuwania ofert.',
     desc_trade:
       'Aplikacja pobiera dane na żywo z giełdy za pomocą API oraz automatycznie scrapuje informacje z wielu stron dzięki integracji z Selenium, zapewniając aktualny i szeroki przegląd rynku.',
     desc_scroll:
@@ -136,7 +140,7 @@ export const dictionary = {
     reactExperience:
       'Spędziłem ponad 100 godzin na kursie React i zbudowałem 8 projektów. Jestem biegły w React Router, Query, Redux i wielu dodatkowych bibliotekach.',
     angularExperience:
-      'Ukończyłem jeden kurs i zbudowałem trzy projekty używając Angular — jeden z nich to aplikacja full-stack, a inny jest częścią projektu fundacji. Również pracuję z Angular codziennie w mojej roli jako developer w fundacji.',
+      'Ukończyłem jeden kurs i zbudowałem cztery projekty używając Angular — jeden z nich to aplikacja full-stack, a inny jest częścią projektu fundacji. Również pracuję z Angular codziennie w mojej roli jako developer w fundacji.',
     webpackExperience: 'Zbudowałem jedną aplikację używając Webpack.',
     typescriptExperience:
       'Ukończyłem dwa kursy i zbudowałem trzy projekty używając TypeScript.',

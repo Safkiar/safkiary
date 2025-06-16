@@ -97,20 +97,20 @@ function Experience() {
               <a href="#">Django</a>
             </li>
             <li
-              className="a7 skewli"
-              onMouseEnter={() => setHovered7(true)}
-              onMouseLeave={() => setHovered7(false)}
-              data-icon="&#xf015"
-            >
-              <a href="#">Angular</a>
-            </li>
-            <li
               className="a6 skewli"
               data-icon="&#xf015"
               onMouseEnter={() => setHovered6(true)}
               onMouseLeave={() => setHovered6(false)}
             >
               <a href="#">TypeScript</a>
+            </li>
+            <li
+              className="a7 skewli"
+              onMouseEnter={() => setHovered7(true)}
+              onMouseLeave={() => setHovered7(false)}
+              data-icon="&#xf015"
+            >
+              <a href="#">Angular</a>
             </li>
             <li
               className="a4 skewli"
@@ -141,7 +141,7 @@ function Experience() {
               {hovered4 && <div className="fadeIn">4 {t('projects')}</div>}
               {hovered5 && <div className="fadeIn">3 {t('projects')}</div>}
               {hovered6 && <div className="fadeIn">3 {t('projects')}</div>}
-              {hovered7 && <div className="fadeIn">3 {t('projects')}</div>}
+              {hovered7 && <div className="fadeIn">4 {t('projects')}</div>}
               {hovered8 && <div className="fadeIn">1 {t('project')}</div>}
               {hovered9 && <div className="fadeIn">2 {t('projects')}</div>}
               {hovered10 && <div className="fadeIn">1 {t('project')}</div>}

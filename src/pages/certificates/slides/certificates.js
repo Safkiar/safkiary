@@ -42,6 +42,12 @@ export const slides1 = [
 ];
 
 export const slides2 = [
+     {
+    image: '/certificates/other/pandas2.jpg',
+  },
+     {
+    image: '/certificates/other/docker.jpg',
+  },
    {
     image: '/certificates/other/SQLMC.jpg',
   },

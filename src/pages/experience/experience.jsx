@@ -17,7 +17,7 @@ function Experience() {
   const [hovered10, setHovered10] = useState(false);
   const [hovered11, setHovered11] = useState(false);
   const [hovered12, setHovered12] = useState(false);
-
+    const [hovered13, setHovered13] = useState(false);
   const [emptyInd, setEmptyInd] = useState(true);
 
   useEffect(() => {
@@ -34,6 +34,7 @@ function Experience() {
       hovered10,
       hovered11,
       hovered12,
+      hovered13,
     ];
     setEmptyInd(allHovered.every((val) => val === false));
   }, [
@@ -49,6 +50,7 @@ function Experience() {
     hovered10,
     hovered11,
     hovered12,
+    hovered13,
   ]);
 
   return (
@@ -56,6 +58,14 @@ function Experience() {
       <div className="grid-container">
         <div className="item item-1">
           <ul className="skewul">
+               <li
+              className="a13 skewli"
+              onMouseEnter={() => setHovered13(true)}
+              onMouseLeave={() => setHovered13(false)}
+              data-icon="&#xf015"
+            >
+              <a href="#">Python</a>
+            </li>
             <li
               className="a12 skewli"
               onMouseEnter={() => setHovered12(true)}
@@ -135,7 +145,7 @@ function Experience() {
           <div className="table">
             <div className="info">
               {emptyInd && <div className="fadeIn">{t('myProjects')}</div>}
-              {hovered && <div className="fadeIn">8 {t('projects2')}</div>}
+              {hovered && <div className="fadeIn">9 {t('projects2')}</div>}
               {hovered2 && <div className="fadeIn">6 {t('projects2')}</div>}
               {hovered3 && <div className="fadeIn">6 {t('projects2')}</div>}
               {hovered4 && <div className="fadeIn">4 {t('projects')}</div>}
@@ -147,6 +157,7 @@ function Experience() {
               {hovered10 && <div className="fadeIn">1 {t('project')}</div>}
               {hovered11 && <div className="fadeIn">1 {t('project')}</div>}
               {hovered12 && <div className="fadeIn">1 {t('project')}</div>}
+               {hovered13 && <div className="fadeIn">1 {t('project')}</div>}
             </div>
           </div>
         </div>
@@ -154,7 +165,7 @@ function Experience() {
           <div className="add_info">
             <div className="table">
               <p className="title">{t('createdProjects')}</p>
-              <p className="number">16</p>
+              <p className="number">18</p>
               <p className="title">{t('solvedTasks')}</p>
               <p className="number">760+</p>
               <p className="title">{t('courseHours')}</p>

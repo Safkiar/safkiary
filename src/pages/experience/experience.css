@@ -142,7 +142,7 @@
 .a1 {
   z-index: 1;
 
-  width: calc(var(--sz) * 8);
+  width: calc(var(--sz) * 9);
 }
 
 .a2 {
@@ -196,6 +196,12 @@
   z-index: 12;
   width: calc(var(--sz) * 1);
 }
+
+.a13 {
+  z-index: 13;
+  width: calc(var(--sz) * 1);
+}
+
 
 /*  test */
 

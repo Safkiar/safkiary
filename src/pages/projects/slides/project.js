@@ -1,4 +1,16 @@
 const slides = [
+      {
+    title: 'Wash-app',
+    subtitle: 'React - Styled Components',
+    descriptionKey: 'desc_wash',
+    description:
+      'Responsive washing machine shop page based on a Figma design, featuring filtering, sorting.',
+    data: '8.25',
+    link: 'https://washing-machines.netlify.app/',
+    image: 'WASH.png',
+    gitlink: 'https://github.com/Safkiar/washing-app',
+    onlygit: false,
+  },
     {
     title: 'Safwork',
     subtitle: 'Angular - SCSS',

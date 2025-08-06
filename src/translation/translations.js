@@ -1,5 +1,7 @@
 export const dictionary = {
   en: {
+               desc_wash:
+    'Responsive washing machine shop page based on a Figma design, featuring filtering, sorting.',
       desc_job:
     'Job listings board in Angular 20, using signals for state and LocalStorage, reactive forms with validation, Angular Material styling, instant search, favorites filter, pagination, and Playwright E2E tests for adding/removing jobs.',
     desc_trade:
@@ -48,7 +50,7 @@ export const dictionary = {
     checkOut:
       'Check out my projects, certificates, and hover over the sphere elements.',
     pythonExperience:
-      "I completed two courses and two projects. I'm currently using Python at work, where I've written many scripts. I'm well-versed in Pandas, Selenium, Django, and NumPy. I'm still actively investing in this area.",
+      "I completed two courses and two projects. I'm currently using Python at work, where I've written many scripts. I'm well-versed in Pandas, Selenium, Django, and NumPy. I'm still actively investing in this area, especially in cybersecurity.",
     javascriptExperience:
       "I completed two courses and built four projects using plain JavaScript. It's worth mentioning that I built a chess game using just JS. I'm also highly skilled in React, TypeScript, and Angular.",
     htmlExperience:
@@ -65,7 +67,7 @@ export const dictionary = {
       'I built a full-stack project with Spring, Angular, and MySQL. I also completed two courses on Spring.',
     nodejsExperience: 'I completed one course on Node.js.',
     reactExperience:
-      "I spent over 100 hours on a React course and built 8 projects with it. I'm proficient in React Router, Query, Redux, and many additional libraries.",
+      "I spent over 100 hours on a React course and built 9 projects with it. I'm proficient in React Router, Query, Redux, and many additional libraries.",
     angularExperience:
       'I completed one course and built four projects using Angular — one of them is a full-stack app, and another is part of a foundation project. I also work with Angular daily in my role as a developer at the foundation.',
     webpackExperience: 'I built one application using Webpack.',
@@ -74,6 +76,8 @@ export const dictionary = {
     tr: 'en',
   },
   pl: {
+             desc_wash:
+    'Responsywna strona sklepu z pralkami na podstawie projektu z Figma, z filtrami, sortowaniem.',
          desc_job:
     'Tablica ogłoszeń w Angularze 20  wykorzystująca sygnały (signals) do zarządzania stanem i LocalStorage, Reactive Forms z walidacją, Angular Material do stylowania, instant search, filtr ulubionych, paginację oraz testy E2E Playwright dodawania i usuwania ofert.',
     desc_trade:
@@ -115,13 +119,13 @@ export const dictionary = {
     downloadCV: 'Pobierz CV',
     viewCV: 'Zobacz CV',
     employer: 'Pracodawcy',
-    languageEnglish: 'Angielski',
+    languageEnglish: 'Angielski', 
     languagePolish: 'Polski',
     blendingCreativity:
       'Łączę pasję do technologii z dyscypliną i głodem wiedzy',
     checkOut: 'Zobacz moje projekty, certyfikaty i najedź na elementy sfery.',
     pythonExperience:
-      'Ukończyłem dwa kursy i dwa projekty. Aktualnie używam Pythona w pracy, gdzie napisałem wiele skryptów. Jestem dobrze zaznajomiony z Pandas, Selenium, Django i NumPy. Nadal aktywnie inwestuję w tę dziedzinę.',
+      'Ukończyłem dwa kursy i dwa projekty. Aktualnie używam Pythona w pracy, gdzie napisałem wiele skryptów. Jestem dobrze zaznajomiony z Pandas, Selenium, Django i NumPy. Nadal aktywnie inwestuję w tę dziedzinę, szczególnie w cybersecurity.',
     javascriptExperience:
       'Ukończyłem dwa kursy i zbudowałem cztery projekty używając czystego JavaScript. Warto wspomnieć, że zbudowałem grę w szachy używając tylko JS. Jestem także bardzo dobrze zaznajomiony z React, TypeScript i Angular.',
     htmlExperience:
@@ -138,7 +142,7 @@ export const dictionary = {
       'Zbudowałem projekt full-stack z Spring, Angular i MySQL. Ukończyłem również dwa kursy na temat Spring.',
     nodejsExperience: 'Ukończyłem jeden kurs na temat Node.js.',
     reactExperience:
-      'Spędziłem ponad 100 godzin na kursie React i zbudowałem 8 projektów. Jestem biegły w React Router, Query, Redux i wielu dodatkowych bibliotekach.',
+      'Spędziłem ponad 100 godzin na kursie React i zbudowałem 9 projektów. Jestem biegły w React Router, Query, Redux i wielu dodatkowych bibliotekach.',
     angularExperience:
       'Ukończyłem jeden kurs i zbudowałem cztery projekty używając Angular — jeden z nich to aplikacja full-stack, a inny jest częścią projektu fundacji. Również pracuję z Angular codziennie w mojej roli jako developer w fundacji.',
     webpackExperience: 'Zbudowałem jedną aplikację używając Webpack.',

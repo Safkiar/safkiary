@@ -29,6 +29,9 @@ export const slides0 = [
 ];
 
 export const slides1 = [
+    {
+    image: '/certificates/back/Clang.jpg',
+  },
   {
     image: '/certificates/back/NODE.jpg',
   },

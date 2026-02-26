@@ -7,7 +7,6 @@ import { useRef, useEffect, useReducer, useState } from 'react';
 import Buttons from './buttons';
 import Spinner from '../../spinner/spinner';
 
-// Tilt effect
 function useTilt(active) {
   const ref = useRef(null);
 
